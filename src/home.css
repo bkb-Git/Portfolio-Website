@@ -1,0 +1,264 @@
+.Homepage-background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('HomePage/assets/colorful-paint.jpg');
+    margin: 0px;
+    z-index: -1;
+    
+    
+}
+
+.Container {
+  position: relative;
+  border-bottom-left-radius: 20%;
+  border-top-left-radius: 20%;
+  border-top: .5px solid black;
+  border-bottom: .5px solid black;
+  box-shadow: 10px 10px 14px -1px rgb(0, 0, 0);
+  -webkit-box-shadow: 10px 10px 14px -1px rgb(0, 0, 0);
+  -moz-box-shadow: 10px 10px 14px -1px rgba(0, 0, 0);
+  width: 94%;
+  left: 6%;
+  top: 5vh;
+  height: 90vh;
+ }
+ 
+.ContainerBgImg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 20%;
+    border-top-left-radius: 20%;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-attachment: fixed;
+ }
+
+    .intro {
+     position: absolute;
+     top: 45vh;
+     left: 35vw;
+     width: 40vw;
+     height: 50vh;
+     transform: translate(-50,-50);
+     font-size: 1.8vw;
+     font-style:italic;
+     font-weight:bolder;
+     font-family: 'Trattatello';
+     color: white;
+     
+    }
+
+        .p1 {
+        position: absolute;
+        top: -25vh;
+        left: -12vw;
+        -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        .p2 {
+        position: absolute; 
+        top: -15vh;
+        left: -8vw;
+        -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation-delay: 1.5s;
+        }
+
+        .p3 {   
+        position: absolute;
+        top: -5vh;
+        left: -4vw;
+        -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation-delay: 3s;
+        }
+
+        .p4 {
+        position: absolute;
+        top: 5vh;
+        left: 0vw;
+        -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation-delay: 4.5s;
+        }
+
+        .p5 {
+        position: absolute;
+        top: 15vh;
+        left: 4vw;
+        -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-contract 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation-delay: 6s;
+        }
+
+        @-webkit-keyframes tracking-in-contract {
+            0% {
+              letter-spacing: .5em;
+              opacity: 0;
+            }
+            40% {
+              opacity: 0.6;
+            }
+            100% {
+              letter-spacing: normal;
+              opacity: 1;
+            }
+          }
+          @keyframes tracking-in-contract {
+            0% {
+              letter-spacing: .5em;
+              opacity: 0;
+            }
+            40% {
+              opacity: 0.6;
+            }
+            100% {
+              letter-spacing: normal;
+              opacity: 1;
+            }
+          }
+  
+        #name {
+    mix-blend-mode: screen;
+    background-color: transparent;
+    color: white;
+    margin: 0 auto;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    border: .5px solid #dcdcdc;
+    border-radius:6px;
+        }
+
+
+.side-nav-bar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    top: 25vh;
+    left: -5vw;
+    width: 5vw;
+    height: 40vh;
+    background-color: transparent;
+    padding: 5px;
+    z-index: 2;
+    }
+
+    .button-icons {
+     flex: 1;
+     position: relative;
+     align-items:center;
+     opacity: 0.7;
+     transition: transform .2s;
+    }
+
+    .button-icons:hover {
+     position: relative;
+     justify-content: center;
+     margin-left: 4px;
+     opacity: 1.0;
+     filter: brightness(1.5);
+     transform: scale(1.10);
+    }
+
+
+.div {
+     position: absolute;
+     right: 0;
+     height: 100%;
+     width: 16vw;
+    }
+
+ .div:hover .arrowButton {
+     animation-name: arrow;
+     color:rgba(255, 255, 255,0.8);
+     animation-duration: .7s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-out;
+    }
+
+ .arrowButton {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     font-size: 5vw;
+     filter: brightness(1);
+     color: rgba(255, 255, 255,0.8);
+    }
+     
+   @keyframes arrow {
+         from {left: 0%;}
+         to {left: 5%;}
+        }
+
+
+    .transition-icon{
+     position:absolute;
+     height: 100%;
+     left: 85%;
+     width: 15%;
+     background-color: rgba(255, 255, 255, 0.3);
+     opacity: 0.5;
+     border-top-left-radius: 99%;
+     border-bottom-left-radius: 99%;
+     display:none;
+    }
+
+    .div:hover .transition-icon{
+     animation-name: blinker;
+     animation-duration: .7s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-out;
+     display: block;
+    }         
+
+        @keyframes blinker {
+         from {
+          border-top-left-radius: 99%;
+          border-bottom-left-radius: 99%;
+          opacity: .3;
+         }
+         to { 
+          border-top-left-radius: 75%;
+          border-bottom-left-radius: 75%;
+          opacity: 1;
+         }
+        }
+
+.contact-button {
+    mix-blend-mode: multiply;
+    background-color: transparent;
+    color: white;
+	border-radius:6px;
+	border: .5px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	font-size:1.4vw;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+.contact-button:hover {
+    mix-blend-mode: screen;
+    background-color: white;
+    background:none;
+    color: black;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+}
+.contact-button:active {
+	position:relative;
+	top:1px;
+}
+
+i {
+  justify-content: center;
+}
