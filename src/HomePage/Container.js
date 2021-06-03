@@ -1,18 +1,17 @@
-import React from 'react';
 import {ArrowIcon} from './SNSNavBar';
 import {Link} from 'react-router-dom';
 import Intro from './Intro';
 
-function Container() {
+export default function Container(props) {
     
     return(
         <div>
           <div className='ContainerBgImg'>
-          <Intro />
+           <Intro />
           </div>
             <Link to='/projects'>
               <div className='div'> 
-                  <ArrowIcon />
+                  <ArrowIcon page='Home' />
                 <div className='transition-icon'>
                 </div>
               </div>
@@ -21,5 +20,4 @@ function Container() {
     )
 }
 
-export default Container;
 

@@ -4,7 +4,7 @@ import Container from './Container';
 import SNSNavBar from './SNSNavBar';
 
 
-function Home() {
+function Home(props) {
     return (
         <div className='Container'>
          <div className='Homepage-background'></div>

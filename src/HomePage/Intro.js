@@ -1,6 +1,8 @@
 import {NavLink} from 'react-router-dom';
 
-export default function Intro() {
+
+export default function Intro(props) {
+    
     return (
     
     <div className='glassContainer'>
@@ -9,7 +11,7 @@ export default function Intro() {
             <p className='p2 '>I am a <span id='name'>Software Developer.</span><br></br></p>
             <p className='p3 '>Check out my <span id='name'>Projects</span><br></br></p>
             <p className='p4 '>If you like what you see <br></br></p>
-            <p className='p5 '>Please <NavLink exact to='/about' className='contact-button'> Contact me.</NavLink></p>
+            <p className='p5 '>Please <NavLink exact to='/about' className='contact-button'> Contact me</NavLink></p>
         </div>
     </div>
 
