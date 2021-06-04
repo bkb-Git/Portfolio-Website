@@ -1,16 +1,29 @@
 import React from 'react';
 import sns from '../sns.js';
-import Container from './Container';
 import SNSNavBar from './SNSNavBar';
+import {ArrowIcon} from './SNSNavBar';
+import {Link} from 'react-router-dom';
+import Intro from './Intro';
 
 
-function Home() {
+function Home(props) {
     return (
-        <div className='Container'>
-         <div className='Homepage-background'></div>
-         <Container />
-         <SNSNavBar buttons={sns} />
-        </div> 
+         <div>
+            <SNSNavBar buttons={sns} />
+                <div className='right-side-background'>
+                    <Link to='/projects'>
+                        <div className='div'> 
+                            <ArrowIcon page='Home' />
+                                <div className='transition-icon'>
+                                </div>
+                        </div>
+                    </Link>
+                </div>
+            <div className='left-side-background'>
+            </div>
+            <Intro />
+        
+         </div>
     )
 }
 
