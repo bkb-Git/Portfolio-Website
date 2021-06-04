@@ -6,7 +6,8 @@ class About extends React.Component {
     }
     render () {
         return(
- <div className='main-body' >
+ <div className='about-background' >
+     <div className='profile-pic'></div>
         </div>
         )
     }

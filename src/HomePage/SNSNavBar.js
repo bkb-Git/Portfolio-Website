@@ -29,19 +29,20 @@ function SNSNavBar(props) {
                    onMouseLeave={handleLeave} 
                 >
                     <NavLink exact to={elem.link} 
-                             style={{color: elem.color, textDecoration: 'none' }}>
+                             style={{textDecoration: 'none' }}
+                             id={'link' + index}>
                               <FontAwesomeIcon icon={elem.icon} /> 
-                     <label className='label' for={'a' + index}>{elem.name}</label>
+                     <label className='label' for={'a' + index} id={'label' + index}>{elem.name}</label>
                     </NavLink>
                    
                  </i>
             :  <i className = 'button-icons fa-4x' 
                   id={'a' + index}
-                  style={{color: elem.color , borderLeftColor: toggle ? `${elem.color}` : ''}}  
+                  style={{borderLeftColor: toggle ? `${elem.color}` : ''}}  
                   onMouseEnter={handleEnter} 
                   onMouseLeave={handleLeave} >
                         <FontAwesomeIcon icon={elem.icon} />
-                    <label className='label' for={'a' + index}>{elem.name}</label>
+                    <label className='label' for={'a' + index} id={'label' + index}>{elem.name}</label>
                </i>;
             });
             
