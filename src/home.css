@@ -439,24 +439,21 @@
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 3px 0px #ffffff;
-  transition: all 0.4s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .contact-button:hover {
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
   background-color: rgb(53, 46, 46);
+  background-image: radial-gradient(rgb(53, 46, 46) 70%, rgb(139, 125, 125));
   color: whitesmoke; 
-  border: 1px solid whitesmoke;
   font-family: 'Monoton', cursive;
-  text-shadow:0px 3px 0px #b9b9b9;
-  box-shadow: -3px -3px 5px .5px rgba(255,255,255,0.75) inset,
-               3px 3px 5px .5px rgba(255,255,255,0.75) inset;
-  -webkit-box-shadow: -3px -3px 5px .5px rgba(255,255,255,0.75) inset,
-                       3px 3px 5px .5px rgba(255,255,255,0.75) inset;
-  -moz-box-shadow: -3px -3px 5px .5px rgba(255,255,255,0.75) inset,
-                    3px 3px 5px .5px rgba(255,255,255,0.75) inset;
-
+  text-shadow: none;
+  border:none;
+  box-shadow: 3px 10px 20px 1px rgba(0, 0, 0, 0.616);
+  transform: scale(1.03);
 }
+
 .contact-button:active {
 	position:relative;
 	top:1px;
