@@ -11,7 +11,7 @@ class Projects extends React.Component {
     render () {
         return(
         <div className='projects-p-background'>
-        <SNSNavBar buttons={sns} />
+        <SNSNavBar buttons={sns} page={2} />
         <Container />
         </div>
         )

@@ -24,13 +24,13 @@ class Tile extends React.Component {
                         <ul className='list'>
                             <li>List One</li><li>List Two</li> <li>List Three</li>
                         </ul>
-                        <button type='button' className='card-button' id='seeLive'><FontAwesomeIcon icon={faDesktop}/><span id='card-bt-text'>Live</span></button>
-                        <button type='button' className='card-button' id='viewCode'><FontAwesomeIcon icon={faCode}/><span id='card-bt-text'>Code</span></button>
+                        <button type='button' className='card-button seeLive'><FontAwesomeIcon icon={faDesktop}/><span id='card-bt-text'>Live</span></button>
+                        <button type='button' className='card-button viewCode'><FontAwesomeIcon icon={faCode}/><span id='card-bt-text'>Code</span></button>
                     </div>
                    </div>
         } )
         return (
-            <div id='tile-c'>{Tiles}</div>
+            <div className='container-for-cards'>{Tiles}</div>
             
         )
     }

@@ -9,11 +9,11 @@ import Intro from './Intro';
 function Home(props) {
     return (
          <div>
-            <SNSNavBar buttons={sns} />
+            <SNSNavBar buttons={sns} page={1} />
                 <div className='right-side-background'>
                     <Link to='/projects'>
                         <div className='div'> 
-                            <ArrowIcon page='Home' />
+                            <ArrowIcon page={1} />
                                 <div className='transition-icon'>
                                 </div>
                         </div>

@@ -3,8 +3,7 @@ import Home from './HomePage/Home';
 import Projects from './ProjectsPage/Projects';
 import About from './AboutPage/About';
 import { Switch , Route} from 'react-router-dom';
-import './app.css';
-import './home.css';
+import './app.scss';
 
 function App() {
   return  (
