@@ -1,6 +1,5 @@
 import React from 'react';
 import {useState} from 'react';
-import '../home.css';
 import '../app.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown, faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
@@ -22,8 +21,7 @@ function SNSNavBar(props) {
 
     const buttons = props.buttons.map((elem,index) => {
        return elem.name === 'Home' || elem.name === 'About' ? 
-                <i className = 'button-icons fa-4x' 
-                   id={'a' + index}    
+                <i className = {`button-icons fa-4x icon${index}`}     
                    style={{borderLeftColor: toggle ? `${elem.color}` : ''}} 
                    onMouseEnter={handleEnter} 
                    onMouseLeave={handleLeave} 
@@ -32,22 +30,21 @@ function SNSNavBar(props) {
                              style={{textDecoration: 'none' }}
                              id={'link' + index}>
                               <FontAwesomeIcon icon={elem.icon} /> 
-                     <label className='label' for={'a' + index} id={'label' + index}>{elem.name}</label>
+                     <label className='btn-label' for={`icon${index}`}>{elem.name}</label>
                     </NavLink>
                    
                  </i>
-            :  <i className = 'button-icons fa-4x' 
-                  id={'a' + index}
+            :  <i className = {`button-icons fa-4x icon${index}`}
                   style={{borderLeftColor: toggle ? `${elem.color}` : ''}}  
                   onMouseEnter={handleEnter} 
                   onMouseLeave={handleLeave} >
                         <FontAwesomeIcon icon={elem.icon} />
-                    <label className='label' for={'a' + index} id={'label' + index}>{elem.name}</label>
+                    <label className= 'btn-label' for={`icon${index}`}>{elem.name}</label>
                </i>;
             });
             
     return (
-                <div className='side-nav-bar' > 
+                <div className= {`side-navbar${props.page}`} > 
                     {buttons}
                     </div>
             )
@@ -55,10 +52,10 @@ function SNSNavBar(props) {
 
 function ArrowIcon(props) {
     const home = {NavPageTag: 'Projects' , color: 'rgb(255, 255, 255)' , icon: faAngleDoubleRight} ;
-    const projects = {NavPageTag: 'About', color: 'rgb(255, 255, 255)', icon: faAngleDoubleDown};
+    const projects = {NavPageTag: 'About', color: '#696867', icon: faAngleDoubleDown};
     const about = {NavPageTag: 'Projects', color: 'rgb(255,255,255)', icon: faAngleDoubleLeft};
 
-    const currentPage = props.page === "Home" ? home : props.page === "Projects" ? projects : about ;
+    const currentPage = props.page === 1 ? home : props.page === 2 ? projects : about ;
     return (
                     <div className={ currentPage === home ? 'arrowButton' : 'arrowButton-1'} style={{color: currentPage.color}}>
                     <i className=' fa-6x' >

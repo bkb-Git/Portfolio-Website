@@ -15,7 +15,7 @@ class Container extends React.Component {
             </div>
             <Link to='/about'>
               <div className='div-1'> 
-                  <ArrowIcon page= 'Projects' />
+                  <ArrowIcon page={2} />
                 <div className='transition-icon-1'>
                 </div>
               </div>
