@@ -30,7 +30,7 @@ function SNSNavBar(props) {
                              style={{textDecoration: 'none' }}
                              id={'link' + index}>
                               <FontAwesomeIcon icon={elem.icon} /> 
-                     <label className='btn-label' for={`icon${index}`} id={'label' + index}>{elem.name}</label>
+                     <label className='btn-label' for={`icon${index}`}>{elem.name}</label>
                     </NavLink>
                    
                  </i>

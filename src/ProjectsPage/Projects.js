@@ -2,6 +2,7 @@ import React from 'react';
 import SNSNavBar from '../HomePage/SNSNavBar';
 import sns from '../sns.js';
 import Container from './container';
+import Header from './Header';
 
 
 class Projects extends React.Component {
@@ -11,6 +12,7 @@ class Projects extends React.Component {
     render () {
         return(
         <div className='projects-p-background'>
+        <Header />
         <SNSNavBar buttons={sns} page={2} />
         <Container />
         </div>
