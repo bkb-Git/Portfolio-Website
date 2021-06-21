@@ -1,5 +1,15 @@
+$primary-color: #886c57;
+$secondary-color: #413b3b;
+$primary-bg-color: linear-gradient(to right, #ffffff, #ece9e6);
+
+.home-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
 .right-side-background {
-  position: fixed;
+  position: absolute;
   right: 0;
   height: 100vh;
   width: 49.9%;
@@ -9,7 +19,7 @@
 
   &:hover {
     .arrowButton {
-      animation: blink .3s normal;
+      animation: blink 0.3s normal;
     }
   }
 
@@ -30,12 +40,10 @@
 }
 
 .left-side-background {
-  position: fixed;
+  position: absolute;
   left: 0;
   height: 100vh;
   width: 49.9%;
-  background: #ece9e6;
-  background: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
   background: linear-gradient(to right, #ffffff, #ece9e6);
 }
 
@@ -299,7 +307,7 @@
       transition: color 0.3s ease-in;
 
       &:hover {
-        color: #551a8b;
+        color: #720058;
       }
     }
   }
@@ -336,35 +344,36 @@
 }
 
 .div {
-  position: fixed;
+  position: absolute;
   right: 0;
   height: 100%;
   width: 16vw;
 
   .arrowButton {
-    position: fixed;
-    right: 10%;
+    position: absolute;
+    left: 25%;
     top: 50vh;
+    color: rgb(255, 255, 255);
     opacity: 0.3;
   }
 
   .transition-icon {
-    position: fixed;
+    position: absolute;
     top: 0;
-    height: 100%;
     right: 0;
-    width: 2%;
-    background-color: rgba(255, 255, 255, 0.3);
+    height: 100vh;
+    width: 0.2%;
     opacity: 0.3;
     border-top-left-radius: 99%;
     border-bottom-left-radius: 99%;
+    box-shadow: -5px 0px 50px 20px #ffffff;
     display: none;
   }
 
   #next-page-tag {
     position: absolute;
     top: 37%;
-    padding-left: 25%;
+    padding-left: 5%;
     color: white;
     font-weight: bolder;
     font-size: 1.3em;
@@ -373,20 +382,13 @@
   }
 
   @keyframes arrow {
-    from {
-      right: 10%;
-      opacity: 0.3;
-    }
     to {
-      right: 8%;
+      left: 32%;
       opacity: 0.8;
     }
   }
 
   @keyframes blinker {
-    from {
-      opacity: 0.3;
-    }
     to {
       opacity: 1;
     }
@@ -394,11 +396,7 @@
 
   &:hover {
     .arrowButton {
-      color: rgba(255, 255, 255, 0.8);
-      animation-name: arrow;
-      animation-duration: 0.7s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-out;
+      animation: arrow 0.7s infinite ease-out;
     }
     #next-page-tag {
       display: inline-block;

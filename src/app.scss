@@ -1,10 +1,11 @@
-@import 'ProjectsPage/ProjectsPage.scss';
-@import 'HomePage/home.scss';
-@import 'AboutPage/about.scss';
+@import "ProjectsPage/ProjectsPage.scss";
+@import "HomePage/home.scss";
+@import "AboutPage/about.scss";
 
-
-
-
- 
- 
+.loading-screen {
+  position: absolute;
+  background: $secondary-color;
+  z-index: 999;
+  pointer-events: none;
+}
 
