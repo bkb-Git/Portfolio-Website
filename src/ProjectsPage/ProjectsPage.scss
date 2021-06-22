@@ -179,16 +179,16 @@ $primary-bg-color: linear-gradient(to right, #ffffff, #ece9e6);
     left: 50vw;
     opacity: 0.3;
 
-    #next-page-tag-1 {
+    i::after {
       position: absolute;
-      top: 9.5vh;
-      right: 0.45vw;
-      padding-bottom: 25%;
-      color: white;
+      top: 75%;
+      margin-top: 0.625rem;
+      content: attr(data);
+      color: #696867;
       font-weight: bolder;
-      font-size: 1.3em;
-      font-style: italic;
-      display: none;
+      font-size: 1.3rem;
+      display: block;
+      opacity: 0;
     }
   }
 
@@ -212,10 +212,10 @@ $primary-bg-color: linear-gradient(to right, #ffffff, #ece9e6);
       animation-duration: 0.7s;
       animation-iteration-count: infinite;
       animation-timing-function: ease-out;
-    }
-
-    #next-page-tag-1 {
-      display: inline-block;
+      
+      i::after {
+        opacity: 1;
+      }
     }
 
     .transition-icon-1 {
