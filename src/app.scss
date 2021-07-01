@@ -1,6 +1,7 @@
-@import "ProjectsPage/ProjectsPage.scss";
-@import "HomePage/home.scss";
-@import "AboutPage/about.scss";
+@import "./styles/globalStyles.scss";
+@import "./Views/Projects/ProjectsPage.scss";
+@import "./Views/Home/home.scss";
+@import "./Views/About/about.scss";
 
 .loading-screen {
   position: absolute;

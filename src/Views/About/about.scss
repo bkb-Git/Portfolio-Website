@@ -1,0 +1,685 @@
+.about-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: $secondary-color;
+}
+
+.container-flex {
+  position: absolute;
+  background: $primary-bg-color;
+  bottom: 12vh;
+  left: 10vw;
+  width: 88vw;
+  height: 75vh;
+  border-radius: 50px;
+  display: flex;
+  z-index: 2;
+}
+
+.container-flex .contactMe {
+  flex: 1;
+  background: $primary-bg-color;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: all 0.5s ease-in;
+
+  div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .contact_me_header {
+      position: absolute;
+      font-family: "Dancing Script", sans-serif;
+      top: 0;
+      word-spacing: 1rem;
+      left: 10vw;
+      font-size: 4vw;
+      color: #413b3b;
+      opacity: 0;
+    }
+
+    svg {
+      position: absolute;
+      display: block;
+      transform: translateX(15%);
+      opacity: 0;
+      left: 10vw;
+      bottom: 15vh;
+      font-size: 18vw;
+      color: $secondary-color;
+    }
+
+    .header {
+      flex: 1;
+      font-size: 3vw;
+      font-weight: 900;
+      font-family: $secondary-font-family;
+      letter-spacing: 5px;
+      color: $secondary-color;
+
+      span {
+        display: block;
+      }
+    }
+
+    form {
+      display: grid;
+      position: absolute;
+      height: 75%;
+      right: 2vw;
+      width: 40%;
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(4, 1fr);
+      row-gap: 10px;
+      align-items: center;
+      align-content: center;
+      transform: translateX(15%);
+      opacity: 0;
+
+      section {
+        grid-row: 1;
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        input[type='text'] {
+          flex: 1;
+          width: 80%;
+          font-family: $primary-font-family;
+          font-size: 15px;
+          height: 4vh;
+          padding: 12px 20px;
+          margin: 8px 0;
+          border: 1px solid #413b3bc7;
+          border-radius: 10px;
+          box-sizing: border-box;
+
+          &::placeholder {
+            font-family: $primary-font-family;
+            font-weight: bolder;
+            font-size: 15px;
+            color: $secondary-color;
+          }
+
+          &:focus {
+            background-color: #413b3bbb;
+            border: 2px solid $primary-color;
+            color: white;
+            outline: none;
+
+            &::placeholder {
+              color: white;
+            }
+          }
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 85%;
+        font-family: $primary-font-family;
+        font-size: 15px;
+        width: 76%;
+        border-radius: 10px;
+        padding: 0.5rem 0.5rem;
+        border: 1px solid #413b3bc7;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column: 1;
+
+        &::placeholder {
+          font-family: $primary-font-family;
+          font-weight: bolder;
+          font-size: 15px;
+          color: $secondary-color;
+        }
+
+        &:focus {
+          background-color: #413b3bbb;
+          border: 2px solid $primary-color;
+          color: white;
+          outline: none;
+
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+
+      input[type='submit'] {
+        position: relative;
+        width: 80%;
+        height: 5vh;
+        grid-row: 4;
+        grid-column: 1;
+        font-weight: bolder;
+        font-size: 1vw;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #413b3bc7;
+        transition: all 0.2s;
+
+        &::placeholder {
+          font-family: $primary-font-family;
+          font-weight: bolder;
+          font-size: 15px;
+        }
+
+        &:hover {
+          top: 1%;
+          background-color: $secondary-color;
+          border: none;
+          box-shadow: 5px 5px 15px 0px $secondary-color;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    flex: 3;
+    z-index: 1;
+    box-shadow: 4px 4px 40px 2px rgba(0, 0, 0, 0.6),
+      -10px -8px 40px 2px rgba(0, 0, 0, 0.4);
+
+    div {
+      form {
+        animation: contact-me 0.25s ease-in 0.4s 1 forwards;
+      }
+
+      svg {
+        animation: contact-me-svg 0.25s ease-in 0.4s 1 forwards;
+      }
+
+      .contact_me_header {
+        animation: contact-me 0.25s ease-in .4s 1 forwards;
+      }
+    }
+  }
+}
+
+.container-flex .aboutMe {
+  position: relative;
+  flex: 1;
+  background-color: #ece9e6;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  transition: all 0.5s ease-in;
+
+  .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header {
+      flex: 1;
+      font-size: 3vw;
+      font-weight: bolder;
+      font-family: $secondary-font-family;
+      letter-spacing: 5px;
+      color: $secondary-color;
+      display: block;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .container .about-grid-display {
+    display: grid;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    grid-template: 40% 40% 20% / repeat(3, 1fr);
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-10%);
+
+    p {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 2;
+      font-size: clamp(20px, 1.1vw, 5vw);
+      font-family: $primary-font-family;
+      font-style: italic;
+      font-weight: 400;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      word-spacing: 2px;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+
+      span {
+        flex: 1;
+        position: relative;
+      }
+    }
+  }
+
+  .about-grid-display .profile-pic {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    position: relative;
+    width: 75%;
+    height: 70%;
+    bottom: 10%;
+    background-image: url(../../assets/profile-pic.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+  }
+
+  .about-grid-display .personal-details {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 2px solid $secondary-color;
+    border-radius: 50px;
+    background-color: $primary-bg-color;
+    width: 100%;
+    height: 80%;
+
+    div {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      font-family: $primary-font-family;
+      font-size: clamp(17px, 0.8vw, 2.5vw);
+      font-weight: 600;
+      letter-spacing: 1px;
+      background: linear-gradient(
+        to top,
+        $secondary-color 50%,
+        transparent 50%
+      );
+      background-size: 100% 200%;
+      transition: all 0.5s ease-out, color 0.6s ease-out;
+      color: $secondary-color;
+      background-position: right top;
+      top: 10%;
+
+      &:hover {
+        background-position: left bottom;
+        color: white;
+
+        &::before {
+          color: white;
+        }
+      }
+
+      &::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        color: black;
+        display: inline-block;
+        font-size: 1.8rem;
+        margin-right: 10px;
+        transition: color 0.6s ease-out;
+      }
+    }
+
+    .detail1 {
+      border-right: 2px solid $secondary-color;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+
+      &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f3c5';
+        position: relative;
+        top: -5%;
+      }
+    }
+    .detail2 {
+      border-right: 2px solid $secondary-color;
+
+      &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f1fa';
+        position: relative;
+      }
+    }
+    .detail3 {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+
+      &::before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f095';
+        position: relative;
+      }
+    }
+  }
+
+  &:hover {
+    flex: 3;
+    z-index: 1;
+    box-shadow: 10px 8px 40px 2px rgba(0, 0, 0, 0.4),
+      -4px -4px 40px 2px rgba(0, 0, 0, 0.6);
+    background: $primary-bg-color;
+
+    .container .about-grid-display {
+      animation: about-me 0.25s ease-in 0.4s 1 forwards;
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 8vh;
+  background: $primary-bg-color;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  z-index: 2;
+
+  .side-navbar3 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    bottom: 1vh;
+    height: 6vh;
+    width: 15vw;
+    left: 42.5vw;
+    background-color: transparent;
+    z-index: 2;
+
+    i {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .button-icons {
+      flex: 1;
+      position: relative;
+      font-size: 50px;
+      display: inline;
+      padding-bottom: 5px;
+
+      svg {
+        display: inline;
+        position: relative;
+        opacity: 0.7;
+        transition: all 0.2s;
+      }
+
+      &:hover {
+        border-bottom: 2px solid;
+
+        svg {
+          bottom: 0.5vh;
+          opacity: 1;
+          filter: brightness(1.2);
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .icon0 {
+      color: #886c57;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: #4267b2;
+      }
+    }
+
+    .icon1 {
+      color: #413b3b;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: #bd2c00;
+      }
+    }
+
+    .icon2 {
+      color: #886c57;
+      transition: color 0.3s ease-in;
+
+      &:hover {
+        color: #0077b5;
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-family: $primary-font-family;
+    font-weight: bolder;
+    color: $secondary-color;
+  }
+
+  .resume-button {
+    position: absolute;
+    right: 10%;
+    top: 35%;
+    width: 8rem;
+    height: 2rem;
+    font-family: $secondary-font-family;
+    font-weight: 900;
+    border-radius: 0.5rem;
+    border: 2px solid $secondary-color;
+    color: $secondary-color;
+    font-size: 1rem;
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+    }
+  }
+}
+
+.div-2 {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 8vw;
+  z-index: 1;
+
+  .arrowButton-2-Home {
+    position: fixed;
+    left: 3%;
+    top: 50vh;
+    opacity: 0.3;
+
+    i::after {
+      position: absolute;
+      top: 10%;
+      margin-left: 0.625rem;
+      content: attr(data);
+      color: white;
+      font-weight: bolder;
+      display: inline-block;
+      font-size: 1.3rem;
+      font-style: normal;
+      opacity: 0;
+    }
+  }
+
+  .transition-icon-2 {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    width: 0.01vh;
+    background-color: transparent;
+    opacity: 0.3;
+    border-top-right-radius: 99%;
+    border-bottom-right-radius: 99%;
+    box-shadow: 10px 0px 50px 10px #ffffff;
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    .arrowButton-2-Home {
+      color: rgba(255, 255, 255, 0.8);
+      animation-name: arrow-2-Home;
+      animation-duration: 0.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+
+      i::after {
+        opacity: 1;
+      }
+    }
+
+    .transition-icon-2 {
+      animation-name: blinker-2;
+      animation-duration: 0.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+      display: block;
+    }
+  }
+
+  @keyframes arrow-2-Home {
+    to {
+      left: 1%;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes blinker-2 {
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.div-3 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 8vh;
+  z-index: 1;
+
+  .arrowButton-3 {
+    position: fixed;
+    top: 3%;
+    left: 50vw;
+    opacity: 0.3;
+
+    i::after {
+      position: absolute;
+      top: 75%;
+      right: -35%;
+      display: block;
+      margin-top: 0.625rem;
+      content: attr(data);
+      color: white;
+      font-weight: bolder;
+      font-size: 1.3rem;
+      font-style: normal;
+      opacity: 0;
+    }
+  }
+
+  .transition-icon-3 {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 0.01vh;
+    background-color: transparent;
+    opacity: 0.3;
+    border-bottom-left-radius: 99%;
+    border-bottom-right-radius: 99%;
+    box-shadow: 0px 15px 50px 10px #ffffff;
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    .arrowButton-3 {
+      color: rgba(255, 255, 255, 0.8);
+      animation-name: arrow-3;
+      animation-duration: 0.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+
+      i::after {
+        opacity: 1;
+      }
+    }
+
+    .transition-icon-3 {
+      animation-name: blinker-2;
+      animation-duration: 0.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+      display: block;
+    }
+  }
+
+  @keyframes arrow-3 {
+    from {
+      top: 3%;
+      opacity: 0.3;
+    }
+    to {
+      top: 1%;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes blinker-3 {
+    from {
+      opacity: 0.3;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes about-me {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contact-me {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes contact-me-svg {
+  to {
+    transform: translateX(0) skewX(-5deg) rotate(-10deg);
+    opacity: 0.4;
+  }
+}
