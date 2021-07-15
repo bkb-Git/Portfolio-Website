@@ -1,4 +1,6 @@
 /* eslint-disable no-octal-escape */
+import resume from '../../assets/Letter of motivation.pdf';
+
 export default function AboutMe(props) {
   const { display, handler } = props;
   const toggleDisplay = display === 'about' ? 'none' : 'block';
@@ -42,9 +44,10 @@ export default function AboutMe(props) {
             billykbett@gmail.com
           </div>
           <a
-            href="/src/assets/Letter of motivation"
+            href={resume}
             className="details detail3"
-            download="resume.pdf"
+            rel="noreferrer"
+            target="_blank"
           >
             Resume
           </a>

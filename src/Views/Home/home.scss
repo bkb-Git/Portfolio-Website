@@ -257,17 +257,17 @@
     }
   }
 
-  $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -0.25rem,
-    2 #886c57 #4267b2 0.625rem 0, 3 #413b3b #bd2c00 0.625rem 0,
-    4 #886c57 #0077b5 0.8rem -0.18rem;
+  $icons: Home #886c57 #008000 0.65rem -0.1rem, About #413b3b #720058 1.1rem -0.25rem,
+    Facebook #886c57 #4267b2 0.625rem 0, Github #413b3b #bd2c00 0.625rem 0,
+    LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
 
-  @each $name, $clr1, $clr2, $padding-left, $left in $icons {
-    .icon#{$name} {
-      @if $name == 0 {
+  @each $name, $colorPrimary, $colorSecondary, $padding-left, $left in $icons {
+    .icon-#{$name} {
+      @if $name == Home {
         &:hover {
           left: 0.28rem;
         }
-      } @else if $name == 1 {
+      } @else if $name == About {
         &:hover {
           left: 0;
         }
@@ -276,7 +276,7 @@
       padding-left: $padding-left;
       left: $left;
       opacity: 0.7;
-      color: $clr1;
+      color: $colorPrimary;
       transition: all 0.2s;
 
       &::after {
@@ -297,9 +297,9 @@
       }
 
       &:hover {
-        color: $clr2;
+        color: $colorSecondary;
         transform: scale(1.1);
-        border-left: 2px solid $clr2;
+        border-left: 2px solid $colorSecondary;
 
         &::after {
           opacity: 1;
@@ -434,12 +434,8 @@
   }
 
   .right-side-background {
-    position: absolute;
     height: 100vh;
     width: 100vw;
-    background-image: url('../../assets/homepage-pic.jpeg');
-    background-size: cover;
-    background-position: center;
 
     .bar-menu {
       position: absolute;
@@ -487,17 +483,17 @@
           cursor: pointer;
         }
     
-        $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -0.25rem,
-          2 #886c57 #4267b2 0.625rem 0, 3 #413b3b #bd2c00 0.625rem 0,
-          4 #886c57 #0077b5 0.8rem -0.18rem;
+        $icons: Home #886c57 #008000 0.65rem -0.1rem, About #413b3b #720058 1.1rem -0.25rem,
+          Facebook #886c57 #4267b2 0.625rem 0, Github #413b3b #bd2c00 0.625rem 0,
+          LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
     
-        @each $name, $clr1, $clr2, $padding-left, $left in $icons {
-          .icon#{$name} {
-            color: $clr1;
+        @each $name, $colorPrimary, $colorSecondary, $padding-left, $left in $icons {
+          .icon-#{$name} {
+            color: $colorPrimary;
             transition: all 0.2s;
 
             &:hover {
-              color: $clr2;
+              color: $colorSecondary;
               transform: scale(1.05);
               border: none;
             }
@@ -540,10 +536,10 @@
     position: absolute;
     display: flex;
     top: 20vh;
-    left: 18vw;
-    width: 80vw;
+    left: 5vw;
+    width: 90vw;
     height: 60vh;
-    font-size: 5vw;
+    font-size: 6vw;
     margin: 0px;
     text-align: left;
     font-family: 'Roboto', sans-serif;
@@ -557,29 +553,26 @@
     }
 
     .text1 {
+
       #sub-text1 {
         position: relative;
-        bottom: 1vh;
         -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        display: inline-block;
       }
 
       #sub-text2 {
         position: relative;
-        left: 10vw;
         mix-blend-mode: screen;
         background-color: white;
         padding: 0px 5px;
         color: black;
         border-radius: 3px;
-        right: 8vw;
         display: inline-block;
         margin: 0 auto;
         font-family: 'Monoton', cursive;
         text-align: center;
         font-size: 9vw;
-        font-weight: 500;
+        font-weight: bolder;
         animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         animation-delay: 1.2s;
 
@@ -614,12 +607,11 @@
         padding: 0px 5px;
         color: black;
         border-radius: 3px;
-        left: 8vw;
         display: inline-block;
         margin: 0 auto;
         font-family: 'Monoton', cursive;
         text-align: center;
-        font-weight: 150;
+        font-weight: bolder;
         font-size: 5vw;
         animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
         animation-delay: 2.7s;
@@ -647,7 +639,7 @@
         display: inline-block;
         margin: 0 auto;
         font-family: 'Monoton', cursive;
-        font-weight: 100;
+        font-weight: bolder;
         text-align: center;
         font-size: 5vw;
         animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -736,9 +728,21 @@
     .transition-icon {
       display: none;
     }
+
+    i::after {
+      display: none;
+    }
   
     &:hover {
       cursor: pointer;
+      .arrowButton {
+        display: none;
+        animation: none;
+      }
+  
+      .transition-icon {
+        display: none;
+      }
       }
 
     }

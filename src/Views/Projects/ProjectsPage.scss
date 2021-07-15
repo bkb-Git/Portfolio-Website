@@ -45,17 +45,17 @@
     }
   }
 
-  $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -0.25rem,
-    2 #886c57 #4267b2 0.625rem 0, 3 #413b3b #bd2c00 0.625rem 0,
-    4 #886c57 #0077b5 0.8rem -0.18rem;
+  $icons: Home #886c57 #008000 0.65rem -0.1rem, About #413b3b #720058 1.1rem -0.25rem,
+    Facebook #886c57 #4267b2 0.625rem 0, Github #413b3b #bd2c00 0.625rem 0,
+    LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
 
-  @each $name, $clr1, $clr2, $padding-left, $left in $icons {
-    .icon#{$name} {
-      @if $name == 0 {
+  @each $name, $colorPrimary, $colorSecondary, $padding-left, $left in $icons {
+    .icon-#{$name} {
+      @if $name == Home {
         &:hover {
           left: 0.28rem;
         }
-      } @else if $name == 1 {
+      } @else if $name == About {
         &:hover {
           left: 0;
         }
@@ -64,7 +64,7 @@
       padding-left: $padding-left;
       left: $left;
       opacity: 0.7;
-      color: $clr1;
+      color: $colorPrimary,;
       transition: all 0.2s;
 
       &::after {
@@ -87,9 +87,9 @@
       }
 
       &:hover {
-        color: $clr2;
+        color: $colorSecondary;
         transform: scale(1.1);
-        border-left: 2px solid $clr2;
+        border-left: 2px solid $colorSecondary;
 
         &::after {
           opacity: 1;
@@ -489,17 +489,17 @@
         cursor: pointer;
       }
   
-      $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -0.25rem,
-        2 #886c57 #4267b2 0.625rem 0, 3 #413b3b #bd2c00 0.625rem 0,
-        4 #886c57 #0077b5 0.8rem -0.18rem;
+      $icons: Home #886c57 #008000 0.65rem -0.1rem, About #413b3b #720058 1.1rem -0.25rem,
+        Facebook #886c57 #4267b2 0.625rem 0, Github #413b3b #bd2c00 0.625rem 0,
+        LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
   
-      @each $name, $clr1, $clr2, $padding-left, $left in $icons {
-        .icon#{$name} {
-          color: $clr1;
+      @each $name, $colorPrimary, $colorSecondary, $padding-left, $left in $icons {
+        .icon-#{$name} {
+          color: $colorPrimary;
           transition: all 0.2s;
 
           &:hover {
-            color: $clr2;
+            color: $colorSecondary;
             transform: scale(1.05);
             border: none;
           }

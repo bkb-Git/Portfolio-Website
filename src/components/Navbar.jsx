@@ -11,9 +11,9 @@ function Navbar(props) {
   const NavBarOptions = buttons.map((elem, index) => {
     return elem.name === 'Home' || elem.name === 'About' ? (
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      <a>
+      <a id={index}>
         <i
-          className={`button-icons fa-4x icon${index}`}
+          className={`button-icons fa-4x icon-${elem.name}`}
           data={elem.name}
           onClick={() => elem.onClick(history, appContext)}
           onKeyUp={() => elem.onClick(history, appContext)}
@@ -25,9 +25,9 @@ function Navbar(props) {
         </i>
       </a>
     ) : (
-      <a href={elem.link} target="_blank" rel="noreferrer">
+      <a href={elem.link} target="_blank" rel="noreferrer" id={index}>
         <i
-          className={`button-icons fa-4x icon${index}`}
+          className={`button-icons fa-4x icon-${elem.name}`}
           data={elem.name}
           role="link"
         >
