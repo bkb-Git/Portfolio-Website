@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useMediaPredicate } from 'react-media-hook';
 import sns from '../../sns';
 import Navbar from '../../components/Navbar';
 import ArrowIcon from '../../components/ArrowIcon';
@@ -16,10 +17,17 @@ function Home() {
     history.push(link);
   }
 
+  const mobileOrDesktop = useMediaPredicate('(min-width: 700px)');
+
   return (
     <div className="home-container">
-      <Navbar buttons={sns} page={1} />
+      {mobileOrDesktop && <Navbar buttons={sns} page={1} />}
       <div className="right-side-background">
+        {!mobileOrDesktop && (
+          <div className="bar-menu">
+            <Navbar buttons={sns} page={1} />
+          </div>
+        )}
         <div
           className="div"
           route="/projects"

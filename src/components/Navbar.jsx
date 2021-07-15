@@ -10,21 +10,30 @@ function Navbar(props) {
 
   const NavBarOptions = buttons.map((elem, index) => {
     return elem.name === 'Home' || elem.name === 'About' ? (
-      <i
-        className={`button-icons fa-4x icon${index}`}
-        data={elem.name}
-        onClick={() => elem.onClick(history, appContext)}
-        onKeyUp={() => elem.onClick(history, appContext)}
-        role="link"
-        onFocus={() => elem.onClick(history, appContext)}
-        tabIndex={0}
-      >
-        <FontAwesomeIcon icon={elem.icon} />
-      </i>
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
+      <a>
+        <i
+          className={`button-icons fa-4x icon${index}`}
+          data={elem.name}
+          onClick={() => elem.onClick(history, appContext)}
+          onKeyUp={() => elem.onClick(history, appContext)}
+          role="link"
+          onFocus={() => elem.onClick(history, appContext)}
+          tabIndex={0}
+        >
+          <FontAwesomeIcon icon={elem.icon} />
+        </i>
+      </a>
     ) : (
-      <i className={`button-icons fa-4x icon${index}`} data={elem.name}>
-        <FontAwesomeIcon icon={elem.icon} />
-      </i>
+      <a href={elem.link} target="_blank" rel="noreferrer">
+        <i
+          className={`button-icons fa-4x icon${index}`}
+          data={elem.name}
+          role="link"
+        >
+          <FontAwesomeIcon icon={elem.icon} />
+        </i>
+      </a>
     );
   });
 

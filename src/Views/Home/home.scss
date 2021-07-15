@@ -65,113 +65,135 @@
 
 .text {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 15vh;
-  left: 10vw;
+  left: 9vw;
+  height: 60vh;
   font-size: 1.8vw;
   text-align: right;
   font-family: 'Roboto', sans-serif;
   color: black;
   letter-spacing: normal;
-  word-spacing: 5px;
+  word-spacing: 10px;
+  justify-content: space-between;
 
-  #text1 {
-    -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    display: inline-block;
+  p {
+    margin: 0;
   }
 
-  #sub-text1 {
-    display: inline-block;
-    margin: 0 auto;
-    font-family: 'Monoton', cursive;
-    text-align: center;
-    font-size: 5rem;
-    font-weight: 500;
-    color: rgb(37, 34, 34);
-    -webkit-animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 1.2s;
+  .text1 {
+    #sub-text1 {
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      display: inline-block;
+    }
 
     #sub-text2 {
-      font-weight: bold;
-      margin-left: 10px;
-      color: #413b3b;
-    }
+      display: inline-block;
+      margin: 0 auto;
+      font-family: 'Monoton', cursive;
+      text-align: center;
+      font-size: 4.5vw;
+      font-weight: 500;
+      color: rgb(37, 34, 34);
+      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 1.2s;
 
-    #sub-text3 {
-      top: 10vh;
-      margin-left: 10px;
+      #single-letter {
+        font-weight: bold;
+        margin-left: 10px;
+        color: #413b3b;
+      }
+
+      #last-name {
+        top: 10vh;
+        margin-left: 10px;
+      }
     }
   }
 
-  #text2 {
+  .text2 {
     position: relative;
     top: 2vh;
-    -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 1.5s;
-    display: inline-block;
-  }
-  #sub-text4 {
-    position: relative;
-    top: 2vh;
-    display: inline-block;
-    margin: 0 auto;
-    font-family: 'Monoton', cursive;
-    text-align: center;
-    font-weight: 150;
-    font-size: 2.8rem;
-    color: rgb(37, 34, 34);
-    -webkit-animation: slide-ft 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 2.7s;
+
+    #sub-text1 {
+      position: relative;
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 1.5s;
+      display: inline-block;
+    }
+
+    #sub-text2 {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      font-family: 'Monoton', cursive;
+      text-align: center;
+      font-weight: 150;
+      font-size: 2.3vw;
+      color: rgb(37, 34, 34);
+      -webkit-animation: slide-ft 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 2.7s;
+    }
   }
 
-  #text3 {
+  .text3 {
     position: relative;
     bottom: 2vh;
-    position: relative;
-    -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 3s;
-    display: inline-block;
+
+    #sub-text1 {
+      position: relative;
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 3s;
+      display: inline-block;
+    }
+
+    #sub-text2 {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      font-family: 'Monoton', cursive;
+      font-weight: 100;
+      text-align: center;
+      font-size: 2vw;
+      color: rgb(37, 34, 34);
+      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 3.7s;
+    }
   }
 
-  #sub-text5 {
+  .text4 {
     position: relative;
-    bottom: 2vh;
-    display: inline-block;
-    margin: 0 auto;
-    font-family: 'Monoton', cursive;
-    font-weight: 100;
-    text-align: center;
-    font-size: 2.5rem;
-    color: rgb(37, 34, 34);
-    -webkit-animation: slide-ft 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 3.7s;
+    top: 1.5vh;
+
+    #sub-text1 {
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 4.5s;
+      display: inline-block;
+    }
   }
 
-  #text4 {
-    -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 4.5s;
-    display: inline-block;
-  }
-
-  #text5 {
+  .text5 {
     position: relative;
-    bottom: 1vh;
-    margin-right: 15px;
-    -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-    animation-delay: 6s;
-    display: inline-block;
+    bottom: 1.5vh;
+
+    #sub-text1 {
+      position: relative;
+      margin-right: 15px;
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 6s;
+      display: inline-block;
+    }
   }
 }
 
 .contact-button {
-  mix-blend-mode: multiply;
   background-color: transparent;
   color: rgb(37, 34, 34);
   display: inline-block;
@@ -179,12 +201,10 @@
   cursor: pointer;
   border-radius: 6px;
   border: 1px solid black;
-  font-size: 2.2rem;
+  font-size: 1.8vw;
   padding: 6px 24px;
   text-decoration: none;
-  opacity: 1;
-  animation: button-fade-in 1.2s ease-in both;
-  animation-delay: 7.5s;
+  animation: button-fade-in 1.2s ease-in both 7.5s;
   transition: all 0.2s ease-in;
 
   &:hover {
@@ -211,16 +231,15 @@
   justify-content: center;
   align-items: center;
   top: 31vh;
-  left: -.2vw;
+  left: -0.2vw;
   width: 5vw;
   height: 40vh;
   background-color: transparent;
   z-index: 2;
 
-  i {
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+    margin-bottom: 10px;
   }
 
   .button-icons {
@@ -229,47 +248,30 @@
     align-items: center;
     transition: transform 0.2s;
     margin-bottom: 10px;
+
     &:hover {
       position: relative;
       justify-content: center;
       opacity: 1;
+      cursor: pointer;
     }
   }
 
-  $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -.25rem,
+  $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -0.25rem,
     2 #886c57 #4267b2 0.625rem 0, 3 #413b3b #bd2c00 0.625rem 0,
-    4 #886c57 #0077b5 .8rem -.18rem;
+    4 #886c57 #0077b5 0.8rem -0.18rem;
 
   @each $name, $clr1, $clr2, $padding-left, $left in $icons {
     .icon#{$name} {
       @if $name == 0 {
-        #link#{$name} {
-          color: $clr1;
-          opacity: 0.7;
-          transition: all 0.2s;
-          &:hover {
-            color: $clr2;
-            border-left: 2px solid $clr2;
-          }
-        }
         &:hover {
-          left: .28rem;
+          left: 0.28rem;
         }
       } @else if $name == 1 {
-        #link#{$name} {
-          color: $clr1;
-          opacity: 0.7;
-          transition: all 0.2s ease-in;
-          &:hover {
-            color: $clr2;
-            transform: scale(1.05);
-            border-left: 2px solid $clr2;
-          }
-        }
         &:hover {
           left: 0;
         }
-      } 
+      }
 
       padding-left: $padding-left;
       left: $left;
@@ -425,3 +427,320 @@
     transform: rotate(360deg) scale(1.15);
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .left-side-background {
+    display: none;
+  }
+
+  .right-side-background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/homepage-pic.jpeg');
+    background-size: cover;
+    background-position: center;
+
+    .bar-menu {
+      position: absolute;
+      display: block;
+      width: 13vw;
+      height: 13vw;
+      right: 0;
+      color: #ece9e6;
+      margin-right: 5px;
+      margin-top: 10px;
+      border-radius: 50%;
+      transition: border .2s ease-in;
+
+      .side-navbar1 {
+        position: absolute;
+        display: flex;
+        visibility: hidden;
+        pointer-events:visible;
+        top: -1vh;
+        left: -85vw;
+        width: 85vw;
+        height: 8vh;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+        margin-top: 10px;
+        z-index: 0;
+        opacity: 0;
+        transform: translateX(125%);
+        transition: all .2s ease-in;
+        transition-delay: .1s;
+    
+        a {
+          text-decoration: none;
+          margin: 0;
+        }
+    
+        .button-icons {
+          position: relative;
+          flex: 1;
+          font-size: 12vw;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+    
+        $icons: 0 #886c57 #008000 0.65rem -0.1rem, 1 #413b3b #720058 1.1rem -0.25rem,
+          2 #886c57 #4267b2 0.625rem 0, 3 #413b3b #bd2c00 0.625rem 0,
+          4 #886c57 #0077b5 0.8rem -0.18rem;
+    
+        @each $name, $clr1, $clr2, $padding-left, $left in $icons {
+          .icon#{$name} {
+            color: $clr1;
+            transition: all 0.2s;
+
+            &:hover {
+              color: $clr2;
+              transform: scale(1.05);
+              border: none;
+            }
+    
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }    
+
+      &:hover {
+        color: white;
+        background-color: transparent;
+        cursor: pointer;
+        border: 2px solid #ece9e6;
+
+        .side-navbar1{
+          transform: translateX(0);
+          visibility: visible;
+          opacity: 1;
+          
+        }
+      }
+      
+      &::before {
+        position: absolute;
+        left: 2.1vw;
+        top: .5vh;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "";
+        font-size: 10vw;
+        text-align: center;
+      }
+    }
+  }
+
+  .text {
+    position: absolute;
+    display: flex;
+    top: 20vh;
+    left: 18vw;
+    width: 80vw;
+    height: 60vh;
+    font-size: 5vw;
+    margin: 0px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    letter-spacing: normal;
+    word-spacing: 3px;
+    justify-content: space-around;
+
+    p {
+      margin: 0;
+    }
+
+    .text1 {
+      #sub-text1 {
+        position: relative;
+        bottom: 1vh;
+        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        display: inline-block;
+      }
+
+      #sub-text2 {
+        position: relative;
+        left: 10vw;
+        mix-blend-mode: screen;
+        background-color: white;
+        padding: 0px 5px;
+        color: black;
+        border-radius: 3px;
+        right: 8vw;
+        display: inline-block;
+        margin: 0 auto;
+        font-family: 'Monoton', cursive;
+        text-align: center;
+        font-size: 9vw;
+        font-weight: 500;
+        animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 1.2s;
+
+        #single-letter {
+          font-weight: bold;
+          margin-left: 10px;
+          color: #413b3b;
+        }
+
+        #last-name {
+          top: 10vh;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .text2 {
+      position: relative;
+      top: 0;
+      #sub-text1 {
+        position: relative;
+        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 1.5s;
+        display: inline-block;
+      }
+
+      #sub-text2 {
+        position: relative;
+        mix-blend-mode: screen;
+        background-color: white;
+        padding: 0px 5px;
+        color: black;
+        border-radius: 3px;
+        left: 8vw;
+        display: inline-block;
+        margin: 0 auto;
+        font-family: 'Monoton', cursive;
+        text-align: center;
+        font-weight: 150;
+        font-size: 5vw;
+        animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 2.7s;
+      }
+    }
+
+    .text3 {
+      position: relative;
+      bottom: 0;
+      #sub-text1 {
+        position: relative;
+        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 3s;
+        display: inline-block;
+      }
+
+      #sub-text2 {
+        position: relative;
+        mix-blend-mode: screen;
+        background-color: white;
+        padding: 0px 5px;
+        color: black;
+        border-radius: 3px;
+        display: inline-block;
+        margin: 0 auto;
+        font-family: 'Monoton', cursive;
+        font-weight: 100;
+        text-align: center;
+        font-size: 5vw;
+        animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 3.7s;
+      }
+    }
+
+    .text4 {
+      position: relative;
+      top: 0;
+      #sub-text1 {
+        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 4.5s;
+        display: inline-block;
+      }
+    }
+
+    .text5 {
+      position: relative;
+      bottom: 0;
+      #sub-text1 {
+        position: relative;
+        margin-right: 15px;
+        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        animation-delay: 6s;
+        display: inline-block;
+      }
+    }
+
+    .contact-button {
+      background-color: transparent;
+      color: white;
+      display: inline-block;
+      font-family: 'Monoton', cursive;
+      cursor: pointer;
+      border-radius: 3px;
+      border: 1px solid white;
+      font-size: 5vw;
+      padding: 1px 12px;
+      text-decoration: none;
+      animation: button-fade-in 1.2s ease-in both 7.5s;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        mix-blend-mode: normal;
+        box-shadow: 3px 10px 20px 1px rgba(0, 0, 0, 0.616);
+        text-shadow: 0px 3px 3px white;
+        background-image: radial-gradient(
+          rgb(53, 46, 46) 70%,
+          rgb(139, 125, 125)
+        );
+        transform: scale(1.05);
+        color: white;
+        margin-top: 3px;
+        margin-right: 2px;
+        border: none;
+      }
+
+      &:active {
+        bottom: 1.2vh;
+      }
+    }
+  }
+
+  .div {
+    position: absolute;
+    right: 40vw;
+    height: 13vh;
+    width: 20vw;
+    bottom: 3vh;
+  
+    .arrowButton {
+      position: relative;
+      top: 0;
+      left: 0;
+      color: rgb(255, 255, 255);
+      opacity: 0.3;
+  
+      i::after {
+        display: none;
+      }
+    }
+  
+    .transition-icon {
+      display: none;
+    }
+  
+    &:hover {
+      cursor: pointer;
+      }
+
+    }
+  }
+

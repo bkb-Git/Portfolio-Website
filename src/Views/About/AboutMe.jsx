@@ -31,9 +31,9 @@ export default function AboutMe(props) {
           <span id="bio-text5">Reach out to me.</span>
         </p>
         <div className="personal-details">
-          <div className="detail1">Nairobi,Kenya</div>
+          <div className="details detail1">Nairobi,Kenya</div>
           <div
-            className="detail2"
+            className="details detail2"
             onClick={handler}
             onKeyUp={handler}
             tabIndex={0}
@@ -41,15 +41,13 @@ export default function AboutMe(props) {
           >
             billykbett@gmail.com
           </div>
-          <div
-            className="detail3"
-            onClick={handler}
-            onKeyUp={handler}
-            tabIndex={0}
-            role="button"
+          <a
+            href="/src/assets/Letter of motivation"
+            className="details detail3"
+            download="resume.pdf"
           >
-            +254-746735731
-          </div>
+            Resume
+          </a>
         </div>
       </div>
     </div>

@@ -12,9 +12,6 @@ export default function Footer() {
         Copyright &copy; {year}, Billy Kipkorir Bett
       </small>
       <Navbar buttons={snsNav} page={3} />
-      <button type="button" className="resume-button">
-        CV
-      </button>
     </div>
   );
 }
