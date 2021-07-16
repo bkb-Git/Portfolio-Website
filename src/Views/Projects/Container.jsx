@@ -10,14 +10,14 @@ export default function Container(props) {
         <Tile />
       </div>
       <div
-        className="page-nav-toAbout"
+        className="page-nav-to-about"
         onClick={clickHandler}
         onKeyUp={clickHandler}
         role="link"
         tabIndex={0}
       >
         <ArrowIcon page={2} />
-        <div className="page-nav-toAbout__icon" />
+        <div className="page-nav-to-about__icon" />
       </div>
     </div>
   );

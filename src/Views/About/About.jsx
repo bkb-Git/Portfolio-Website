@@ -59,7 +59,7 @@ function About() {
       </div>
       <Footer />
       <div
-        className="page-nav-toHome"
+        className="page-nav-to-home"
         route="/"
         onClick={handleRoute}
         onKeyUp={handleRoute}
@@ -67,10 +67,10 @@ function About() {
         tabIndex={0}
       >
         <ArrowIcon backToHome />
-        <div className="page-nav-toHome__icon" />
+        <div className="page-nav-to-home__icon" />
       </div>
       <div
-        className="page-nav-backToProjects"
+        className="page-nav-back-to-projects"
         route="/projects"
         onClick={handleRoute}
         onKeyUp={handleRoute}
@@ -78,7 +78,7 @@ function About() {
         tabIndex={0}
       >
         <ArrowIcon backToHome={false} />
-        <div className="page-nav-backToProjects__icon" />
+        <div className="page-nav-back-to-projects__icon" />
       </div>
     </div>
   );

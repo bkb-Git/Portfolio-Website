@@ -12,7 +12,7 @@
   opacity: 0;
 }
 
-.navbar2 {
+.navbar-Projects {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -127,7 +127,7 @@
   }
 }
 
-.page-nav-toAbout {
+.page-nav-to-about {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -153,7 +153,7 @@
     }
   }
 
-  .page-nav-toAbout__icon {
+  .page-nav-to-about__icon {
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -180,7 +180,7 @@
       }
     }
 
-    .page-nav-toAbout__icon {
+    .page-nav-to-about__icon {
       animation-name: blinker-1;
       animation-duration: 0.7s;
       animation-iteration-count: infinite;
@@ -451,12 +451,12 @@
     height: 13vw;
     right: 8vw;
     color: #413b3b;
-    margin-right: 5px;
-    margin-top: 10px;
+    margin-right: 0.26vw;
+    margin-top: 2vh;
     border-radius: 50%;
     transition: all .2s ease-in;
 
-    .navbar2 {
+    .navbar-Projects {
       position: absolute;
       display: flex;
       opacity: 0;
@@ -517,7 +517,7 @@
       cursor: pointer;
       border: 2px solid #886c57;
 
-      .navbar2{
+      .navbar-Projects{
         opacity: 1;
         transform: translateY(0);
         visibility: visible;
@@ -538,7 +538,7 @@
 
   .header-container {
     position: absolute;
-    top: -5px;
+    top: -.8vh;
     left: 30vw;
     width: 25vw;
     height: 12vh;
@@ -779,7 +779,7 @@
     }
   }
 
-  .page-nav-toAbout {
+  .page-nav-to-about {
     position: absolute;
     top: 86vh;
     right: 35vw;
@@ -807,7 +807,7 @@
       }
     }
   
-    .page-nav-toAbout__icon {
+    .page-nav-to-about__icon {
       position: fixed;
       width: 100%;
       bottom: 0;
@@ -826,7 +826,7 @@
         color: rgba(92, 92, 92, 0.8);
       }
   
-      .page-nav-next__icon {
+      .page-nav-to-about__icon {
         display: none;
       }
     }

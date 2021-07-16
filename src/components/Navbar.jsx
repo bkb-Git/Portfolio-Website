@@ -8,10 +8,20 @@ function Navbar(props) {
   const history = useHistory();
   const appContext = useContext(AppContext);
 
-  const NavBarOptions = buttons.map((elem, index) => {
+  function navbarPage() {
+    if (page === 1) {
+      return 'Home';
+    }
+    if (page === 2) {
+      return 'Projects';
+    }
+    return 'About';
+  }
+
+  const NavBarOptions = buttons.map((elem) => {
     return elem.name === 'Home' || elem.name === 'About' ? (
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      <a id={index}>
+      <a key={elem.id}>
         <i
           className={`button-icons fa-4x icon-${elem.name}`}
           data={elem.name}
@@ -25,7 +35,7 @@ function Navbar(props) {
         </i>
       </a>
     ) : (
-      <a href={elem.link} target="_blank" rel="noreferrer" id={index}>
+      <a href={elem.link} target="_blank" rel="noreferrer" key={elem.id}>
         <i
           className={`button-icons fa-4x icon-${elem.name}`}
           data={elem.name}
@@ -37,7 +47,7 @@ function Navbar(props) {
     );
   });
 
-  return <div className={`navbar${page}`}>{NavBarOptions}</div>;
+  return <div className={`navbar-${navbarPage()}`}>{NavBarOptions}</div>;
 }
 
 export default Navbar;

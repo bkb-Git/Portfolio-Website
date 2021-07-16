@@ -224,7 +224,7 @@
   }
 }
 
-.navbar1 {
+.navbar-Home {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -310,7 +310,7 @@
   }
 }
 
-.page-nav-toProjects {
+.page-nav-to-projects {
   position: absolute;
   right: 0;
   height: 100%;
@@ -336,7 +336,7 @@
     }
   }
 
-  .page-nav-toProjects__icon {
+  .page-nav-to-projects__icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -372,7 +372,7 @@
       }
     }
 
-    .page-nav-toProjects__icon {
+    .page-nav-to-projects__icon {
       animation-name: blinker;
       animation-duration: 0.7s;
       animation-iteration-count: infinite;
@@ -449,7 +449,7 @@
       border-radius: 50%;
       transition: border .2s ease-in;
 
-      .navbar1 {
+      .navbar-Home {
         position: absolute;
         visibility: hidden;
         pointer-events:visible;
@@ -510,7 +510,7 @@
         cursor: pointer;
         border: 2px solid #ece9e6;
 
-        .navbar1{
+        .navbar-Home{
           transform: translateX(0);
           visibility: visible;
           opacity: 1;
@@ -705,7 +705,7 @@
     }
   }
 
-  .page-nav-toProjects {
+  .page-nav-to-projects {
     position: absolute;
     right: 40vw;
     height: 13vh;
@@ -724,7 +724,7 @@
       }
     }
   
-    .page-nav-toProjects__icon {
+    .page-nav-to-projects__icon {
       display: none;
     }
 
@@ -739,7 +739,7 @@
         animation: none;
       }
   
-      .page-nav-toProjects__icon {
+      .page-nav-to-projects__icon {
         display: none;
       }
       }

@@ -29,7 +29,7 @@ function Home() {
           </div>
         )}
         <div
-          className="page-nav-toProjects"
+          className="page-nav-to-projects"
           route="/projects"
           onClick={handleClick}
           onKeyUp={handleClick}
@@ -37,7 +37,7 @@ function Home() {
           tabIndex={0}
         >
           <ArrowIcon page={1} />
-          <div className="page-nav-toProjects__icon" />
+          <div className="page-nav-to-projects__icon" />
         </div>
       </div>
       <div className="left-side-background" />
