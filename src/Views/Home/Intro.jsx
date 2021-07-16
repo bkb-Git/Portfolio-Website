@@ -2,7 +2,7 @@
 export default function Intro(props) {
   const { clickHandler } = props;
   return (
-    <p className="text">
+    <p className="intro-text">
       <p className="text1">
         <span id="sub-text1">Hi, I'm</span>{' '}
         <span id="sub-text2">

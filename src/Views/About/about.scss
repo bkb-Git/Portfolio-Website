@@ -1,11 +1,11 @@
-.about-background {
+.about-page {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background: $secondary-color;
 }
 
-.container-flex {
+.about-page__content {
   position: absolute;
   display: flex;
   background: $primary-bg-color;
@@ -17,7 +17,7 @@
   z-index: 2;
 }
 
-.container-flex .contactMe {
+.about-page__content .contactMe {
   flex: 1;
   background: $primary-bg-color;
   border-top-right-radius: 50px;
@@ -212,7 +212,7 @@
   }
 }
 
-.container-flex .aboutMe {
+.about-page__content .aboutMe {
   position: relative;
   flex: 1;
   background-color: #ece9e6;
@@ -422,7 +422,7 @@
   border-top-right-radius: 50%;
   z-index: 2;
 
-  .side-navbar3 {
+  .navbar3 {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -503,7 +503,7 @@
   }
 }
 
-.div-2 {
+.page-nav-toHome {
   position: absolute;
   left: 0;
   height: 100vh;
@@ -530,7 +530,7 @@
     }
   }
 
-  .transition-icon-2 {
+  .page-nav-toHome__icon {
     position: fixed;
     height: 100vh;
     left: 0;
@@ -545,6 +545,7 @@
 
   &:hover {
     cursor: pointer;
+
     .arrowButton-2-Home {
       color: rgba(255, 255, 255, 0.8);
       animation-name: arrow-2-Home;
@@ -557,7 +558,7 @@
       }
     }
 
-    .transition-icon-2 {
+    .page-nav-toHome__icon {
       animation-name: blinker-2;
       animation-duration: 0.7s;
       animation-iteration-count: infinite;
@@ -580,7 +581,7 @@
   }
 }
 
-.div-3 {
+.page-nav-backToProjects {
   position: absolute;
   top: 0;
   width: 100%;
@@ -608,7 +609,7 @@
     }
   }
 
-  .transition-icon-3 {
+  .page-nav-backToProjects__icon {
     position: fixed;
     width: 100%;
     top: 0;
@@ -623,6 +624,7 @@
 
   &:hover {
     cursor: pointer;
+
     .arrowButton-3 {
       color: rgba(255, 255, 255, 0.8);
       animation-name: arrow-3;
@@ -635,7 +637,7 @@
       }
     }
 
-    .transition-icon-3 {
+    .page-nav-backToProjects__icon {
       animation-name: blinker-2;
       animation-duration: 0.7s;
       animation-iteration-count: infinite;
@@ -687,7 +689,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .container-flex {
+  .about-page__content {
     flex-direction: column;
 
     .contactMe {
@@ -780,12 +782,18 @@
   }
 
   .footer {
-    .side-navbar3 {
+    .navbar3 {
       left: 50vw;
       bottom: 0.3vh;
 
       .button-icons {
         font-size: 40px;
+
+        &:hover {
+          svg {
+            bottom: .2vh;
+          }
+        }
       }
     }
 
@@ -795,7 +803,7 @@
     }
   }
 
-  .div-2 {
+  .page-nav-toHome {
     width: 40px;
     height: 60px;
     left: 0;
@@ -815,7 +823,7 @@
       }
     }
 
-    .transition-icon-2 {
+    .page-nav-toHome__icon {
       display: none;
     }
 
@@ -827,7 +835,7 @@
     }
   }
 
-  .div-3 {
+  .page-nav-backToProjects {
     top: 3%;
     left: 50vw;
     width: 40px;
@@ -847,7 +855,7 @@
       }
     }
 
-    .transition-icon-3 {
+    .page-nav-backToProjects__icon {
       display: none;
     }
 

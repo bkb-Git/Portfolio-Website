@@ -37,7 +37,7 @@ function Navbar(props) {
     );
   });
 
-  return <div className={`side-navbar${page}`}>{NavBarOptions}</div>;
+  return <div className={`navbar${page}`}>{NavBarOptions}</div>;
 }
 
 export default Navbar;

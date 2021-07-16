@@ -36,8 +36,8 @@ function About() {
   }
 
   return (
-    <div className="about-background">
-      <div className="container-flex">
+    <div className="about-page">
+      <div className="about-page__content">
         <div
           className="aboutMe"
           onMouseOver={() => setDisplayState(DISPLAY_STATE.ABOUT)}
@@ -59,7 +59,7 @@ function About() {
       </div>
       <Footer />
       <div
-        className="div-2"
+        className="page-nav-toHome"
         route="/"
         onClick={handleRoute}
         onKeyUp={handleRoute}
@@ -67,10 +67,10 @@ function About() {
         tabIndex={0}
       >
         <ArrowIcon backToHome />
-        <div className="transition-icon-2" />
+        <div className="page-nav-toHome__icon" />
       </div>
       <div
-        className="div-3"
+        className="page-nav-backToProjects"
         route="/projects"
         onClick={handleRoute}
         onKeyUp={handleRoute}
@@ -78,7 +78,7 @@ function About() {
         tabIndex={0}
       >
         <ArrowIcon backToHome={false} />
-        <div className="transition-icon-3" />
+        <div className="page-nav-backToProjects__icon" />
       </div>
     </div>
   );
