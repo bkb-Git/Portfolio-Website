@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Route, useLocation } from 'react-router-dom';
-import { Transition } from 'react-transition-group';
+import { Transition, TransitionGroup } from 'react-transition-group';
 import { AppContext } from './context/AppContext';
 import { routes } from './lib/constants/routes';
 import './app.scss';
@@ -28,22 +28,24 @@ export default function App() {
       }}
     >
       <div className="loading-screen" />
-      {routes.map(({ name, path, onEnter, onExit, Component }) => (
-        <Route key={name} exact path={path}>
-          {({ match }) => (
-            <Transition
-              in={match !== null}
-              classNames="page"
-              timeout={{ exit: 650, enter: 850 }}
-              unmountOnExit
-              onEntering={(Node) => onEnter(appState, Node)}
-              onExiting={() => onExit(appState)}
-            >
-              <Component />
-            </Transition>
-          )}
-        </Route>
-      ))}
+      <TransitionGroup>
+        {routes.map(({ name, path, onEnter, onExit, Component }) => (
+          <Route key={name} exact path={path}>
+            {({ match }) => (
+              <Transition
+                in={match !== null}
+                classNames="page"
+                timeout={{ exit: 650, enter: 850 }}
+                unmountOnExit
+                onEntering={(Node) => onEnter(appState, Node)}
+                onExiting={() => onExit(appState)}
+              >
+                <Component />
+              </Transition>
+            )}
+          </Route>
+        ))}
+      </TransitionGroup>
     </AppContext.Provider>
   );
 }
