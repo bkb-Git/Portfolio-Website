@@ -12,7 +12,7 @@ export default function ContactMe(props) {
       </h2>
       <h3 className="contact_me_header">Thank you</h3>
       <FontAwesomeIcon icon={faEnvelopeOpenText} className="fa-10x" />
-      <form action="">
+      <form netlify>
         <section>
           <input
             type="text"
