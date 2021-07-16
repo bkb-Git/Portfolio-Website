@@ -1,0 +1,12 @@
+@import "./styles/globalStyles.scss";
+@import "./Views/Projects/ProjectsPage.scss";
+@import "./Views/Home/home.scss";
+@import "./Views/About/about.scss";
+
+.loading-screen {
+  position: absolute;
+  background: $secondary-color;
+  z-index: 999;
+  pointer-events: none;
+}
+
