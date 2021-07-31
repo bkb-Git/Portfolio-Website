@@ -28,6 +28,10 @@
   a {
     text-decoration: none;
     margin-bottom: 10px;
+
+    .fa-4x {
+      font-size: 8vh;
+    }
   }
 
   .button-icons {
@@ -139,9 +143,14 @@
     left: 50vw;
     opacity: 0.3;
 
+    .fa-6x {
+      font-size: 5vw;
+    }
+
     i::after {
       position: absolute;
       top: 75%;
+      right: -5%;
       margin-top: 0.625rem;
       content: attr(data);
       color: #696867;
@@ -792,6 +801,10 @@
       left: 0;
       bottom: 0;
       opacity: 0.3;
+
+      .fa-6x {
+        font-size: 15vw;
+      }
   
       i::after {
         position: absolute;
