@@ -437,6 +437,10 @@
     a {
       text-decoration: none;
       margin-right: 30px;
+
+      .fa-4x {
+        font-size: 3vw;
+      }
     }
 
     .button-icons {
@@ -516,6 +520,10 @@
     top: 50vh;
     opacity: 0.3;
 
+    .fa-4x {
+      font-size: 4vw;
+    }
+
     i::after {
       position: absolute;
       top: 10%;
@@ -590,9 +598,13 @@
 
   .arrowButton-3 {
     position: fixed;
-    top: 3%;
+    top: 2%;
     left: 50vw;
     opacity: 0.3;
+
+    .fa-4x {
+      font-size: 4vw;
+    }
 
     i::after {
       position: absolute;
@@ -648,11 +660,11 @@
 
   @keyframes arrow-3 {
     from {
-      top: 3%;
+      top: 2%;
       opacity: 0.3;
     }
     to {
-      top: 1%;
+      top: .8%;
       opacity: 0.8;
     }
   }

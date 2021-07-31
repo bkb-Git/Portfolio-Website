@@ -240,6 +240,10 @@
   a {
     text-decoration: none;
     margin-bottom: 10px;
+
+    .fa-4x {
+      font-size: 8vh;
+    }
   }
 
   .button-icons {
@@ -322,6 +326,10 @@
     top: 50vh;
     color: rgb(255, 255, 255);
     opacity: 0.3;
+
+    .fa-6x {
+      font-size: 5vw;
+    }
 
     i::after {
       position: absolute;
@@ -718,6 +726,10 @@
       left: 0;
       color: rgb(255, 255, 255);
       opacity: 0.3;
+
+      .fa-6x {
+        font-size: 15vw;
+      }
   
       i::after {
         display: none;
