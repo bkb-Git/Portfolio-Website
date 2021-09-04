@@ -10,7 +10,13 @@ const ContactMe = (props) => {
 
   const renderForm = () => {
     return (
-      <form name="contact" method="POST" id="contact-me-form" data-netlify="true"  netlify-honeypot="bot-field">
+      <form
+        name="contact"
+        method="POST"
+        id="contact-me-form"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
         <section>
           <input
             type="text"
