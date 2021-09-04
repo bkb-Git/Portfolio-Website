@@ -1,7 +1,4 @@
-@import "./styles/globalStyles.scss";
-@import "./Views/Projects/ProjectsPage.scss";
-@import "./Views/Home/home.scss";
-@import "./Views/About/about.scss";
+@import './styles/globalStyles.scss';
 
 .loading-screen {
   position: absolute;
@@ -9,4 +6,3 @@
   z-index: 999;
   pointer-events: none;
 }
-

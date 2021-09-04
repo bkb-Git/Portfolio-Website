@@ -4,9 +4,9 @@ import {
   ProjectTransitions,
 } from '../helpers/Page-transitions';
 import { APP_ROUTES } from './global-vars';
-import Home from '../../Views/Home/Home';
-import Projects from '../../Views/Projects/Projects';
-import About from '../../Views/About/About';
+import Home from '../../Views/Home';
+import Projects from '../../Views/Projects';
+import About from '../../Views/About';
 
 // eslint-disable-next-line import/prefer-default-export
 export const routes = [

@@ -1,17 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
-export default function ContactMe(props) {
-  const { display } = props;
-  const toggleDisplay = display === 'contact' ? 'none' : 'block';
+import './ContactMe.scss';
 
-  return (
-    <div>
-      <h2 className="header" style={{ display: toggleDisplay }}>
-        Contact <span>Me</span>
-      </h2>
-      <h3 className="contact_me_header">Thank you</h3>
-      <FontAwesomeIcon icon={faEnvelopeOpenText} className="fa-10x" />
+const ContactMe = (props) => {
+  const { displaystate, display } = props;
+  const toggleDisplay = displaystate === 'contact' ? 'none' : 'block';
+  const { setDisplayState, contact, leave } = display;
+
+  const renderForm = () => {
+    return (
       <form netlify>
         <section>
           <input
@@ -49,6 +47,33 @@ export default function ContactMe(props) {
         />
         <input type="submit" value="Submit" />
       </form>
+    );
+  };
+
+  const renderThankYouMessage = () => {
+    return (
+      <>
+        <h2 className="header" style={{ display: toggleDisplay }}>
+          Contact <span>Me</span>
+        </h2>
+        <h3 className="contact_me_header">Thank you</h3>
+        <FontAwesomeIcon icon={faEnvelopeOpenText} className="fa-10x" />
+      </>
+    );
+  };
+
+  return (
+    <div
+      className="about-page__content__contactMe"
+      onMouseOver={() => setDisplayState(contact)}
+      onMouseLeave={leave}
+      onFocus={() => setDisplayState(contact)}
+      onBlur={leave}
+    >
+      {renderThankYouMessage()}
+      {renderForm()}
     </div>
   );
-}
+};
+
+export default ContactMe;

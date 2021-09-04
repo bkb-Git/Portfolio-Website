@@ -3,6 +3,7 @@ import { Route, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import { AppContext } from './context/AppContext';
 import { routes } from './lib/constants/routes';
+
 import './app.scss';
 
 export default function App() {

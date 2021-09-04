@@ -1,3 +1,5 @@
+@import '../../styles/globalStyles.scss';
+
 .home-container {
   position: absolute;
   height: 100vh;
@@ -60,136 +62,6 @@
 
   &:hover::before {
     animation: logo 0.4s ease-in-out 3;
-  }
-}
-
-.intro-text {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 15vh;
-  left: 9vw;
-  height: 60vh;
-  font-size: 1.8vw;
-  text-align: right;
-  font-family: 'Roboto', sans-serif;
-  color: black;
-  letter-spacing: normal;
-  word-spacing: 10px;
-  justify-content: space-between;
-
-  p {
-    margin: 0;
-  }
-
-  .text1 {
-    #sub-text1 {
-      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      display: inline-block;
-    }
-
-    #sub-text2 {
-      display: inline-block;
-      margin: 0 auto;
-      font-family: 'Monoton', cursive;
-      text-align: center;
-      font-size: 4.5vw;
-      font-weight: 500;
-      color: rgb(37, 34, 34);
-      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 1.2s;
-
-      #single-letter {
-        font-weight: bold;
-        margin-left: 10px;
-        color: #413b3b;
-      }
-
-      #last-name {
-        top: 10vh;
-        margin-left: 10px;
-      }
-    }
-  }
-
-  .text2 {
-    position: relative;
-    top: 2vh;
-
-    #sub-text1 {
-      position: relative;
-      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 1.5s;
-      display: inline-block;
-    }
-
-    #sub-text2 {
-      position: relative;
-      display: inline-block;
-      margin: 0 auto;
-      font-family: 'Monoton', cursive;
-      text-align: center;
-      font-weight: 150;
-      font-size: 2.3vw;
-      color: rgb(37, 34, 34);
-      -webkit-animation: slide-ft 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 2.7s;
-    }
-  }
-
-  .text3 {
-    position: relative;
-    bottom: 2vh;
-
-    #sub-text1 {
-      position: relative;
-      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 3s;
-      display: inline-block;
-    }
-
-    #sub-text2 {
-      position: relative;
-      display: inline-block;
-      margin: 0 auto;
-      font-family: 'Monoton', cursive;
-      font-weight: 100;
-      text-align: center;
-      font-size: 2vw;
-      color: rgb(37, 34, 34);
-      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 3.7s;
-    }
-  }
-
-  .text4 {
-    position: relative;
-    top: 1.5vh;
-
-    #sub-text1 {
-      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 4.5s;
-      display: inline-block;
-    }
-  }
-
-  .text5 {
-    position: relative;
-    bottom: 1.5vh;
-
-    #sub-text1 {
-      position: relative;
-      margin-right: 15px;
-      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 6s;
-      display: inline-block;
-    }
   }
 }
 
@@ -261,9 +133,9 @@
     }
   }
 
-  $icons: Home #886c57 #008000 0.65rem -0.1rem, About #413b3b #720058 1.1rem -0.25rem,
-    Facebook #886c57 #4267b2 0.625rem 0, Github #413b3b #bd2c00 0.625rem 0,
-    LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
+  $icons: Home #886c57 #008000 0.65rem -0.1rem,
+    About #413b3b #720058 1.1rem -0.25rem, Facebook #886c57 #4267b2 0.625rem 0,
+    Github #413b3b #bd2c00 0.625rem 0, LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
 
   @each $name, $colorPrimary, $colorSecondary, $padding-left, $left in $icons {
     .icon-#{$name} {
@@ -390,35 +262,6 @@
   }
 }
 
-@keyframes slide-in {
-  0% {
-    -webkit-transform: translateX(-150%);
-    transform: translateX(-150%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-ft {
-  0% {
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-    transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
 @keyframes button-fade-in {
   0% {
     opacity: 0;
@@ -430,6 +273,7 @@
     opacity: 1;
   }
 }
+
 @keyframes logo {
   to {
     transform: rotate(360deg) scale(1.15);
@@ -455,12 +299,12 @@
       margin-right: 5px;
       margin-top: 10px;
       border-radius: 50%;
-      transition: border .2s ease-in;
+      transition: border 0.2s ease-in;
 
       .navbar-Home {
         position: absolute;
         visibility: hidden;
-        pointer-events:visible;
+        pointer-events: visible;
         top: -1vh;
         left: -85vw;
         width: 85vw;
@@ -473,14 +317,14 @@
         z-index: 0;
         opacity: 0;
         transform: translateX(125%);
-        transition: all .2s ease-in;
-        transition-delay: .1s;
-    
+        transition: all 0.2s ease-in;
+        transition-delay: 0.1s;
+
         a {
           text-decoration: none;
           margin: 0;
         }
-    
+
         .button-icons {
           position: relative;
           flex: 1;
@@ -489,12 +333,15 @@
           padding: 0;
           cursor: pointer;
         }
-    
-        $icons: Home #886c57 #008000 0.65rem -0.1rem, About #413b3b #720058 1.1rem -0.25rem,
+
+        $icons: Home #886c57 #008000 0.65rem -0.1rem,
+          About #413b3b #720058 1.1rem -0.25rem,
           Facebook #886c57 #4267b2 0.625rem 0, Github #413b3b #bd2c00 0.625rem 0,
           LinkedIn #886c57 #0077b5 0.8rem -0.18rem;
-    
-        @each $name, $colorPrimary, $colorSecondary, $padding-left, $left in $icons {
+
+        @each $name, $colorPrimary, $colorSecondary, $padding-left,
+          $left in $icons
+        {
           .icon-#{$name} {
             color: $colorPrimary;
             transition: all 0.2s;
@@ -504,13 +351,13 @@
               transform: scale(1.05);
               border: none;
             }
-    
+
             &::after {
               display: none;
             }
           }
         }
-      }    
+      }
 
       &:hover {
         color: white;
@@ -518,197 +365,22 @@
         cursor: pointer;
         border: 2px solid #ece9e6;
 
-        .navbar-Home{
+        .navbar-Home {
           transform: translateX(0);
           visibility: visible;
           opacity: 1;
-          
         }
       }
-      
+
       &::before {
         position: absolute;
         left: 2.1vw;
-        top: .5vh;
-        font-family: "Font Awesome 5 Free";
+        top: 0.5vh;
+        font-family: 'Font Awesome 5 Free';
         font-weight: 900;
-        content: "";
+        content: '';
         font-size: 10vw;
         text-align: center;
-      }
-    }
-  }
-
-  .intro-text {
-    position: absolute;
-    display: flex;
-    top: 20vh;
-    left: 5vw;
-    width: 90vw;
-    height: 60vh;
-    font-size: 6vw;
-    margin: 0px;
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    letter-spacing: normal;
-    word-spacing: 3px;
-    justify-content: space-around;
-
-    p {
-      margin: 0;
-    }
-
-    .text1 {
-
-      #sub-text1 {
-        position: relative;
-        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      }
-
-      #sub-text2 {
-        position: relative;
-        mix-blend-mode: screen;
-        background-color: white;
-        padding: 0px 5px;
-        color: black;
-        border-radius: 3px;
-        display: inline-block;
-        margin: 0 auto;
-        font-family: 'Monoton', cursive;
-        text-align: center;
-        font-size: 9vw;
-        font-weight: bolder;
-        animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 1.2s;
-
-        #single-letter {
-          font-weight: bold;
-          margin-left: 10px;
-          color: #413b3b;
-        }
-
-        #last-name {
-          top: 10vh;
-          margin-left: 10px;
-        }
-      }
-    }
-
-    .text2 {
-      position: relative;
-      top: 0;
-      #sub-text1 {
-        position: relative;
-        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 1.5s;
-        display: inline-block;
-      }
-
-      #sub-text2 {
-        position: relative;
-        mix-blend-mode: screen;
-        background-color: white;
-        padding: 0px 5px;
-        color: black;
-        border-radius: 3px;
-        display: inline-block;
-        margin: 0 auto;
-        font-family: 'Monoton', cursive;
-        text-align: center;
-        font-weight: bolder;
-        font-size: 5vw;
-        animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 2.7s;
-      }
-    }
-
-    .text3 {
-      position: relative;
-      bottom: 0;
-      #sub-text1 {
-        position: relative;
-        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 3s;
-        display: inline-block;
-      }
-
-      #sub-text2 {
-        position: relative;
-        mix-blend-mode: screen;
-        background-color: white;
-        padding: 0px 5px;
-        color: black;
-        border-radius: 3px;
-        display: inline-block;
-        margin: 0 auto;
-        font-family: 'Monoton', cursive;
-        font-weight: bolder;
-        text-align: center;
-        font-size: 5vw;
-        animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 3.7s;
-      }
-    }
-
-    .text4 {
-      position: relative;
-      top: 0;
-      #sub-text1 {
-        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 4.5s;
-        display: inline-block;
-      }
-    }
-
-    .text5 {
-      position: relative;
-      bottom: 0;
-      #sub-text1 {
-        position: relative;
-        margin-right: 15px;
-        -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-        animation-delay: 6s;
-        display: inline-block;
-      }
-    }
-
-    .contact-button {
-      background-color: transparent;
-      color: white;
-      display: inline-block;
-      font-family: 'Monoton', cursive;
-      cursor: pointer;
-      border-radius: 3px;
-      border: 1px solid white;
-      font-size: 5vw;
-      padding: 1px 12px;
-      text-decoration: none;
-      animation: button-fade-in 1.2s ease-in both 7.5s;
-      transition: all 0.2s ease-in;
-
-      &:hover {
-        mix-blend-mode: normal;
-        box-shadow: 3px 10px 20px 1px rgba(0, 0, 0, 0.616);
-        text-shadow: 0px 3px 3px white;
-        background-image: radial-gradient(
-          rgb(53, 46, 46) 70%,
-          rgb(139, 125, 125)
-        );
-        transform: scale(1.05);
-        color: white;
-        margin-top: 3px;
-        margin-right: 2px;
-        border: none;
-      }
-
-      &:active {
-        bottom: 1.2vh;
       }
     }
   }
@@ -719,7 +391,7 @@
     height: 13vh;
     width: 20vw;
     bottom: 3vh;
-  
+
     .arrowButton {
       position: relative;
       top: 0;
@@ -730,12 +402,12 @@
       .fa-6x {
         font-size: 15vw;
       }
-  
+
       i::after {
         display: none;
       }
     }
-  
+
     .page-nav-to-projects__icon {
       display: none;
     }
@@ -743,19 +415,17 @@
     i::after {
       display: none;
     }
-  
+
     &:hover {
       cursor: pointer;
       .arrowButton {
         display: none;
         animation: none;
       }
-  
+
       .page-nav-to-projects__icon {
         display: none;
       }
-      }
-
     }
   }
-
+}

@@ -7,7 +7,9 @@ import Container from './Container';
 import Header from './Header';
 import Navbar from '../../components/Navbar';
 
-function Projects() {
+import './Projects.scss';
+
+const Projects = () => {
   const history = useHistory();
   const appContext = useContext(AppContext);
 
@@ -30,6 +32,6 @@ function Projects() {
       <Container clickHandler={handleClick} />
     </div>
   );
-}
+};
 
 export default Projects;
