@@ -16,6 +16,7 @@ const ContactMe = (props) => {
         id="contact-me-form"
         data-netlify="true"
         netlify-honeypot="bot-field"
+        encType="application/x-www-form-urlencoded"
       >
         <section>
           <input
