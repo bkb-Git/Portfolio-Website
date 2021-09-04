@@ -10,7 +10,13 @@ const ContactMe = (props) => {
 
   const renderForm = () => {
     return (
-      <form name="contact" method="POST" id="contact-me-form" netlify>
+      <form
+        name="contact"
+        method="POST"
+        id="contact-me-form"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
         <section>
           <input
             type="text"
@@ -24,7 +30,7 @@ const ContactMe = (props) => {
           <input
             type="text"
             id="subject"
-            name="text"
+            name="subject"
             placeholder="Subject"
             autoComplete="off"
             required
@@ -45,7 +51,7 @@ const ContactMe = (props) => {
           placeholder="Comment..."
           autoComplete="off"
         />
-        <button type="submit" form="contact-me-form" value="Submit">
+        <button type="submit" form="contact-me-form">
           Submit
         </button>
       </form>
