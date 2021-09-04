@@ -10,14 +10,8 @@ const ContactMe = (props) => {
 
   const renderForm = () => {
     return (
-      <form
-        name="contact"
-        method="POST"
-        id="contact-me-form"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        encType="application/x-www-form-urlencoded"
-      >
+      <form name="contact" method="POST" id="contact-me-form">
+        <input type="hidden" name="form-name" value="contact" />
         <section>
           <input
             type="text"
@@ -38,7 +32,7 @@ const ContactMe = (props) => {
           />
 
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             placeholder="E-mail"
