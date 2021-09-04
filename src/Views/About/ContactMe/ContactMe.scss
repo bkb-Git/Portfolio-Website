@@ -138,25 +138,21 @@
       }
     }
 
-    input[type='submit'] {
+    button {
       position: relative;
       width: 80%;
       height: 5vh;
       grid-row: 4;
       grid-column: 1;
       font-weight: bolder;
-      font-size: 1vw;
+      font-family: $primary-font-family;
+      font-weight: bolder;
+      font-size: 15px;
       color: white;
       text-align: center;
       border-radius: 5px;
       background-color: #413b3bc7;
       transition: all 0.2s;
-
-      &::placeholder {
-        font-family: $primary-font-family;
-        font-weight: bolder;
-        font-size: 15px;
-      }
 
       &:hover {
         top: 1%;
@@ -230,7 +226,7 @@
       left: 8vw;
       width: 100%;
 
-      input[type='submit'] {
+      button {
         font-size: 5vw;
       }
     }

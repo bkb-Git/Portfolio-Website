@@ -45,7 +45,7 @@ const ContactMe = (props) => {
           placeholder="Comment..."
           autoComplete="off"
         />
-        <input type="submit" value="Submit" />
+        <button type="submit">Submit</button>
       </form>
     );
   };
