@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-export default function Intro(props) {
+import './Intro.scss';
+
+const Intro = (props) => {
   const { clickHandler } = props;
   return (
     <p className="intro-text">
@@ -37,4 +39,6 @@ export default function Intro(props) {
       </p>
     </p>
   );
-}
+};
+
+export default Intro;

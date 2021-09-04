@@ -7,6 +7,8 @@ import ArrowIcon from '../../components/ArrowIcon';
 import Intro from './Intro';
 import { AppContext } from '../../context/AppContext';
 
+import './Home.scss';
+
 function Home() {
   const history = useHistory();
   const appContext = useContext(AppContext);
@@ -19,29 +21,49 @@ function Home() {
 
   const mobileOrDesktop = useMediaPredicate('(min-width: 700px)');
 
-  return (
-    <div className="home-container">
-      {mobileOrDesktop && <Navbar buttons={sns} page={1} />}
+  const renderPageNavToProjects = () => {
+    return (
+      <div
+        className="page-nav-to-projects"
+        route="/projects"
+        onClick={handleClick}
+        onKeyUp={handleClick}
+        role="link"
+        tabIndex={0}
+      >
+        <ArrowIcon page={1} />
+        <div className="page-nav-to-projects__icon" />
+      </div>
+    );
+  };
+
+  const renderLeftSideView = () => {
+    return (
+      <>
+        <div className="left-side-background" />
+        <Intro clickHandler={handleClick} />
+      </>
+    );
+  };
+
+  const renderRightSideView = () => {
+    return (
       <div className="right-side-background">
         {!mobileOrDesktop && (
           <div className="bar-menu">
             <Navbar buttons={sns} page={1} />
           </div>
         )}
-        <div
-          className="page-nav-to-projects"
-          route="/projects"
-          onClick={handleClick}
-          onKeyUp={handleClick}
-          role="link"
-          tabIndex={0}
-        >
-          <ArrowIcon page={1} />
-          <div className="page-nav-to-projects__icon" />
-        </div>
+        {renderPageNavToProjects()}
       </div>
-      <div className="left-side-background" />
-      <Intro clickHandler={handleClick} />
+    );
+  };
+
+  return (
+    <div className="home-container">
+      {mobileOrDesktop && <Navbar buttons={sns} page={1} />}
+      {renderRightSideView()}
+      {renderLeftSideView()}
     </div>
   );
 }

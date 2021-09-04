@@ -1,0 +1,273 @@
+@import '../../../styles/globalStyles.scss';
+
+.intro-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 15vh;
+  left: 9vw;
+  height: 60vh;
+  font-size: 1.8vw;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  letter-spacing: normal;
+  word-spacing: 10px;
+  justify-content: space-between;
+
+  p {
+    margin: 0;
+  }
+
+  .text1 {
+    #sub-text1 {
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      display: inline-block;
+    }
+
+    #sub-text2 {
+      display: inline-block;
+      margin: 0 auto;
+      font-family: 'Monoton', cursive;
+      text-align: center;
+      font-size: 4.5vw;
+      font-weight: 500;
+      color: rgb(37, 34, 34);
+      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 1.2s;
+
+      #single-letter {
+        font-weight: bold;
+        margin-left: 10px;
+        color: #413b3b;
+      }
+
+      #last-name {
+        top: 10vh;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .text2 {
+    position: relative;
+    top: 2vh;
+
+    #sub-text1 {
+      position: relative;
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 1.5s;
+      display: inline-block;
+    }
+
+    #sub-text2 {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      font-family: 'Monoton', cursive;
+      text-align: center;
+      font-weight: 150;
+      font-size: 2.3vw;
+      color: rgb(37, 34, 34);
+      -webkit-animation: slide-ft 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 2.7s;
+    }
+  }
+
+  .text3 {
+    position: relative;
+    bottom: 2vh;
+
+    #sub-text1 {
+      position: relative;
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 3s;
+      display: inline-block;
+    }
+
+    #sub-text2 {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      font-family: 'Monoton', cursive;
+      font-weight: 100;
+      text-align: center;
+      font-size: 2vw;
+      color: rgb(37, 34, 34);
+      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 3.7s;
+    }
+  }
+
+  .text4 {
+    position: relative;
+    top: 1.5vh;
+
+    #sub-text1 {
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 4.5s;
+      display: inline-block;
+    }
+  }
+
+  .text5 {
+    position: relative;
+    bottom: 1.5vh;
+
+    #sub-text1 {
+      position: relative;
+      margin-right: 15px;
+      -webkit-animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: slide-in 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation-delay: 6s;
+      display: inline-block;
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(-150%);
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-ft {
+  0% {
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .intro-text {
+    top: 20vh;
+    left: 5vw;
+    width: 90vw;
+    font-size: 6vw;
+    margin: 0px;
+    text-align: left;
+    color: white;
+    letter-spacing: normal;
+    word-spacing: 3px;
+    justify-content: space-around;
+
+    .text1 {
+      #sub-text1 {
+        position: relative;
+      }
+
+      #sub-text2 {
+        position: relative;
+        mix-blend-mode: screen;
+        background-color: white;
+        padding: 0px 5px;
+        color: black;
+        border-radius: 3px;
+        font-family: 'Monoton', cursive;
+        font-size: 9vw;
+        font-weight: bolder;
+      }
+    }
+
+    .text2 {
+      position: relative;
+      top: 0;
+
+      #sub-text2 {
+        mix-blend-mode: screen;
+        background-color: white;
+        padding: 0px 5px;
+        color: black;
+        border-radius: 3px;
+        font-weight: bolder;
+        font-size: 5vw;
+      }
+    }
+
+    .text3 {
+      position: relative;
+      bottom: 0;
+      #sub-text1 {
+        position: relative;
+      }
+
+      #sub-text2 {
+        position: relative;
+        mix-blend-mode: screen;
+        background-color: white;
+        padding: 0px 5px;
+        color: black;
+        border-radius: 3px;
+        font-weight: bolder;
+        font-size: 5vw;
+      }
+    }
+
+    .text4 {
+      position: relative;
+      top: 0;
+    }
+
+    .text5 {
+      position: relative;
+      bottom: 0;
+    }
+
+    .contact-button {
+      background-color: transparent;
+      color: white;
+      display: inline-block;
+      font-family: 'Monoton', cursive;
+      cursor: pointer;
+      border-radius: 3px;
+      border: 1px solid white;
+      font-size: 5vw;
+      padding: 1px 12px;
+      text-decoration: none;
+      animation: button-fade-in 1.2s ease-in both 7.5s;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        mix-blend-mode: normal;
+        box-shadow: 3px 10px 20px 1px rgba(0, 0, 0, 0.616);
+        text-shadow: 0px 3px 3px white;
+        background-image: radial-gradient(
+          rgb(53, 46, 46) 70%,
+          rgb(139, 125, 125)
+        );
+        transform: scale(1.05);
+        color: white;
+        margin-top: 3px;
+        margin-right: 2px;
+        border: none;
+      }
+
+      &:active {
+        bottom: 1.2vh;
+      }
+    }
+  }
+}

@@ -7,59 +7,64 @@ import Footer from './Footer';
 import ArrowIcon from '../../components/ArrowIcon';
 import { AppContext } from '../../context/AppContext';
 
+import './About.scss';
+
 const DISPLAY_STATE = {
   ABOUT: 'about',
   CONTACT: 'contact',
 };
 
-function About() {
+const About = () => {
   const [displayState, setDisplayState] = useState('');
   const history = useHistory();
   const appContext = useContext(AppContext);
 
-  function handleLeave() {
+  const handleLeave = () => {
     setDisplayState('');
-  }
+  };
 
-  function handleRoute(e) {
+  const handleRoute = (e) => {
     const link = e.currentTarget.attributes.route.value;
     appContext.updateNextRoute(link);
     history.push(link);
-  }
+  };
 
-  function handleClick(e) {
+  const handleClick = (e) => {
     const cb = navigator.clipboard;
     const text = e.currentTarget;
     cb.writeText(text.innerText).then(() =>
       alert(`Copied ${text.innerText} to Clipboard`)
     );
-  }
+  };
 
-  return (
-    <div className="about-page">
+  const renderAboutPageContent = () => {
+    return (
       <div className="about-page__content">
-        <div
-          className="aboutMe"
-          onMouseOver={() => setDisplayState(DISPLAY_STATE.ABOUT)}
-          onMouseLeave={handleLeave}
-          onFocus={() => setDisplayState(DISPLAY_STATE.ABOUT)}
-          onBlur={handleLeave}
-        >
-          <AboutMe display={displayState} handler={handleClick} />
-        </div>
-        <div
-          className="contactMe"
-          onMouseOver={() => setDisplayState(DISPLAY_STATE.CONTACT)}
-          onMouseLeave={handleLeave}
-          onFocus={() => setDisplayState(DISPLAY_STATE.CONTACT)}
-          onBlur={handleLeave}
-        >
-          <ContactMe display={displayState} />
-        </div>
+        <AboutMe
+          displaystate={displayState}
+          handler={handleClick}
+          display={{
+            setDisplayState,
+            about: DISPLAY_STATE.ABOUT,
+            leave: handleLeave,
+          }}
+        />
+        <ContactMe
+          displaystate={displayState}
+          display={{
+            setDisplayState,
+            contact: DISPLAY_STATE.CONTACT,
+            leave: handleLeave,
+          }}
+        />
       </div>
-      <Footer />
+    );
+  };
+
+  const renderPageNavToHome = () => {
+    return (
       <div
-        className="page-nav-to-home"
+        className="about-page__page-nav-to-home"
         route="/"
         onClick={handleRoute}
         onKeyUp={handleRoute}
@@ -67,10 +72,15 @@ function About() {
         tabIndex={0}
       >
         <ArrowIcon backToHome />
-        <div className="page-nav-to-home__icon" />
+        <div className="about-page__page-nav-to-home__icon" />
       </div>
+    );
+  };
+
+  const renderPageNavBackToProjects = () => {
+    return (
       <div
-        className="page-nav-back-to-projects"
+        className="about-page__page-nav-back-to-projects"
         route="/projects"
         onClick={handleRoute}
         onKeyUp={handleRoute}
@@ -78,10 +88,19 @@ function About() {
         tabIndex={0}
       >
         <ArrowIcon backToHome={false} />
-        <div className="page-nav-back-to-projects__icon" />
+        <div className="about-page__page-nav-back-to-projects__icon" />
       </div>
+    );
+  };
+
+  return (
+    <div className="about-page">
+      {renderAboutPageContent()}
+      <Footer />
+      {renderPageNavToHome()}
+      {renderPageNavBackToProjects()}
     </div>
   );
-}
+};
 
 export default About;
