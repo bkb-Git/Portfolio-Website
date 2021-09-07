@@ -177,6 +177,10 @@
             content: '\f15b';
             position: relative;
           }
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
