@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+import { saveAs } from 'file-saver';
+import resume from '../../../assets/Resume.pdf';
 import './AboutMe.scss';
 
 const AboutMe = (props) => {
@@ -13,6 +16,10 @@ const AboutMe = (props) => {
     );
   };
 
+  const handleDownload = () => {
+    saveAs(resume, 'resume.pdf');
+  };
+
   const renderPersonalDetails = () => {
     return (
       <div className="personal-details">
@@ -26,7 +33,16 @@ const AboutMe = (props) => {
         >
           billykbett@gmail.com
         </div>
-        <div className="details detail3">Resume</div>
+
+        <div
+          onClick={handleDownload}
+          onKeyUp={handleDownload}
+          tabIndex={0}
+          role="button"
+          className="details detail3"
+        >
+          Resume
+        </div>
       </div>
     );
   };
