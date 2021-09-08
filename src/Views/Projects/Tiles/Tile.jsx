@@ -5,6 +5,18 @@ import './Tile.scss';
 
 const Tile = (props) => {
   const { data, tileNo } = props;
+  const {
+    name = 'TITLE',
+    description = 'This is an example for where a description will be placed',
+    languages = ['Item One', 'Item Two', 'Item Three', 'Item Four'],
+    link: WebsiteLink = '',
+    backgroundImg,
+  } = data;
+
+  const handleRoute = (e) => {
+    e.preventDefault();
+    window.open(WebsiteLink, '_blank');
+  };
 
   const renderCardFrontTop = () => {
     return (
@@ -13,7 +25,11 @@ const Tile = (props) => {
           <FontAwesomeIcon icon={faDesktop} />
           <span id="card-bt-text">Live</span>
         </button>
-        <button type="button" className="card-button viewCode">
+        <button
+          onClick={(e) => handleRoute(e)}
+          type="button"
+          className="card-button viewCode"
+        >
           <FontAwesomeIcon icon={faCode} />
           <span id="card-bt-text">Code</span>
         </button>
@@ -24,21 +40,21 @@ const Tile = (props) => {
   const renderCardFrontBottom = () => {
     return (
       <div className="card__bottom_front">
-        <h2 className="title">TITLE</h2>
-        <p className="description">
-          This is an example for where a description will be placed
-        </p>
+        <h2 className="title">{name}</h2>
+        <p className="description">{description}</p>
         <ul>
-          <li>Item One</li>
-          <li>Item Two</li>
-          <li>Item Three</li>
-          <li>Item Four</li>
+          {languages.map((elem) => (
+            <li key={`PW-${elem}`}>{elem}</li>
+          ))}
         </ul>
       </div>
     );
   };
 
   const renderEmptyButton = () => {
+    if (backgroundImg) {
+      return null;
+    }
     return (
       <div className="card__button">
         <span>Empty</span>
@@ -47,7 +63,12 @@ const Tile = (props) => {
   };
 
   return (
-    <div key={data.no} id={tileNo} className="card">
+    <div
+      className="card"
+      style={{ backgroundImage: `url(${backgroundImg})` }}
+      key={data.no}
+      id={tileNo}
+    >
       {renderEmptyButton()}
       {renderCardFrontTop()}
       {renderCardFrontBottom()}
