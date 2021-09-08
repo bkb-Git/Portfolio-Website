@@ -5,16 +5,21 @@
   min-width: 30rem;
   height: 80%;
   border-radius: 1.5rem;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: $secondary-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-right: 2rem;
-  background-position: 100%;
   overflow: hidden;
   box-shadow: 0 6px 10px rgba(136, 123, 123, 0.16), 0 0 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-out;
+
+  // &[id='0'] {
+  //   background-image: url('../../assets/PortfolioWebsiteImg-min.png');
+  // }
 
   &__button {
     flex-basis: 8rem;
