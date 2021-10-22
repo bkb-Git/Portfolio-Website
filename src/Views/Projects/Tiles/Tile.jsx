@@ -9,25 +9,48 @@ const Tile = (props) => {
     name = 'TITLE',
     description = 'This is an example for where a description will be placed',
     languages = ['Item One', 'Item Two', 'Item Three', 'Item Four'],
-    link: WebsiteLink = '',
+    gitLink,
+    liveLink,
     backgroundImg,
+    id,
   } = data;
+
+  const live = 'live';
+  const code = 'code';
 
   const handleRoute = (e) => {
     e.preventDefault();
-    window.open(WebsiteLink, '_blank');
+    const liveId = `${id}-${live}`;
+
+    if (e.currentTarget.id === liveId) {
+      if (liveLink) {
+        return window.open(liveLink, '_blank');
+      }
+      return null;
+    }
+
+    if (gitLink) {
+      return window.open(gitLink, '_blank');
+    }
+    return null;
   };
 
   const renderCardFrontTop = () => {
     return (
       <div className="card__top_front">
-        <button type="button" className="card-button seeLive">
+        <button
+          onClick={(e) => handleRoute(e)}
+          type="button"
+          id={`${id}-${live}`}
+          className="card-button seeLive"
+        >
           <FontAwesomeIcon icon={faDesktop} />
           <span id="card-bt-text">Live</span>
         </button>
         <button
           onClick={(e) => handleRoute(e)}
           type="button"
+          id={`${id}-${code}`}
           className="card-button viewCode"
         >
           <FontAwesomeIcon icon={faCode} />
@@ -65,7 +88,10 @@ const Tile = (props) => {
   return (
     <div
       className="card"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: 'contain',
+      }}
       key={data.no}
       id={tileNo}
     >
