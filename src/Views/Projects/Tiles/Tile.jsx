@@ -9,25 +9,44 @@ const Tile = (props) => {
     name = 'TITLE',
     description = 'This is an example for where a description will be placed',
     languages = ['Item One', 'Item Two', 'Item Three', 'Item Four'],
-    link: WebsiteLink = '',
+    gitLink = '',
+    liveLink = '',
     backgroundImg,
+    id,
   } = data;
+
+  const live = 'live';
+  const code = 'code';
 
   const handleRoute = (e) => {
     e.preventDefault();
-    window.open(WebsiteLink, '_blank');
+    const liveId = `${id}-${live}`;
+    let link;
+
+    if (e.target.id === liveId) {
+      link = liveLink;
+    }
+    link = gitLink;
+
+    window.open(link, '_blank');
   };
 
   const renderCardFrontTop = () => {
     return (
       <div className="card__top_front">
-        <button type="button" className="card-button seeLive">
+        <button
+          onClick={(e) => handleRoute(e)}
+          type="button"
+          id={`${id}-${live}`}
+          className="card-button seeLive"
+        >
           <FontAwesomeIcon icon={faDesktop} />
           <span id="card-bt-text">Live</span>
         </button>
         <button
           onClick={(e) => handleRoute(e)}
           type="button"
+          id={`${id}-${code}`}
           className="card-button viewCode"
         >
           <FontAwesomeIcon icon={faCode} />
