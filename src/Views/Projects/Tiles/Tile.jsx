@@ -9,8 +9,8 @@ const Tile = (props) => {
     name = 'TITLE',
     description = 'This is an example for where a description will be placed',
     languages = ['Item One', 'Item Two', 'Item Three', 'Item Four'],
-    gitLink = '',
-    liveLink = '',
+    gitLink,
+    liveLink,
     backgroundImg,
     id,
   } = data;
@@ -21,14 +21,18 @@ const Tile = (props) => {
   const handleRoute = (e) => {
     e.preventDefault();
     const liveId = `${id}-${live}`;
-    let link;
 
-    if (e.target.id === liveId) {
-      link = liveLink;
+    if (e.currentTarget.id === liveId) {
+      if (liveLink) {
+        return window.open(liveLink, '_blank');
+      }
+      return null;
     }
-    link = gitLink;
 
-    window.open(link, '_blank');
+    if (gitLink) {
+      return window.open(gitLink, '_blank');
+    }
+    return null;
   };
 
   const renderCardFrontTop = () => {
@@ -84,7 +88,10 @@ const Tile = (props) => {
   return (
     <div
       className="card"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: 'contain',
+      }}
       key={data.no}
       id={tileNo}
     >

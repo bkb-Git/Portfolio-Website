@@ -11,7 +11,7 @@ function ProjectTiles() {
         'Graphical representation of economic data using World Bank APIs',
       backgroundImg: GraphAppImg,
       gitLink: 'https://github.com/bkb-Git/Graph-Application',
-      liveLink: '',
+      liveLink: 'https://wb-graph-app.netlify.app/',
       no: 1,
     },
     {
@@ -20,7 +20,7 @@ function ProjectTiles() {
       description: 'This is my portfolio website',
       backgroundImg: PortfolioWebsiteImg,
       gitLink: 'https://github.com/bkb-Git/Portfolio-Website',
-      liveLink: 'https://wb-graph-app.netlify.app/',
+      liveLink: null,
       no: 2,
     },
     { no: 3 },
