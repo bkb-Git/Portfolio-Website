@@ -85,12 +85,20 @@ const Tile = (props) => {
     );
   };
 
+  const renderBgColor = () => {
+    if (name === 'TITLE') {
+      return '#413b3b';
+    }
+    return '#413b3ba9';
+  };
+
   return (
     <div
       className="card"
       style={{
         backgroundImage: `url(${backgroundImg})`,
         backgroundSize: 'contain',
+        backgroundColor: renderBgColor(),
       }}
       key={data.no}
       id={tileNo}

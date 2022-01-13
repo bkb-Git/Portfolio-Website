@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Route, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
 import { AppContext } from './context/AppContext';
@@ -30,7 +31,7 @@ export default function App() {
     >
       <div className="loading-screen" />
       <TransitionGroup>
-        {routes.map(({ name, path, onEnter, onExit, Component }) => (
+        {routes.map(({ name, path, pageName, onEnter, onExit, Component }) => (
           <Route key={name} exact path={path}>
             {({ match }) => (
               <Transition
@@ -41,7 +42,12 @@ export default function App() {
                 onEntering={(Node) => onEnter(appState, Node)}
                 onExiting={() => onExit(appState)}
               >
-                <Component />
+                <>
+                  <Helmet>
+                    <title>{`${pageName} | Portfolio`}</title>
+                  </Helmet>
+                  <Component />
+                </>
               </Transition>
             )}
           </Route>
