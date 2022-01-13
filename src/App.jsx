@@ -44,7 +44,7 @@ export default function App() {
               >
                 <>
                   <Helmet>
-                    <title>{pageName}</title>
+                    <title>{`${pageName} | Portfolio`}</title>
                   </Helmet>
                   <Component />
                 </>
