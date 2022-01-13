@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Web Portfolio</title>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicons/favicon.ico" sizes="64x64" />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="%PUBLIC_URL%/favicons/android-icon-192x192.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
@@ -15,18 +14,9 @@
       sizes="32x32"
       href="%PUBLIC_URL%/favicons/favicon-32x32.png"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="%PUBLIC_URL%/favicons/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="%PUBLIC_URL%/favicons/favicon-16x16.png"
-    />
+
+    <link rel="manifest" href="%PUBLIC_URL%/favicons/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css?family=Luckiest+Guy:regular"
@@ -47,27 +37,26 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-
-    <script
-      src="https://kit.fontawesome.com/01671628e1.js"
-      crossorigin="anonymous"
-    ></script>
-    <html>
-      <body>
-        <form
-          name="contact"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          hidden
-        >
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <input type="text" name="subject" />
-          <textarea name="comment"></textarea>
-        </form>
-
-        <div id="root"></div>
-      </body>
-    </html>
   </head>
+  <script
+    src="https://kit.fontawesome.com/01671628e1.js"
+    crossorigin="anonymous"
+  ></script>
+  <html>
+    <body>
+      <form
+        name="contact"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="subject" />
+        <textarea name="comment"></textarea>
+      </form>
+
+      <div id="root"></div>
+    </body>
+  </html>
 </html>
