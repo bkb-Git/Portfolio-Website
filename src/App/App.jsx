@@ -2,12 +2,15 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, useLocation } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
-import { AppContext } from './context/AppContext';
-import { routes } from './lib/constants/routes';
+
+import { AppContext } from '../context/AppContext';
+import { routes } from '../lib/constants/routes';
+
+import MainLayout from '../Views/Layout/MainLayout';
 
 import './app.scss';
 
-export default function App() {
+const App = () => {
   const [appState, setAppState] = useState({ router: {} });
   const location = useLocation();
 
@@ -22,14 +25,8 @@ export default function App() {
     });
   };
 
-  return (
-    <AppContext.Provider
-      value={{
-        ...appState,
-        updateNextRoute,
-      }}
-    >
-      <div className="loading-screen" />
+  const renderTransitionGroup = () => {
+    return (
       <TransitionGroup>
         {routes.map(({ name, path, pageName, onEnter, onExit, Component }) => (
           <Route key={name} exact path={path}>
@@ -53,6 +50,22 @@ export default function App() {
           </Route>
         ))}
       </TransitionGroup>
+    );
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        ...appState,
+        updateNextRoute,
+      }}
+    >
+      <MainLayout>
+        <div className="loading-screen" />
+        {renderTransitionGroup()}
+      </MainLayout>
     </AppContext.Provider>
   );
-}
+};
+
+export default App;

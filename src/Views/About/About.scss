@@ -1,417 +1,71 @@
 @import '../../styles/globalStyles.scss';
 
 .about-page {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
   background: $secondary-color;
+  height: 100vh;
+  border-left: 2px solid $tertiary-color;
 
-  &__content {
-    position: absolute;
-    display: flex;
-    background: $primary-bg-color;
-    bottom: 12vh;
-    left: 10vw;
-    width: 88vw;
-    height: 75vh;
-    border-radius: 50px;
-    z-index: 2;
-
-    &::-webkit-scrollbar {
-      height: 5px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $secondary-color;
-      border-radius: 10px;
-    }
-  }
-
-  &__page-nav-to-home {
-    position: absolute;
-    left: 0;
-    height: 100vh;
-    width: 8vw;
-    z-index: 1;
-
-    .arrowButton-2-Home {
-      position: fixed;
-      left: 3%;
-      top: 50vh;
-      opacity: 0.3;
-
-      .fa-4x {
-        font-size: 4vw;
-      }
-
-      i::after {
-        position: absolute;
-        top: 10%;
-        margin-left: 0.625rem;
-        content: attr(data);
-        color: white;
-        font-weight: bolder;
-        display: inline-block;
-        font-size: 1.3rem;
-        font-style: normal;
-        opacity: 0;
-      }
-    }
-
-    &__icon {
-      position: fixed;
-      height: 100vh;
-      left: 0;
-      width: 0.01vh;
-      background-color: transparent;
-      opacity: 0.3;
-      border-top-right-radius: 99%;
-      border-bottom-right-radius: 99%;
-      box-shadow: 10px 0px 50px 10px #ffffff;
-      display: none;
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      .arrowButton-2-Home {
-        color: rgba(255, 255, 255, 0.8);
-        animation-name: arrow-2-Home;
-        animation-duration: 0.7s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-out;
-
-        i::after {
-          opacity: 1;
-        }
-      }
-
-      .about-page__page-nav-to-home__icon {
-        animation-name: blinker-2;
-        animation-duration: 0.7s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-out;
-        display: block;
-      }
-    }
-  }
-
-  &__page-nav-back-to-projects {
-    position: absolute;
-    top: 0;
+  &__container {
     width: 100%;
-    height: 8vh;
-    z-index: 1;
+    height: calc(100% - 3.5rem);
+    margin: 7rem 1rem 1rem 7rem;
 
-    .arrowButton-3 {
-      position: fixed;
-      top: 2%;
-      left: 50vw;
-      opacity: 0.3;
-
-      .fa-4x {
-        font-size: 4vw;
-      }
-
-      i::after {
-        position: absolute;
-        top: 75%;
-        right: -35%;
-        display: block;
-        margin-top: 0.625rem;
-        content: attr(data);
-        color: white;
-        font-weight: bolder;
-        font-size: 1.3rem;
-        font-style: normal;
-        opacity: 0;
-      }
-    }
-
-    &__icon {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      height: 0.01vh;
-      background-color: transparent;
-      opacity: 0.3;
-      border-bottom-left-radius: 99%;
-      border-bottom-right-radius: 99%;
-      box-shadow: 0px 15px 50px 10px #ffffff;
-      display: none;
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      .arrowButton-3 {
-        color: rgba(255, 255, 255, 0.8);
-        animation-name: arrow-3;
-        animation-duration: 0.7s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-out;
-
-        i::after {
-          opacity: 1;
-        }
-      }
-
-      .about-page__page-nav-back-to-projects__icon {
-        animation-name: blinker-2;
-        animation-duration: 0.7s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-out;
-        display: block;
-      }
-    }
-  }
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  height: 8vh;
-  background: $primary-bg-color;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  z-index: 2;
-
-  .navbar-About {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    bottom: 1vh;
-    height: 6vh;
-    width: 15vw;
-    left: 42.5vw;
-    background-color: transparent;
-    z-index: 2;
-
-    a {
-      text-decoration: none;
-      margin-right: 30px;
-
-      .fa-4x {
-        font-size: 3vw;
-      }
-    }
-
-    .button-icons {
-      flex: 1;
-      position: relative;
-      font-size: 50px;
-      display: inline;
-      padding-bottom: 5px;
-
-      svg {
-        display: inline;
-        position: relative;
-        opacity: 0.7;
-        transition: all 0.2s;
-      }
-
-      &:hover {
-        border-bottom: 2px solid;
-
-        svg {
-          bottom: 0.5vh;
-          opacity: 1;
-          filter: brightness(1.2);
-          transform: scale(1.1);
-        }
-      }
-    }
-
-    .icon-Facebook {
-      color: #886c57;
-      transition: color 0.3s ease-in;
-
-      &:hover {
-        color: #4267b2;
-      }
-    }
-
-    .icon-Github {
-      color: #413b3b;
-      transition: color 0.3s ease-in;
-
-      &:hover {
-        color: #bd2c00;
-      }
-    }
-
-    .icon-LinkedIn {
-      color: #886c57;
-      transition: color 0.3s ease-in;
-
-      &:hover {
-        color: #0077b5;
-      }
-    }
-  }
-
-  .copyright {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    font-family: $primary-font-family;
-    font-weight: bolder;
-    color: $secondary-color;
-  }
-}
-
-@keyframes arrow-2-Home {
-  to {
-    left: 1%;
-    opacity: 0.8;
-  }
-}
-
-@keyframes blinker-2 {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes arrow-3 {
-  from {
-    top: 2%;
-    opacity: 0.3;
-  }
-  to {
-    top: 0.8%;
-    opacity: 0.8;
-  }
-}
-
-@keyframes blinker-3 {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .about-page {
     &__content {
-      flex-direction: row;
-      display: inline-flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-    }
+      border-radius: 50px;
+      height: 85%;
+      padding: 1rem 0 1rem 0rem;
+      z-index: 2;
 
-    &__page-nav-to-home {
-      width: 40px;
-      height: 60px;
-      left: 0;
-      top: 50vh;
-
-      .arrowButton-2-Home {
-        width: 40px;
-        height: 60px;
-        left: 0;
-
-        .fa-4x {
-          font-size: 3em;
-        }
-
-        i::after {
-          display: none;
-        }
+      &::-webkit-scrollbar {
+        height: 5px;
       }
 
-      &__icon {
-        display: none;
-      }
-
-      &:hover {
-        cursor: pointer;
-        .arrowButton-2-Home {
-          color: rgba(255, 255, 255, 0.8);
-        }
-
-        .about-page__page-nav-to-home__icon {
-          display: none;
-        }
-      }
-    }
-
-    &__page-nav-back-to-projects {
-      top: 3%;
-      left: 50vw;
-      width: 40px;
-      height: 60px;
-
-      .arrowButton-3 {
-        top: 3%;
-        width: 40px;
-        height: 60px;
-
-        .fa-4x {
-          font-size: 3em;
-        }
-
-        i::after {
-          display: none;
-        }
-      }
-
-      &__icon {
-        display: none;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        .arrowButton-3 {
-          color: rgba(255, 255, 255, 0.8);
-        }
-
-        .about-page__page-nav-back-to-projects__icon {
-          display: none;
-        }
+      &::-webkit-scrollbar-thumb {
+        background: $secondary-color;
+        border-radius: 10px;
       }
     }
   }
 
-  .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .navbar-About {
-      flex: 1;
-      bottom: 25%;
-      left: 4%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .button-icons {
-        font-size: 8vw !important;
-
-        &:hover {
-          svg {
-            bottom: 0.2vh;
-          }
-        }
-      }
+  @keyframes arrow-2-Home {
+    to {
+      left: 1%;
+      opacity: 0.8;
     }
+  }
 
-    .copyright {
-      left: 0;
-      top: 70%;
-      flex: 1;
-      font-size: 3vw;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  @keyframes arrow-3 {
+    from {
+      top: 2%;
+      opacity: 0.3;
+    }
+    to {
+      top: 0.8%;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes blinker-3 {
+    from {
+      opacity: 0.3;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    border-left: none;
+    border-top: 2px solid $tertiary-color;
+    height: calc(100vh - 64px);
+
+    &__container {
+      margin: 3rem 0.5rem 0.5rem 3rem;
+      &__content {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+      }
     }
   }
 }

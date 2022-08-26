@@ -1,0 +1,19 @@
+.menu {
+  z-index: 50;
+
+  div[class='ant-layout-sider-children'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__avatar {
+    margin: 2rem 0.5rem;
+  }
+
+  &__container {
+    height: 80%;
+
+    align-items: flex-start;
+  }
+}

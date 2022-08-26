@@ -1,8 +1,8 @@
-@import './styles/globalStyles.scss';
+@import '/src/styles/globalStyles.scss';
 
 .loading-screen {
   position: absolute;
   background: $secondary-color;
-  z-index: 999;
+  z-index: 49;
   pointer-events: none;
 }

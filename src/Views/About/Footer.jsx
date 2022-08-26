@@ -1,8 +1,8 @@
-import Navbar from '../../components/Navbar';
-import sns from '../../sns';
+// import Navbar from '../../components/Navbar';
+// import sns from '../../sns';
 
 export default function Footer() {
-  const snsNav = sns.slice(2);
+  // const snsNav = sns.slice(2);
   const date = new Date();
   const year = date.getFullYear();
 
@@ -11,7 +11,7 @@ export default function Footer() {
       <small className="copyright">
         Copyright &copy; {year}, Billy Kipkorir Bett
       </small>
-      <Navbar buttons={snsNav} page={3} />
+      {/* <Navbar buttons={snsNav} page={3} /> */}
     </div>
   );
 }

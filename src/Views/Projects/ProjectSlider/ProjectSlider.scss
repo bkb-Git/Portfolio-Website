@@ -1,0 +1,19 @@
+.projectSlider {
+  height: 100%;
+  width: 100%;
+
+  div[class='ant-carousel'] {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__sliderArrow {
+    &[id='prevArrow'] {
+      left: -3% !important;
+    }
+
+    &[id='nextArrow'] {
+      right: -3% !important;
+    }
+  }
+}
