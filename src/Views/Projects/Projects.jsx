@@ -2,9 +2,10 @@ import { Col, Row, Grid } from 'antd';
 
 import ProjectSlider from './ProjectSlider';
 
-import PortfolioWebsiteImg from '../../assets/PortfolioWebsiteImg-min.png';
+import PortfolioWebsiteImg from '../../assets/portfolio-cover.jpg';
 import GraphAppImg from '../../assets/WB-graph-app-cover.png';
 import TravelLamuCover from '../../assets/Travel-Lamu-Cover.jpg';
+import LLLCover from '../../assets/LLL Section 2.png';
 
 import PageNavigator from '../../components/PageNavigator/PageNavigator';
 import { APP_ROUTES } from '../../lib/constants/global-vars';
@@ -14,6 +15,22 @@ import './Projects.scss';
 const { useBreakpoint } = Grid;
 
 const TILES__PROJECTS = {
+  loglinkLogs: {
+    name: 'Loglink Logistics Limited',
+    languages: [
+      'NextJS',
+      'Javascript',
+      'AntDesign',
+      'HTML5',
+      'SCSS',
+      'Mailgun API',
+    ],
+    description: 'Main company website to attract new customers.',
+    backgroundImg: LLLCover,
+    gitLink: 'https://github.com/bkb-Git/Brasi-Web',
+    liveLink: 'https://loglinklogistics.com',
+    no: 1,
+  },
   travelLamu: {
     name: 'Travel Lamu',
     languages: [
@@ -29,7 +46,7 @@ const TILES__PROJECTS = {
     backgroundImg: TravelLamuCover,
     gitLink: 'https://github.com/bkb-Git/travel-lamu',
     liveLink: 'https://travel-lamu.vercel.app/',
-    no: 1,
+    no: 2,
   },
   WBGraphApp: {
     name: 'World Bank Graph App',
@@ -39,7 +56,7 @@ const TILES__PROJECTS = {
     backgroundImg: GraphAppImg,
     gitLink: 'https://github.com/bkb-Git/Graph-Application',
     liveLink: 'https://wb-graph-app.netlify.app/',
-    no: 2,
+    no: 3,
   },
   PortfolioWeb: {
     name: 'Portfolio Website',
@@ -48,10 +65,9 @@ const TILES__PROJECTS = {
     backgroundImg: PortfolioWebsiteImg,
     gitLink: 'https://github.com/bkb-Git/Portfolio-Website',
     liveLink: null,
-    no: 3,
+    no: 4,
   },
   empty1: {},
-  empty2: {},
 };
 
 const Projects = () => {

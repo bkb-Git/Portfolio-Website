@@ -39,7 +39,14 @@ const Intro = (props) => {
     return (
       <>
         <Text id="sub-text1">Check out my</Text>
-        <Text id="sub-text2">Projects</Text>
+        <Text
+          id="sub-text2"
+          className="link"
+          route="/projects"
+          onClick={clickHandler}
+        >
+          Projects
+        </Text>
       </>
     );
   };

@@ -1,3 +1,5 @@
+@import '/src/styles/globalStyles.scss';
+
 .projectSlider {
   height: 100%;
   width: 100%;
@@ -15,5 +17,19 @@
     &[id='nextArrow'] {
       right: -3% !important;
     }
+  }
+}
+
+.customDots {
+  top: -8% !important;
+  height: 5px;
+
+  li {
+    height: 100% !important;
+  }
+
+  button {
+    background-color: $secondary-color !important;
+    height: 100% !important;
   }
 }

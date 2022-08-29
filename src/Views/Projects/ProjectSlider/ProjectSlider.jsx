@@ -17,15 +17,14 @@ const ProjectSlider = (props) => {
         <Carousel
           slidesToShow={isMobileOrTablet ? 1 : 3}
           slidesToScroll={1}
-          dots={false}
-          autoplay
+          dots={{ className: 'customDots' }}
+          dotPosition="top"
           draggable
         >
+          <ProjectCard data={projects.loglinkLogs} />
           <ProjectCard data={projects.travelLamu} />
           <ProjectCard data={projects.WBGraphApp} />
           <ProjectCard data={projects.PortfolioWeb} />
-          <ProjectCard data={projects.empty1} />
-          <ProjectCard data={projects.empty2} />
         </Carousel>
       </Col>
     </Row>

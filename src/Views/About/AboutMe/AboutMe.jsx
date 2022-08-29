@@ -157,7 +157,7 @@ const AboutMe = (props) => {
   const myTechStack = () => {
     return (
       <Row justify="center" align="middle">
-        <Col lg={18}>
+        <Col span={24}>
           <List
             grid={{
               gutter: 16,
@@ -181,14 +181,12 @@ const AboutMe = (props) => {
 
   const renderAvatarAndBio = () => {
     return (
-      <Col lg={24} xs={22} sm={22}>
+      <Col xl={20} lg={22} xs={22} sm={22}>
         <Row gutter={[0, 32]} justify="center" align="middle">
-          <Col lg={20} style={{ marginTop: isMobileOrTablet && '1rem' }}>
+          <Col span={24} style={{ marginTop: isMobileOrTablet && '1rem' }}>
             {myAvatar()}
           </Col>
-          <Col lg={20} sm={23} xs={23}>
-            {myBio()}
-          </Col>
+          <Col span={24}>{myBio()}</Col>
         </Row>
       </Col>
     );
@@ -197,7 +195,7 @@ const AboutMe = (props) => {
   const renderTechStack = () => {
     // if (isMobileOrTablet) return null;
     return (
-      <Col lg={24} xs={23} sm={23}>
+      <Col xl={20} lg={18} xs={20} sm={20}>
         {myTechStack()}
       </Col>
     );
@@ -205,7 +203,7 @@ const AboutMe = (props) => {
 
   const renderPersonalDetails = () => {
     return (
-      <Col lg={18} xs={23} sm={23}>
+      <Col lg={18} xs={20} sm={20}>
         {personalDets()}
       </Col>
     );

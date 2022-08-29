@@ -11,7 +11,7 @@ const { Sider } = Layout;
 const { Title, Text } = Typography;
 
 const SideMenu = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   const AvatarProfile = () => {
     return (
