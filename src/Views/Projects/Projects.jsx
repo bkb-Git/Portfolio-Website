@@ -67,7 +67,6 @@ const TILES__PROJECTS = {
     liveLink: null,
     no: 4,
   },
-  empty1: {},
 };
 
 const Projects = () => {

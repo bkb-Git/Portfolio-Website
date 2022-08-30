@@ -14,6 +14,7 @@ import NextJSSvg from '../../assets/NextJSSvg';
 import RestApiSvg from '../../assets/RestApisSvg';
 import ReduxSvg from '../../assets/ReduxSvg';
 import GitSvg from '../../assets/GitSvg';
+import MailgunSVG from '../../assets/MailgunSvg';
 
 const LanguageIcons = {
   NextJS: <NextJSSvg width="1.5em" height="1em" color="#3d3d3d" />,
@@ -28,6 +29,7 @@ const LanguageIcons = {
   RestAPIs: <RestApiSvg width="1em" height="1em" />,
   Redux: <ReduxSvg width="0.875em" height="1em" />,
   Git: <GitSvg width="0.875em" height="1em" />,
+  'Mailgun API': <MailgunSVG width="0.875em" height="1em" />,
 };
 
 export default LanguageIcons;

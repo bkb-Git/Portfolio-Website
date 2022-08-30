@@ -177,8 +177,10 @@ const AboutMe = (props) => {
         <List
           grid={{
             gutter: 16,
+            xxl: 5,
             xl: 4,
             lg: 4,
+            md: 4,
             xs: 2,
             sm: 2,
           }}
