@@ -66,6 +66,7 @@ const Navbar = () => {
       selectedKeys={[history.location.pathname]}
       mode={isMobileOrTablet ? 'horizontal' : 'inline'}
       items={items}
+      style={{ justifyContent: isMobileOrTablet && 'space-around' }}
     />
   );
 };
