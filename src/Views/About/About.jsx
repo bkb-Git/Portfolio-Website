@@ -1,13 +1,16 @@
 /* eslint-disable no-alert */
-import { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Col, Row } from 'antd';
+import { useEffect, useState } from 'react';
+
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
-import Footer from './Footer';
-import ArrowIcon from '../../components/ArrowIcon';
-import { AppContext } from '../../context/AppContext';
+
+import PageNavigator from '../../components/PageNavigator/PageNavigator';
+import { APP_ROUTES } from '../../lib/constants/global-vars';
 
 import './About.scss';
+
+// const { useBreakpoint } = Grid;
 
 const DISPLAY_STATE = {
   ABOUT: 'about',
@@ -16,20 +19,15 @@ const DISPLAY_STATE = {
 
 const About = () => {
   const [displayState, setDisplayState] = useState('');
-  const history = useHistory();
-  const appContext = useContext(AppContext);
 
-  const handleLeave = () => {
-    setDisplayState('');
-  };
+  // const { xs, sm, lg } = useBreakpoint();
+  // const isMobileOrTablet = (xs || sm) && !lg;
 
-  const handleRoute = (e) => {
-    const link = e.currentTarget.attributes.route.value;
-    appContext.updateNextRoute(link);
-    history.push(link);
-  };
+  useEffect(() => {}, [displayState]);
 
-  const handleClick = (e) => {
+  const handleLeave = () => setDisplayState('');
+
+  const handleCopyToClipboard = (e) => {
     const cb = navigator.clipboard;
     const text = e.currentTarget;
     cb.writeText(text.innerText).then(() =>
@@ -39,67 +37,38 @@ const About = () => {
 
   const renderAboutPageContent = () => {
     return (
-      <div className="about-page__content">
+      <Row
+        justify="center"
+        align="middle"
+        className="about-page__container__content"
+      >
         <AboutMe
-          displaystate={displayState}
-          handler={handleClick}
+          handler={handleCopyToClipboard}
           display={{
+            displayState,
             setDisplayState,
             about: DISPLAY_STATE.ABOUT,
             leave: handleLeave,
           }}
         />
         <ContactMe
-          displaystate={displayState}
           display={{
+            displayState,
             setDisplayState,
             contact: DISPLAY_STATE.CONTACT,
             leave: handleLeave,
           }}
         />
-      </div>
-    );
-  };
-
-  const renderPageNavToHome = () => {
-    return (
-      <div
-        className="about-page__page-nav-to-home"
-        route="/"
-        onClick={handleRoute}
-        onKeyUp={handleRoute}
-        role="link"
-        tabIndex={0}
-      >
-        <ArrowIcon backToHome />
-        <div className="about-page__page-nav-to-home__icon" />
-      </div>
-    );
-  };
-
-  const renderPageNavBackToProjects = () => {
-    return (
-      <div
-        className="about-page__page-nav-back-to-projects"
-        route="/projects"
-        onClick={handleRoute}
-        onKeyUp={handleRoute}
-        role="link"
-        tabIndex={0}
-      >
-        <ArrowIcon backToHome={false} />
-        <div className="about-page__page-nav-back-to-projects__icon" />
-      </div>
+      </Row>
     );
   };
 
   return (
-    <div className="about-page">
-      {renderAboutPageContent()}
-      <Footer />
-      {renderPageNavToHome()}
-      {renderPageNavBackToProjects()}
-    </div>
+    <Row justify="center" align="middle" className="about-page">
+      <PageNavigator navTo={APP_ROUTES.HOME} backHome />
+      <PageNavigator navTo={APP_ROUTES.PROJECTS} />
+      <Col className="about-page__container">{renderAboutPageContent()}</Col>
+    </Row>
   );
 };
 

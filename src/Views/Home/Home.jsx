@@ -1,71 +1,70 @@
+import { Col, Row, Grid } from 'antd';
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useMediaPredicate } from 'react-media-hook';
-import sns from '../../sns';
-import Navbar from '../../components/Navbar';
-import ArrowIcon from '../../components/ArrowIcon';
-import Intro from './Intro';
+
 import { AppContext } from '../../context/AppContext';
+import { APP_ROUTES } from '../../lib/constants/global-vars';
+
+import Intro from './Intro';
+import PageNavigator from '../../components/PageNavigator/PageNavigator';
 
 import './Home.scss';
 
-function Home() {
+const { useBreakpoint } = Grid;
+
+const Home = () => {
   const history = useHistory();
   const appContext = useContext(AppContext);
 
-  function handleClick(e) {
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
+
+  const handleClick = (e) => {
     const link = e.currentTarget.attributes.route.value;
     appContext.updateNextRoute(link);
     history.push(link);
-  }
+  };
 
-  const mobileOrDesktop = useMediaPredicate('(min-width: 700px)');
-
-  const renderPageNavToProjects = () => {
+  const renderIntroductionSection = () => {
     return (
-      <div
-        className="page-nav-to-projects"
-        route="/projects"
-        onClick={handleClick}
-        onKeyUp={handleClick}
-        role="link"
-        tabIndex={0}
+      <Row
+        justify="start"
+        align="center"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '60%',
+          top: '20%',
+        }}
       >
-        <ArrowIcon page={1} />
-        <div className="page-nav-to-projects__icon" />
-      </div>
+        {!isMobileOrTablet && (
+          <Col span={23}>
+            <Intro clickHandler={handleClick} />
+          </Col>
+        )}
+      </Row>
     );
   };
 
-  const renderLeftSideView = () => {
+  const renderImageSection = () => {
     return (
       <>
-        <div className="left-side-background" />
-        <Intro clickHandler={handleClick} />
+        {isMobileOrTablet && <Intro clickHandler={handleClick} />}
+        <PageNavigator navTo={APP_ROUTES.PROJECTS} />
       </>
     );
   };
 
-  const renderRightSideView = () => {
-    return (
-      <div className="right-side-background">
-        {!mobileOrDesktop && (
-          <div className="bar-menu">
-            <Navbar buttons={sns} page={1} />
-          </div>
-        )}
-        {renderPageNavToProjects()}
-      </div>
-    );
-  };
-
   return (
-    <div className="home-container">
-      {mobileOrDesktop && <Navbar buttons={sns} page={1} />}
-      {renderRightSideView()}
-      {renderLeftSideView()}
-    </div>
+    <Row className="Home">
+      <Col lg={12} xs={0} sm={0} className="Home__intro">
+        {renderIntroductionSection()}
+      </Col>
+      <Col lg={12} xs={24} sm={24} className="Home__image">
+        {renderImageSection()}
+      </Col>
+    </Row>
   );
-}
+};
 
 export default Home;

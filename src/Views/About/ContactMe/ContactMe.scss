@@ -1,167 +1,64 @@
 @import '../../../styles/globalStyles.scss';
 
-.about-page__content__contactMe {
-  flex: 1;
+.about-page__container__content__contactMe {
+  position: relative;
   background: $primary-bg-color;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  transition: all 0.5s ease-in;
-  position: relative;
-  width: 100%;
-  height: 100%;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
+  transition: all 0.5s ease-in;
+  height: 100%;
 
-  .header {
-    flex: 1;
-    font-size: 3vw;
-    font-weight: 900;
-    font-family: $secondary-font-family;
-    letter-spacing: 5px;
-    color: $secondary-color;
+  &__header {
+    height: 100%;
+    &__title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      font-family: $secondary-font-family;
+      letter-spacing: 5px;
+      color: $secondary-color;
 
-    span {
-      display: block;
+      span {
+        display: block;
+      }
     }
   }
 
-  .contact_me_header {
-    position: absolute;
+  &__thankYou {
     font-family: 'Dancing Script', sans-serif;
-    top: 0;
     word-spacing: 1rem;
-    left: 10vw;
     font-size: 4vw;
     color: #413b3b;
     opacity: 0;
+    visibility: hidden;
+  }
+
+  &__form {
+    opacity: 0;
+    width: 60%;
+    transform: translateX(15%);
+    pointer-events: visible;
+    visibility: hidden;
+
+    &__title {
+      font-family: 'Dancing Script', sans-serif;
+      word-spacing: 1rem;
+      font-size: 4vw;
+      color: #413b3b;
+    }
   }
 
   svg {
     position: absolute;
     display: block;
-    transform: translateX(15%);
     opacity: 0;
-    left: 10vw;
     bottom: 15vh;
-    font-size: 18vw;
+    font-size: 18rem;
     color: $secondary-color;
-    pointer-events: visible;
-    visibility: hidden;
-  }
-
-  form {
-    display: grid;
-    position: absolute;
-    height: 75%;
-    right: 2vw;
-    width: 40%;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(4, 1fr);
-    row-gap: 10px;
-    align-items: center;
-    align-content: center;
     transform: translateX(15%);
-    opacity: 0;
     pointer-events: visible;
     visibility: hidden;
-
-    section {
-      grid-row: 1;
-      grid-column: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      input[type='text'],
-      input[type='email'] {
-        flex: 1;
-        width: 80%;
-        font-family: $primary-font-family;
-        font-size: 15px;
-        height: 4vh;
-        padding: 12px 20px;
-        margin: 8px 0;
-        border: 1px solid #413b3bc7;
-        border-radius: 10px;
-        box-sizing: border-box;
-
-        &::placeholder {
-          font-family: $primary-font-family;
-          font-weight: bolder;
-          font-size: 15px;
-          color: $secondary-color;
-        }
-
-        &:focus {
-          background-color: #413b3bbb;
-          border: 2px solid $primary-color;
-          color: white;
-          outline: none;
-
-          &::placeholder {
-            color: white;
-          }
-        }
-      }
-    }
-
-    textarea {
-      resize: none;
-      height: 85%;
-      font-family: $primary-font-family;
-      font-size: 15px;
-      width: 76%;
-      border-radius: 10px;
-      padding: 0.5rem 0.5rem;
-      border: 1px solid #413b3bc7;
-      grid-row-start: 2;
-      grid-row-end: 4;
-      grid-column: 1;
-
-      &::placeholder {
-        font-family: $primary-font-family;
-        font-weight: bolder;
-        font-size: 15px;
-        color: $secondary-color;
-      }
-
-      &:focus {
-        background-color: #413b3bbb;
-        border: 2px solid $primary-color;
-        color: white;
-        outline: none;
-
-        &::placeholder {
-          color: white;
-        }
-      }
-    }
-
-    button {
-      position: relative;
-      width: 80%;
-      height: 5vh;
-      grid-row: 4;
-      grid-column: 1;
-      font-weight: bolder;
-      font-family: $primary-font-family;
-      font-weight: bolder;
-      font-size: 15px;
-      color: white;
-      text-align: center;
-      border-radius: 5px;
-      background-color: #413b3bc7;
-      transition: all 0.2s;
-
-      &:hover {
-        top: 1%;
-        background-color: $secondary-color;
-        border: none;
-        box-shadow: 5px 5px 15px 0px $secondary-color;
-      }
-    }
   }
 
   &:hover {
@@ -170,19 +67,41 @@
     box-shadow: 4px 4px 40px 2px rgba(0, 0, 0, 0.6),
       -10px -8px 40px 2px rgba(0, 0, 0, 0.4);
 
-    form {
-      animation: contact-me 0.25s ease-in 0.4s 1 forwards;
-      visibility: visible;
-    }
-
     svg {
       animation: contact-me-svg 0.25s ease-in 0.4s 1 forwards;
       visibility: visible;
     }
+  }
 
-    .contact_me_header {
-      animation: contact-me 0.25s ease-in 0.4s 1 forwards;
-      visibility: visible;
+  &:hover &__thankYou {
+    animation: contact-me 0.25s ease-in 0.4s 1 forwards;
+    visibility: visible;
+  }
+
+  &:hover &__form {
+    animation: contact-me 0.25s ease-in 0.4s 1 forwards;
+    visibility: visible;
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 0;
+    width: 100%;
+    height: 100%;
+
+    &__header {
+      &__title {
+        font-size: 1.5rem;
+      }
+    }
+
+    svg {
+      display: none;
+    }
+
+    &:hover {
+      flex: 5;
     }
   }
 }
@@ -198,42 +117,5 @@
   to {
     transform: translateX(0) skewX(-5deg) rotate(-10deg);
     opacity: 0.4;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .about-page__content__contactMe {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    width: 100%;
-    height: 100%;
-    flex: none;
-    scroll-snap-align: center;
-
-    .header {
-      font-size: 8vw;
-    }
-
-    .contact_me_header {
-      display: none;
-    }
-
-    svg {
-      display: none;
-    }
-
-    form {
-      left: 8vw;
-      width: 100%;
-
-      button {
-        font-size: 5vw;
-      }
-    }
-
-    &:hover {
-      flex: none;
-    }
   }
 }
