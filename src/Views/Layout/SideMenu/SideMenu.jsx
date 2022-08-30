@@ -44,7 +44,7 @@ const SideMenu = () => {
       theme="dark"
       className="menu"
     >
-      <Row className="menu__container">
+      <Row justify="center" align="middle" className="menu__container">
         <Col span={24}>
           <AvatarProfile />
         </Col>

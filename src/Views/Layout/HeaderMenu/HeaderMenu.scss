@@ -1,3 +1,9 @@
+@import '/src/styles/globalStyles.scss';
+
 .headerMenu {
-  padding: 0 5px;
+  padding: 0;
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    padding: 0 2px;
+  }
 }

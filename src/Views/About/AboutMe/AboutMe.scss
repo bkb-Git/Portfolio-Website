@@ -2,11 +2,12 @@
 
 .about-page__container__content__aboutMe {
   position: relative;
+  flex: 1;
   background-color: #ece9e6;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   transition: all 0.5s ease-in;
-  flex: 1;
+  height: 100%;
 
   &__header {
     height: 100%;

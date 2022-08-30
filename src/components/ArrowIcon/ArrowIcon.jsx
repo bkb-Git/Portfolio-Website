@@ -19,23 +19,39 @@ const ArrowIcon = (props) => {
   const isMobileOrTablet = (xs || sm) && !lg;
 
   const arrowDistance = isMobileOrTablet ? '.5rem' : '3rem';
+  const selectOpacity = isMobileOrTablet ? 1 : 0.3;
 
   const ARROW__STYLES = {
     '/': {
       NavPageTag: 'Projects',
-      icon: faAngleDoubleRight,
-      iconStyle: {
-        right: arrowDistance,
-        top: '50%',
-        color: 'white',
-        opacity: 0.3,
-      },
-      tagStyle: {
-        color: 'white',
-        top: '25%',
-        left: '-200%',
-        marginLeft: '0.625rem',
-      },
+      icon: isMobileOrTablet ? faAngleDoubleDown : faAngleDoubleRight,
+      iconStyle: isMobileOrTablet
+        ? {
+            bottom: arrowDistance,
+            left: '50%',
+            transform: 'translate(-50%,0)',
+            color: 'white',
+            opacity: selectOpacity,
+          }
+        : {
+            right: arrowDistance,
+            top: '50%',
+            color: 'white',
+            opacity: selectOpacity,
+          },
+      tagStyle: isMobileOrTablet
+        ? {
+            color: '#696867',
+            left: '-25%',
+            top: '-50%',
+            textAlign: 'center',
+          }
+        : {
+            color: 'white',
+            top: '25%',
+            left: '-200%',
+            marginLeft: '0.625rem',
+          },
     },
     '/projects': {
       NavPageTag: 'About',
@@ -45,7 +61,7 @@ const ArrowIcon = (props) => {
         left: '50%',
         transform: 'translate(-50%,0)',
         color: '#696867',
-        opacity: 0.3,
+        opacity: selectOpacity,
       },
       tagStyle: {
         color: '#696867',
@@ -62,7 +78,7 @@ const ArrowIcon = (props) => {
           top: arrowDistance,
           left: '50%',
           color: 'white',
-          opacity: 0.3,
+          opacity: selectOpacity,
         },
         tagStyle: {
           color: 'white',
@@ -74,10 +90,10 @@ const ArrowIcon = (props) => {
         NavPageTag: 'Back Home',
         icon: faAngleDoubleLeft,
         iconStyle: {
-          left: arrowDistance,
+          left: isMobileOrTablet ? '0' : arrowDistance,
           top: '50%',
           color: 'white',
-          opacity: 0.3,
+          opacity: selectOpacity,
         },
         tagStyle: {
           color: 'white',
@@ -110,7 +126,7 @@ const ArrowIcon = (props) => {
     <Col className={selectArrowClassName()} style={arrowStyle.iconStyle}>
       <FontAwesomeIcon
         icon={arrowStyle.icon}
-        size={isMobileOrTablet ? '3x' : '5x'}
+        size={isMobileOrTablet ? '4x' : '5x'}
       />
       <Text
         className={`${selectArrowClassName()}__navTag`}

@@ -37,7 +37,11 @@ const About = () => {
 
   const renderAboutPageContent = () => {
     return (
-      <Row className="about-page__container__content">
+      <Row
+        justify="center"
+        align="middle"
+        className="about-page__container__content"
+      >
         <AboutMe
           handler={handleCopyToClipboard}
           display={{

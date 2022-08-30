@@ -38,7 +38,7 @@ const PageNavigator = (props) => {
       },
       bottom: {
         bottom: 0,
-        height: PageNavSize,
+        height: isMobileOrTablet ? '10%' : PageNavSize,
         width: '100%',
       },
     },
@@ -91,33 +91,29 @@ const PageNavigator = (props) => {
   };
 
   const renderNavStyle = () => {
-    if (navTo === APP_ROUTES.HOME) {
-      return NAV__STYLE.navigator.left;
-    }
+    if (navTo === APP_ROUTES.HOME) return NAV__STYLE.navigator.left;
 
-    if (navTo === APP_ROUTES.ABOUT) {
-      return NAV__STYLE.navigator.bottom;
-    }
+    if (navTo === APP_ROUTES.ABOUT) return NAV__STYLE.navigator.bottom;
 
-    if (navTo === APP_ROUTES.PROJECTS && currentLocation === APP_ROUTES.ABOUT) {
+    if (navTo === APP_ROUTES.PROJECTS && currentLocation === APP_ROUTES.ABOUT)
       return NAV__STYLE.navigator.top;
-    }
+
+    if (navTo === APP_ROUTES.PROJECTS && isMobileOrTablet)
+      return NAV__STYLE.navigator.bottom;
 
     return NAV__STYLE.navigator.right;
   };
 
   const renderBlinkerStyle = () => {
-    if (navTo === APP_ROUTES.HOME) {
-      return NAV__STYLE.blinker.left;
-    }
+    if (navTo === APP_ROUTES.HOME) return NAV__STYLE.blinker.left;
 
-    if (navTo === APP_ROUTES.ABOUT) {
-      return NAV__STYLE.blinker.bottom;
-    }
+    if (navTo === APP_ROUTES.ABOUT) return NAV__STYLE.blinker.bottom;
 
-    if (navTo === APP_ROUTES.PROJECTS && currentLocation === APP_ROUTES.ABOUT) {
+    if (navTo === APP_ROUTES.PROJECTS && currentLocation === APP_ROUTES.ABOUT)
       return NAV__STYLE.blinker.top;
-    }
+
+    if (navTo === APP_ROUTES.PROJECTS && isMobileOrTablet)
+      return NAV__STYLE.blinker.bottom;
 
     return NAV__STYLE.blinker.right;
   };

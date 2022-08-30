@@ -41,40 +41,39 @@ const AboutMe = (props) => {
 
   const myAvatar = () => {
     return (
-      <Row justify="start" align="middle">
-        <Col lg={10}>
+      <Row
+        justify="center"
+        align="middle"
+        // style={{ flexDirection: isMobileOrTablet && 'column' }}
+        style={
+          isMobileOrTablet && { marginTop: '1rem', flexDirection: 'column' }
+        }
+        gutter={isMobileOrTablet && [0, 32]}
+      >
+        <Col xl={10} lg={10} xs={24} sm={24}>
+          <Avatar
+            size={84}
+            src={
+              <Image
+                width={84}
+                height={84}
+                src={ProfilePhoto}
+                style={{ objectFit: 'cover' }}
+              />
+            }
+          />
+        </Col>
+        <Col xl={14} lg={14} xs={24} sm={24}>
           <Row
             justify="center"
             align="middle"
             style={{ flexDirection: isMobileOrTablet && 'column' }}
-            gutter={isMobileOrTablet && [0, 16]}
           >
-            <Col lg={12} xs={24} sm={24}>
-              <Avatar
-                size={84}
-                src={
-                  <Image
-                    width={84}
-                    height={84}
-                    src={ProfilePhoto}
-                    style={{ objectFit: 'cover' }}
-                  />
-                }
-              />
+            <Col lg={24}>
+              <Title level={4}>Billy Kipkorir Bett</Title>
             </Col>
-            <Col lg={12} xs={24} sm={24}>
-              <Row
-                justify="center"
-                align="middle"
-                style={{ flexDirection: isMobileOrTablet && 'column' }}
-              >
-                <Col lg={24}>
-                  <Title level={4}>Billy Kipkorir Bett</Title>
-                </Col>
-                <Col lg={24}>
-                  <Text type="secondary">Software Engineer</Text>
-                </Col>
-              </Row>
+            <Col lg={24}>
+              <Text type="secondary">Software Engineer</Text>
             </Col>
           </Row>
         </Col>
@@ -139,71 +138,65 @@ const AboutMe = (props) => {
 
   const myBio = () => {
     return (
-      <Paragraph>
-        Hi, I am a driven and conscientious software developer currently based
-        in Nairobi, Kenya. My developer journey began in 2020 having learnt from
-        great online resources such as freeCodeCamp among others, that have
-        given me a solid foundational understanding of web development which I
-        have since utilized to build applications and websites for local
-        buisnesses. I desire to build applications that are socially impactful
-        and grow into a senior full-stack developer role able to own my projects
-        from start to finish. It would be a great opportunity to work on a
-        variety of projects delivering excellent services on your behalf.
-        <span>Reach out to me.</span>
-      </Paragraph>
-    );
-  };
-
-  const myTechStack = () => {
-    return (
       <Row justify="center" align="middle">
-        <Col span={24}>
-          <List
-            grid={{
-              gutter: 16,
-              xl: 4,
-              lg: 4,
-              xs: 2,
-              sm: 2,
-            }}
-            dataSource={languages}
-            itemLayout="horizontal"
-            renderItem={(item) => (
-              <List.Item>
-                <List.Item.Meta avatar={LanguageIcons[item]} title={item} />
-              </List.Item>
-            )}
-          />
-        </Col>
+        <Paragraph>
+          Hi, I am a driven and conscientious software developer currently based
+          in Nairobi, Kenya. My developer journey began in 2020 having learnt
+          from great online resources such as freeCodeCamp among others, that
+          have given me a solid foundational understanding of web development
+          which I have since utilized to build applications and websites for
+          local buisnesses. I desire to build applications that are socially
+          impactful and grow into a senior full-stack developer role able to own
+          my projects from start to finish. It would be a great opportunity to
+          work on a variety of projects delivering excellent services on your
+          behalf.
+          <span>Reach out to me.</span>
+        </Paragraph>
       </Row>
     );
   };
 
   const renderAvatarAndBio = () => {
     return (
-      <Col xl={20} lg={22} xs={22} sm={22}>
-        <Row gutter={[0, 32]} justify="center" align="middle">
-          <Col span={24} style={{ marginTop: isMobileOrTablet && '1rem' }}>
-            {myAvatar()}
-          </Col>
-          <Col span={24}>{myBio()}</Col>
+      <Col xl={20} lg={22} xs={20} sm={20}>
+        <Row
+          gutter={[0, 32]}
+          justify={isMobileOrTablet ? 'center' : 'start'}
+          align="middle"
+        >
+          {myAvatar()}
+          {myBio()}
         </Row>
       </Col>
     );
   };
 
   const renderTechStack = () => {
-    // if (isMobileOrTablet) return null;
     return (
       <Col xl={20} lg={18} xs={20} sm={20}>
-        {myTechStack()}
+        <List
+          grid={{
+            gutter: 16,
+            xl: 4,
+            lg: 4,
+            xs: 2,
+            sm: 2,
+          }}
+          dataSource={languages}
+          itemLayout="horizontal"
+          renderItem={(item) => (
+            <List.Item>
+              <List.Item.Meta avatar={LanguageIcons[item]} title={item} />
+            </List.Item>
+          )}
+        />
       </Col>
     );
   };
 
   const renderPersonalDetails = () => {
     return (
-      <Col lg={18} xs={20} sm={20}>
+      <Col xl={20} lg={18} xs={20} sm={20}>
         {personalDets()}
       </Col>
     );
