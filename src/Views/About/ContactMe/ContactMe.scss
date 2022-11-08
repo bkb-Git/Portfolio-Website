@@ -1,4 +1,6 @@
-@import '../../../styles/globalStyles.scss';
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+@import "/src/styles/typography";
 
 .about-page__container__content__contactMe {
   position: relative;
@@ -26,7 +28,7 @@
   }
 
   &__thankYou {
-    font-family: 'Dancing Script', sans-serif;
+    font-family: "Dancing Script", sans-serif;
     word-spacing: 1rem;
     font-size: 4vw;
     color: #413b3b;
@@ -42,7 +44,7 @@
     visibility: hidden;
 
     &__title {
-      font-family: 'Dancing Script', sans-serif;
+      font-family: "Dancing Script", sans-serif;
       word-spacing: 1rem;
       font-size: 4vw;
       color: #413b3b;
@@ -64,8 +66,7 @@
   &:hover {
     flex: 3;
     z-index: 1;
-    box-shadow: 4px 4px 40px 2px rgba(0, 0, 0, 0.6),
-      -10px -8px 40px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 40px 2px rgba(0, 0, 0, 0.6), -10px -8px 40px 2px rgba(0, 0, 0, 0.4);
 
     svg {
       animation: contact-me-svg 0.25s ease-in 0.4s 1 forwards;
@@ -83,7 +84,7 @@
     visibility: visible;
   }
 
-  @media (max-width: $mobile-or-tablet-screen) {
+  @include mixins.respond(tab-land) {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border-top-right-radius: 0;
@@ -104,18 +105,18 @@
       flex: 5;
     }
   }
-}
 
-@keyframes contact-me {
-  to {
-    transform: translateX(0);
-    opacity: 1;
+  @keyframes contact-me {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
-}
 
-@keyframes contact-me-svg {
-  to {
-    transform: translateX(0) skewX(-5deg) rotate(-10deg);
-    opacity: 0.4;
+  @keyframes contact-me-svg {
+    to {
+      transform: translateX(0) skewX(-5deg) rotate(-10deg);
+      opacity: 0.4;
+    }
   }
 }

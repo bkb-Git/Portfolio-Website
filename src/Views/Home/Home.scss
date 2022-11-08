@@ -1,4 +1,4 @@
-@import '../../styles/globalStyles.scss';
+@use "/src/styles/mixins";
 
 .Home {
   position: absolute;
@@ -9,7 +9,7 @@
     background: linear-gradient(to right, #ffffff, #ece9e6);
 
     &::before {
-      content: '';
+      content: "";
       background-image: url(../../assets/logo.svg);
       background-position: center;
       transform-origin: 50% 50%;
@@ -19,7 +19,7 @@
       width: 7rem;
       height: 5.5rem;
       &::after {
-        content: 'bkb';
+        content: "bkb";
         position: absolute;
       }
     }
@@ -30,12 +30,12 @@
   }
 
   &__image {
-    background-image: url('../../assets/homepage-pic.jpeg');
+    background-image: url("../../assets/homepage-pic.jpeg");
     background-size: cover;
     background-position: center;
   }
 
-  @media (max-width: $mobile-or-tablet-screen) {
+  @include mixins.respond(tab-land) {
     &__intro {
       display: none;
     }

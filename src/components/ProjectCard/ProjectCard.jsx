@@ -4,7 +4,7 @@ import { Button, Card, Col, Image, List, Row, Typography } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faDesktop } from '@fortawesome/free-solid-svg-icons';
 
-import LanguageIcons from '../../../lib/constants/languageIcons';
+import LanguageIcons from '../../lib/constants/languageIcons';
 
 import './ProjectCard.scss';
 

@@ -1,4 +1,5 @@
-@import '/src/styles/globalStyles.scss';
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
 
 .arrow {
   position: absolute;
@@ -117,8 +118,5 @@
       bottom: 1.5rem;
       opacity: 0.8;
     }
-  }
-
-  @media (max-width: $mobile-or-tablet-screen) {
   }
 }

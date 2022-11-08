@@ -1,4 +1,6 @@
-@import '../../../styles/globalStyles.scss';
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+@import "/src/styles/typography";
 
 .about-page__container__content__aboutMe {
   position: relative;
@@ -44,11 +46,7 @@
         font-size: 1rem;
         font-weight: 600;
         letter-spacing: 1px;
-        background: linear-gradient(
-          to top,
-          $secondary-color 50%,
-          transparent 50%
-        );
+        background: linear-gradient(to top, $secondary-color 50%, transparent 50%);
         background-size: 100% 200%;
         background-position: right top;
         color: $secondary-color;
@@ -90,9 +88,9 @@
 
         &::before {
           position: relative;
-          font-family: 'Font Awesome 5 Free';
+          font-family: "Font Awesome 5 Free";
           font-weight: 900;
-          content: '\f3c5';
+          content: "\f3c5";
         }
       }
 
@@ -105,9 +103,9 @@
 
         &::before {
           position: relative;
-          font-family: 'Font Awesome 5 Free';
+          font-family: "Font Awesome 5 Free";
           font-weight: 900;
-          content: '\f1fa';
+          content: "\f1fa";
         }
       }
 
@@ -123,9 +121,9 @@
         &::before {
           position: relative;
 
-          font-family: 'Font Awesome 5 Free';
+          font-family: "Font Awesome 5 Free";
           font-weight: 900;
-          content: '\f15b';
+          content: "\f15b";
         }
       }
     }
@@ -134,8 +132,7 @@
   &:hover {
     flex: 3;
     z-index: 1;
-    box-shadow: 10px 8px 40px 2px rgba(0, 0, 0, 0.4),
-      -4px -4px 40px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 8px 40px 2px rgba(0, 0, 0, 0.4), -4px -4px 40px 2px rgba(0, 0, 0, 0.6);
     background: $primary-bg-color;
 
     &__header {
@@ -147,14 +144,7 @@
     }
   }
 
-  @keyframes about-me {
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @media (max-width: $mobile-or-tablet-screen) {
+  @include mixins.respond(tab-land) {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 0;
@@ -195,6 +185,13 @@
 
     &:hover {
       flex: 5;
+    }
+  }
+
+  @keyframes about-me {
+    to {
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 }

@@ -1,6 +1,6 @@
 import { Carousel, Col, Row, Grid } from 'antd';
 
-import ProjectCard from '../ProjectCard';
+import ProjectCard from '../../../components/ProjectCard';
 
 import './ProjectSlider.scss';
 

@@ -1,9 +1,9 @@
 import { Avatar, Col, Layout, Row, Typography } from 'antd';
 import { useState } from 'react';
 
-import Navbar from '../../../components/Navbar';
+import Navbar from '../../components/Navbar';
 
-import ProfilePhoto from '../../../assets/ProfilePhoto.jpg';
+import ProfilePhoto from '../../assets/ProfilePhoto.jpg';
 
 import './SideMenu.scss';
 

@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-import Navbar from '../../../components/Navbar';
+import Navbar from '../../components/Navbar';
 
 import './HeaderMenu.scss';
 

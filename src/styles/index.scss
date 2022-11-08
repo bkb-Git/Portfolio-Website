@@ -1,0 +1,64 @@
+@use "./mixins";
+@import "./variables";
+@import "./typography";
+
+body {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+// #root {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     margin: 0px;
+// }
+
+.loading-screen {
+    position: absolute;
+    background: $secondary-color;
+    z-index: 49;
+    pointer-events: none;
+
+    @include mixins.respond(tab-land) {
+        z-index: 49;
+    }
+}
+
+@include mixins.respond(desk-large) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@include mixins.respond(desk-small) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@include mixins.respond(tab-land) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@include mixins.respond(tab-port) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@include mixins.respond(phone) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@include mixins.respond(mini) {
+    html {
+        font-size: 17px;
+    }
+}

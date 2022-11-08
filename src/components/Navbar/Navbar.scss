@@ -1,11 +1,12 @@
-@import '../../styles/globalStyles.scss';
+@use "src/styles/mixins";
+@import "/src/styles/variables";
 
 .navbar {
   position: relative;
   height: 100%;
   // z-index: 49;
 
-  @media (max-width: $mobile-or-tablet-screen) {
+  @include mixins.respond(tab-land) {
     li {
       display: flex !important;
       flex-direction: column;

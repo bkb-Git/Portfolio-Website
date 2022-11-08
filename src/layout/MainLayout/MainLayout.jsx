@@ -15,7 +15,7 @@ const MainLayout = (props) => {
   const isMobileOrTablet = (xs || sm) && !lg;
 
   return (
-    <Layout style={{ height: '100%' }}>
+    <Layout style={{ height: '100vh' }}>
       {isMobileOrTablet ? <HeaderMenu /> : <SideMenu />}
       <Content className="content">{children}</Content>
     </Layout>

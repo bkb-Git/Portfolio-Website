@@ -1,0 +1,10 @@
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+
+.headerMenu {
+  padding: 0;
+
+  @include mixins.respond(tab-land) {
+    padding: 0 2px;
+  }
+}
