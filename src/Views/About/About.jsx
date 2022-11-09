@@ -64,11 +64,13 @@ const About = () => {
   };
 
   return (
-    <Row justify="center" align="middle" className="about-page">
-      <PageNavigator navTo={APP_ROUTES.HOME} backHome />
-      <PageNavigator navTo={APP_ROUTES.PROJECTS} />
-      <Col className="about-page__container">{renderAboutPageContent()}</Col>
-    </Row>
+    <Col span={24} style={{ height: '100vh' }}>
+      <Row justify="center" align="middle" className="about-page">
+        <PageNavigator navTo={APP_ROUTES.HOME} backHome />
+        <PageNavigator navTo={APP_ROUTES.PROJECTS} />
+        <Col className="about-page__container">{renderAboutPageContent()}</Col>
+      </Row>
+    </Col>
   );
 };
 

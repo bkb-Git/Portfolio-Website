@@ -3,28 +3,9 @@
 @import "./typography";
 
 body {
-    position: fixed;
-    height: 100%;
-    width: 100%;
     margin: 0;
-}
-
-// #root {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     margin: 0px;
-// }
-
-.loading-screen {
-    position: absolute;
-    background: $secondary-color;
-    z-index: 49;
-    pointer-events: none;
-
-    @include mixins.respond(tab-land) {
-        z-index: 49;
-    }
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 
 @include mixins.respond(desk-large) {

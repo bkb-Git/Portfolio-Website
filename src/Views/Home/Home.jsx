@@ -3,10 +3,8 @@ import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { AppContext } from '../../context/AppContext';
-import { APP_ROUTES } from '../../lib/constants/global-vars';
 
 import Intro from './Intro';
-import PageNavigator from '../../components/PageNavigator/PageNavigator';
 
 import './Home.scss';
 
@@ -46,24 +44,20 @@ const Home = () => {
     );
   };
 
-  const renderImageSection = () => {
-    return (
-      <>
-        {isMobileOrTablet && <Intro clickHandler={handleClick} />}
-        <PageNavigator navTo={APP_ROUTES.PROJECTS} />
-      </>
-    );
-  };
+  const renderImageSection = () =>
+    isMobileOrTablet && <Intro clickHandler={handleClick} />;
 
   return (
-    <Row className="Home">
-      <Col lg={12} xs={0} sm={0} className="Home__intro">
-        {renderIntroductionSection()}
-      </Col>
-      <Col lg={12} xs={24} sm={24} className="Home__image">
-        {renderImageSection()}
-      </Col>
-    </Row>
+    <Col span={24} style={{ height: '100vh' }}>
+      <Row className="Home">
+        <Col lg={12} xs={0} sm={0} className="Home__intro">
+          {renderIntroductionSection()}
+        </Col>
+        <Col lg={12} xs={24} sm={24} className="Home__image">
+          {renderImageSection()}
+        </Col>
+      </Row>
+    </Col>
   );
 };
 

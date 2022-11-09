@@ -2,9 +2,13 @@
 @import "/src/styles/variables";
 
 .navbar {
+  @include mixins.flex(center, center, row);
+  width: 100%;
   position: relative;
-  height: 100%;
-  // z-index: 49;
+
+  li {
+    margin: 0 2.5rem;
+  }
 
   @include mixins.respond(tab-land) {
     li {

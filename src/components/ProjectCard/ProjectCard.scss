@@ -1,6 +1,6 @@
 @use "/src/styles/mixins";
-@import "/src/styles/variables";
 @import "/src/styles/typography";
+@import "/src/styles/variables";
 
 .card {
   width: 95%;
@@ -46,9 +46,7 @@
       transition: opacity 0.5s ease-out;
 
       &__title {
-        font-family: $primary-font-family;
-        font-weight: bolder;
-        letter-spacing: 2.5px;
+        @extend .sub-header;
       }
 
       &__actionsButtons {

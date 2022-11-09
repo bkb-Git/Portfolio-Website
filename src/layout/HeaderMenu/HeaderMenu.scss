@@ -2,7 +2,16 @@
 @import "/src/styles/variables";
 
 .headerMenu {
-  padding: 0;
+  width: 100%;
+
+  &__navbar {
+    // @include mixins.flex(center, center, row);
+    // width: 100%;
+  }
+
+  &__buttons {
+    @include mixins.flex(flex-end, center, row);
+  }
 
   @include mixins.respond(tab-land) {
     padding: 0 2px;

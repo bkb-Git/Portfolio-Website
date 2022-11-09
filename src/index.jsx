@@ -1,13 +1,18 @@
 import { useState } from 'react';
+import { Col, Row } from 'antd';
+
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
-import { Route, useLocation, BrowserRouter as Router } from 'react-router-dom';
-import { Transition, TransitionGroup } from 'react-transition-group';
+import { useLocation, BrowserRouter as Router } from 'react-router-dom';
+// import { Transition, TransitionGroup } from 'react-transition-group';
 
 import { AppContext } from './context/AppContext';
-import { routes } from './lib/constants/routes';
+// import { routes } from './lib/constants/routes';
 
 import MainLayout from './layout/MainLayout';
+import Home from './views/Home';
+import Projects from './views/Projects';
+// import About from './views/About';
 
 import './styles/index.scss';
 
@@ -26,34 +31,6 @@ const App = () => {
     });
   };
 
-  const renderTransitionGroup = () => {
-    return (
-      <TransitionGroup>
-        {routes.map(({ name, path, pageName, onEnter, onExit, Component }) => (
-          <Route key={name} exact path={path}>
-            {({ match }) => (
-              <Transition
-                in={match !== null}
-                classNames="page"
-                timeout={{ exit: 650, enter: 850 }}
-                unmountOnExit
-                onEntering={(Node) => onEnter(appState, Node)}
-                onExiting={() => onExit(appState)}
-              >
-                <>
-                  <Helmet>
-                    <title>{`${pageName} | Portfolio`}</title>
-                  </Helmet>
-                  <Component />
-                </>
-              </Transition>
-            )}
-          </Route>
-        ))}
-      </TransitionGroup>
-    );
-  };
-
   return (
     <AppContext.Provider
       value={{
@@ -62,8 +39,15 @@ const App = () => {
       }}
     >
       <MainLayout>
-        <div className="loading-screen" />
-        {renderTransitionGroup()}
+        <Helmet>
+          <title>Billy K. Bett | Portfolio</title>
+        </Helmet>
+        <Row justify="center" align="middle">
+          <Home />
+          <Projects />
+          <Col span={24} style={{ height: '100vh' }} />
+          <Col span={24} style={{ background: '#0047ab', height: '100vh' }} />
+        </Row>
       </MainLayout>
     </AppContext.Provider>
   );

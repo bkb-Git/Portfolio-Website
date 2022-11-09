@@ -7,9 +7,6 @@ import GraphAppImg from '../../assets/WB-graph-app-cover.png';
 import TravelLamuCover from '../../assets/Travel-Lamu-Cover.jpg';
 import LLLCover from '../../assets/LLL Section 2.png';
 
-import PageNavigator from '../../components/PageNavigator/PageNavigator';
-import { APP_ROUTES } from '../../lib/constants/global-vars';
-
 import './Projects.scss';
 
 const { useBreakpoint } = Grid;
@@ -73,40 +70,22 @@ const Projects = () => {
   const { xs, sm, lg } = useBreakpoint();
   const isMobileOrTablet = (xs || sm) && !lg;
 
-  const renderHeader = () => {
-    return (
-      <Row justify="center" align="middle" style={{ height: '100%' }}>
-        <p className="projects__header__text">PORTFOLIO</p>
-      </Row>
-    );
-  };
-
-  const renderContent = () => {
-    return (
+  return (
+    <Col span={24} style={{ background: '#0047ab' }}>
       <Row
         justify={isMobileOrTablet && 'center'}
         align={isMobileOrTablet && 'middle'}
-        style={{ height: '100%' }}
+        style={{ height: 'auto' }}
+        className="projects"
       >
         <Col lg={24} className="projects__header">
-          {renderHeader()}
+          PORTFOLIO | PROJECTS
         </Col>
         <Col lg={24} sm={23} xs={22} className="projects__slider">
           <ProjectSlider projects={TILES__PROJECTS} />
         </Col>
       </Row>
-    );
-  };
-
-  return (
-    <Row className="projects">
-      <Col lg={24} style={{ height: '85%' }}>
-        {renderContent()}
-      </Col>
-      <Col lg={24} sm={24} xs={24} style={{ height: '15%' }}>
-        <PageNavigator navTo={APP_ROUTES.ABOUT} />
-      </Col>
-    </Row>
+    </Col>
   );
 };
 

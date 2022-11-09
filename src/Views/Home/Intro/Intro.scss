@@ -14,125 +14,9 @@
   font-size: 2rem;
   height: 100%;
   text-align: right;
-  font-family: $primary-font-family;
+  font-family: $font-primary;
   letter-spacing: normal;
   word-spacing: 10px;
-
-  &__text1 {
-    #sub-text1 {
-      @extend .sub-text;
-    }
-
-    #sub-text2 {
-      display: inline-block;
-      margin: 0 auto;
-      font-family: $secondary-font-family;
-      text-align: center;
-      font-size: 4.5rem;
-      font-weight: 500;
-      color: rgb(37, 34, 34);
-      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 1.2s;
-
-      #single-letter {
-        font-weight: bold;
-        margin-left: 10px;
-        color: #413b3b;
-      }
-
-      #last-name {
-        top: 10vh;
-        margin-left: 10px;
-      }
-    }
-  }
-
-  &__text2 {
-    #sub-text1 {
-      @extend .sub-text;
-      animation-delay: 1.5s;
-    }
-
-    #sub-text2 {
-      position: relative;
-      display: inline-block;
-      margin: 0 auto;
-      font-family: $secondary-font-family;
-      text-align: center;
-      font-weight: 150;
-      font-size: 2.3rem;
-      color: rgb(37, 34, 34);
-      -webkit-animation: slide-ft 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 2.7s;
-    }
-  }
-
-  &__text3 {
-    #sub-text1 {
-      @extend .sub-text;
-      animation-delay: 3s;
-    }
-
-    #sub-text2 {
-      display: inline-block;
-      margin: 0 auto;
-      font-family: $secondary-font-family;
-      font-weight: 100;
-      text-align: center;
-      font-size: 2rem;
-      color: rgb(37, 34, 34);
-      animation: slide-ft 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-      animation-delay: 3.7s;
-    }
-
-    .link {
-      transition: all 0.2s ease-in;
-
-      &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
-    }
-  }
-
-  &__text4 {
-    #sub-text1 {
-      @extend .sub-text;
-      animation-delay: 4.5s;
-    }
-  }
-
-  &__text5 {
-    #sub-text1 {
-      @extend .sub-text;
-      margin-right: 15px;
-      animation-delay: 6s;
-    }
-
-    &__button {
-      height: 4rem;
-      padding: 0.2em 1em;
-      font-size: 2rem;
-      font-family: $secondary-font-family;
-      cursor: pointer;
-      text-decoration: none;
-      border-radius: 6px;
-      border: 1px solid;
-      animation: button-fade-in 1.2s ease-in both 7.5s;
-      transition: all 0.2s ease-in;
-
-      &:hover {
-        mix-blend-mode: normal;
-        box-shadow: 3px 10px 20px 1px rgba(0, 0, 0, 0.616);
-        text-shadow: 0px 3px 3px white;
-        background-image: radial-gradient(rgb(53, 46, 46) 70%, rgb(139, 125, 125));
-        transform: scale(1.05);
-        color: white;
-        border: none;
-      }
-    }
-  }
 
   @include mixins.respond(tab-land) {
     font-size: 1.5rem;
@@ -170,7 +54,7 @@
         background-color: transparent;
         color: white;
         display: inline-block;
-        font-family: $secondary-font-family;
+        font-family: $font-secondary;
         cursor: pointer;
         border-radius: 3px;
         border: 1px solid white;
