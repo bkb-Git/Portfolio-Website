@@ -46,7 +46,13 @@ const App = () => {
           <Home />
           <Projects />
           <Col span={24} style={{ height: '100vh' }} />
-          <Col span={24} style={{ background: '#0047ab', height: '100vh' }} />
+          <Col
+            span={24}
+            style={{
+              background: '#1c3879',
+              height: '100vh',
+            }}
+          />
         </Row>
       </MainLayout>
     </AppContext.Provider>

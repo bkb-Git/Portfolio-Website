@@ -3,17 +3,18 @@
 @import "/src/styles/typography";
 
 .projects {
-  height: 100%;
-  padding-bottom: 5rem;
+  height: auto;
+  background: $primary-bg-color;
+  padding-bottom: 8rem;
 
   &__header {
     @extend .header;
     text-align: center;
-    margin: 2.5rem 0 5rem 0;
+    margin: 5rem 0;
   }
 
-  &__slider {
-    height: 75%;
+  &__works {
+    padding: 0 0 15px 0;
   }
 
   @include mixins.respond(tab-land) {

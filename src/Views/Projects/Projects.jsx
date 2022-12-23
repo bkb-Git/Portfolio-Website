@@ -1,6 +1,6 @@
 import { Col, Row, Grid } from 'antd';
 
-import ProjectSlider from './ProjectSlider';
+import ProjectCard from '../../components/ProjectCard';
 
 import PortfolioWebsiteImg from '../../assets/portfolio-cover.jpg';
 import GraphAppImg from '../../assets/WB-graph-app-cover.png';
@@ -11,8 +11,8 @@ import './Projects.scss';
 
 const { useBreakpoint } = Grid;
 
-const TILES__PROJECTS = {
-  loglinkLogs: {
+const TILES__PROJECTS = [
+  {
     name: 'Loglink Logistics Limited',
     languages: [
       'NextJS',
@@ -28,7 +28,7 @@ const TILES__PROJECTS = {
     liveLink: 'https://loglinklogistics.com',
     no: 1,
   },
-  travelLamu: {
+  {
     name: 'Travel Lamu',
     languages: [
       'NextJS',
@@ -43,9 +43,10 @@ const TILES__PROJECTS = {
     backgroundImg: TravelLamuCover,
     gitLink: 'https://github.com/bkb-Git/travel-lamu',
     liveLink: 'https://travel-lamu.vercel.app/',
+    rightSide: true,
     no: 2,
   },
-  WBGraphApp: {
+  {
     name: 'World Bank Graph App',
     languages: ['React', 'Javascript', 'Bootstrap', 'HTML5', 'D3.js', 'SCSS'],
     description:
@@ -55,34 +56,43 @@ const TILES__PROJECTS = {
     liveLink: 'https://wb-graph-app.netlify.app/',
     no: 3,
   },
-  PortfolioWeb: {
+  {
     name: 'Portfolio Website',
     languages: ['React', 'Javascript', 'SCSS', 'HTML5'],
     description: 'This is my portfolio website',
     backgroundImg: PortfolioWebsiteImg,
     gitLink: 'https://github.com/bkb-Git/Portfolio-Website',
     liveLink: null,
+    rightSide: true,
     no: 4,
   },
-};
+];
 
 const Projects = () => {
   const { xs, sm, lg } = useBreakpoint();
   const isMobileOrTablet = (xs || sm) && !lg;
 
   return (
-    <Col span={24} style={{ background: '#0047ab' }}>
+    <Col span={24} className="projects">
       <Row
         justify={isMobileOrTablet && 'center'}
         align={isMobileOrTablet && 'middle'}
-        style={{ height: 'auto' }}
-        className="projects"
+        gutter={[0, 20]}
       >
         <Col lg={24} className="projects__header">
-          PORTFOLIO | PROJECTS
+          Latest Projects
         </Col>
-        <Col lg={24} sm={23} xs={22} className="projects__slider">
-          <ProjectSlider projects={TILES__PROJECTS} />
+        <Col lg={24} sm={23} xs={22} className="projects__works">
+          <Row
+            justify="center"
+            align="middle"
+            gutter={[0, 50]}
+            style={{ height: 'auto' }}
+          >
+            {TILES__PROJECTS.map((work) => (
+              <ProjectCard key={work.id} data={work} right={work.rightSide} />
+            ))}
+          </Row>
         </Col>
       </Row>
     </Col>
