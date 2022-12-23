@@ -2,11 +2,11 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Col, List, Row, Typography, Grid, Image } from 'antd';
 import { saveAs } from 'file-saver';
-import resume from '../../../assets/Resume.pdf';
+import resume from 'assets/Resume.pdf';
 
-import LanguageIcons from '../../../lib/constants/languageIcons';
+import LanguageIcons from 'lib/constants/languageIcons';
 
-import ProfilePhoto from '../../../assets/ProfilePhoto.jpg';
+import ProfilePhoto from 'assets/images/ProfilePhoto.jpg';
 
 import './AboutMe.scss';
 

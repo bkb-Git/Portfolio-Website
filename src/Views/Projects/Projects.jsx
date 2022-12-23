@@ -1,11 +1,11 @@
 import { Col, Row, Grid } from 'antd';
 
-import ProjectCard from '../../components/ProjectCard';
+import ProjectCard from 'components/ProjectCard';
 
-import PortfolioWebsiteImg from '../../assets/portfolio-cover.jpg';
-import GraphAppImg from '../../assets/WB-graph-app-cover.png';
-import TravelLamuCover from '../../assets/Travel-Lamu-Cover.jpg';
-import LLLCover from '../../assets/LLL Section 2.png';
+import PortfolioWebsiteImg from 'assets/images/portfolio-cover.jpg';
+import GraphAppImg from 'assets/images/WB-graph-app-cover.png';
+import TravelLamuCover from 'assets/images/Travel-Lamu-Cover.jpg';
+import LLLCover from 'assets/images/LLLSection2.png';
 
 import './Projects.scss';
 
@@ -86,7 +86,7 @@ const Projects = () => {
           <Row
             justify="center"
             align="middle"
-            gutter={[0, 50]}
+            gutter={[0, 150]}
             style={{ height: 'auto' }}
           >
             {TILES__PROJECTS.map((work) => (

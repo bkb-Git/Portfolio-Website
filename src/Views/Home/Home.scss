@@ -9,7 +9,7 @@
 
     &::before {
       content: "";
-      background-image: url(../../assets/logo.svg);
+      background-image: url(../../assets/svg/logo.svg);
       background-position: center;
       transform-origin: 50% 50%;
       background-size: cover;
@@ -29,7 +29,7 @@
   }
 
   &__image {
-    background-image: url("../../assets/homepage-pic.jpeg");
+    background-image: url("../../assets/images/homepage-pic.jpeg");
     background-size: cover;
     background-position: center;
   }

@@ -1,6 +1,5 @@
 import { Affix, Layout } from 'antd';
-import HeaderMenu from '../HeaderMenu/HeaderMenu';
-// import HeaderMenu from '../HeaderMenu';
+import HeaderMenu from '../HeaderMenu';
 
 import './MainLayout.scss';
 

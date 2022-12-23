@@ -2,11 +2,11 @@
 import { Col, Row } from 'antd';
 import { useEffect, useState } from 'react';
 
+import PageNavigator from 'components/PageNavigator/PageNavigator';
+import { APP_ROUTES } from 'lib/constants/global-vars';
+
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
-
-import PageNavigator from '../../components/PageNavigator/PageNavigator';
-import { APP_ROUTES } from '../../lib/constants/global-vars';
 
 import './About.scss';
 

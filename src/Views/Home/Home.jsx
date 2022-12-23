@@ -2,7 +2,7 @@ import { Col, Row, Grid } from 'antd';
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from 'context/AppContext';
 
 import Intro from './Intro';
 

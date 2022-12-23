@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { APP_ROUTES } from '../constants/global-vars';
+import { APP_ROUTES } from 'lib/constants/global-vars';
 
 export const HomeTransitions = (stage, appState, node) => {
   if (stage === 'Exit') {
