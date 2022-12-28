@@ -45,11 +45,10 @@ const App = () => {
         <Row justify="center" align="middle">
           <Home />
           <Projects />
-          <Col span={24} style={{ height: '100vh' }} />
+          <Col span={24} style={{ height: '100vh', background: '#1c3879' }} />
           <Col
             span={24}
             style={{
-              background: '#1c3879',
               height: '100vh',
             }}
           />

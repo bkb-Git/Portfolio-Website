@@ -1,8 +1,10 @@
 @use "/src/styles/mixins";
+@import "/src/styles/variables";
 
 .Home {
   height: 100%;
   width: 100%;
+  background: $primary-bg-color;
 
   &__intro {
     // background: linear-gradient(to right, #ffffff, #ece9e6);

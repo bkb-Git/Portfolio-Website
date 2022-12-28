@@ -1,15 +1,17 @@
-import { Carousel, Col, Row, Typography } from 'antd';
+import { GithubFilled } from '@ant-design/icons';
+import { Col, Image, Row, Typography } from 'antd';
 
-import { ReactComponent as CircleArrowUp } from '../../assets/circle-arrow-up-solid.svg';
+import { ReactComponent as CircleArrowUp } from 'assets/svg/circle-arrow-up-solid.svg';
+import CarouselMod from 'components/CarouselMod';
 
 import './ProjectCard.scss';
 
 const { Title } = Typography;
 
 const responsiveWidths = {
-  lg: 20,
-  xl: 20,
-  xxl: 18,
+  lg: 22,
+  xl: 22,
+  xxl: 20,
 };
 
 const ProjectCard = (props) => {
@@ -17,6 +19,7 @@ const ProjectCard = (props) => {
   const {
     name = 'TITLE',
     description = 'This is an example for where a description will be placed',
+    backgroundImg,
   } = data;
 
   const projectHeader = () => {
@@ -28,10 +31,8 @@ const ProjectCard = (props) => {
           </Title>
         </Col>
         <Col span={6} className="projectHeader__button">
-          <CircleArrowUp
-            fontSize={20}
-            className="projectHeader__button__icon"
-          />
+          <GithubFilled className="projectHeader__button__gitIcon" />
+          <CircleArrowUp className="projectHeader__button__linkIcon" />
         </Col>
       </Row>
     );
@@ -39,11 +40,55 @@ const ProjectCard = (props) => {
 
   const projectImages = () => {
     return (
-      <Row justify="space-between" align="middle" className="projectImages">
-        <Col span={16}>
-          <Carousel />
+      <Row
+        justify="space-between"
+        align="middle"
+        className="projectImages"
+        gutter={[0, 25]}
+      >
+        <Col span={24}>
+          <CarouselMod arrows dots={false} infinite slidesToShow={1}>
+            <Col className="projectImages__mainImage">
+              <Image src={backgroundImg} />
+            </Col>
+          </CarouselMod>
         </Col>
-        <Col span={8} />
+        <Col span={24}>
+          <CarouselMod
+            arrows
+            dots={false}
+            infinite
+            slidesToShow={3}
+            autoplay
+            otherClassNames="projectImages__secondSlider"
+          >
+            <Col className="projectImages__card">
+              <Col className="projectImages__card__image">
+                <Image preview={false} src={backgroundImg} />
+              </Col>
+            </Col>
+            <Col className="projectImages__card">
+              <Col className="projectImages__card__image">
+                <Image preview={false} src={backgroundImg} />
+              </Col>
+            </Col>
+            <Col className="projectImages__card">
+              <Col className="projectImages__card__image">
+                <Image preview={false} src={backgroundImg} />
+              </Col>
+            </Col>
+            <Col className="projectImages__card">
+              <Col className="projectImages__card__image">
+                <Image preview={false} src={backgroundImg} />
+              </Col>
+            </Col>
+            <Col className="projectImages__card">
+              <Col className="projectImages__card__image">
+                <Image preview={false} src={backgroundImg} />
+              </Col>
+            </Col>
+          </CarouselMod>
+        </Col>
       </Row>
     );
   };
@@ -53,7 +98,7 @@ const ProjectCard = (props) => {
       <Row
         justify="start"
         align="middle"
-        gutter={[0, 25]}
+        gutter={[0, 32]}
         className="project__main"
       >
         <Col span={24}>{projectHeader()}</Col>

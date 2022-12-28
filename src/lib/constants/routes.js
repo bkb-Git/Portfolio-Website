@@ -2,12 +2,13 @@ import {
   AboutTransitions,
   HomeTransitions,
   ProjectTransitions,
-} from '../helpers/Page-transitions';
-import { APP_ROUTES } from './global-vars';
+} from 'lib/helpers/Page-transitions';
 
-import Home from '../../views/Home';
-import Projects from '../../views/Projects';
-import About from '../../views/About';
+import Home from 'views/Home';
+import Projects from 'views/Projects';
+import About from 'views/About';
+
+import { APP_ROUTES } from './global-vars';
 
 // eslint-disable-next-line import/prefer-default-export
 export const routes = [

@@ -1,13 +1,13 @@
 @import "/src/styles/variables";
 
 .arrow {
-  color: $tertiary-color;
-  height: 2rem;
-  width: 2rem;
+  color: $primary-color;
+  height: 2.5rem;
+  width: 2.5rem;
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
-    color: adjust-color($color: $tertiary-color, $alpha: 0.7);
+    color: adjust-color($color: $primary-color, $alpha: 0.7);
   }
 }
 

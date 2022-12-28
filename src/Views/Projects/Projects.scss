@@ -4,11 +4,12 @@
 
 .projects {
   height: auto;
-  background: $primary-bg-color;
+  // background: $primary-bg-color;
   padding-bottom: 8rem;
 
   &__header {
     @extend .header;
+    color: #333;
     text-align: center;
     margin: 5rem 0;
   }

@@ -39,7 +39,7 @@ const CarouselMod = (props) => {
     <FontAwesomeIcon
       icon={faArrowLeft}
       color="#ab966f"
-      size="6x"
+      size="8x"
       id="prevArrow"
     />
   );
@@ -48,7 +48,7 @@ const CarouselMod = (props) => {
     <FontAwesomeIcon
       icon={faArrowRight}
       color="#ab966f"
-      size="6x"
+      size="8x"
       id="nextArrow"
     />
   );

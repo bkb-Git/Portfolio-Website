@@ -1,8 +1,8 @@
 import { Col, Grid } from 'antd';
 import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { AppContext } from '../../context/AppContext';
-import { APP_ROUTES } from '../../lib/constants/global-vars';
+import { AppContext } from 'context/AppContext';
+import { APP_ROUTES } from 'lib/constants/global-vars';
 
 import ArrowIcon from '../ArrowIcon';
 
