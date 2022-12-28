@@ -46,6 +46,7 @@ const Navbar = () => {
   return (
     <Menu
       className="navbar"
+      theme="dark"
       defaultSelectedKeys={[1]}
       selectedKeys={[history.location.pathname]}
       mode="horizontal"

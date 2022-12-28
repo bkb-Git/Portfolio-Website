@@ -1,4 +1,4 @@
-import { Affix, Layout } from 'antd';
+import { Layout } from 'antd';
 import HeaderMenu from '../HeaderMenu';
 
 import './MainLayout.scss';
@@ -14,9 +14,7 @@ const MainLayout = (props) => {
 
   return (
     <Layout>
-      <Affix style={{ position: 'absolute', width: '100%', zIndex: 15 }}>
-        <HeaderMenu />
-      </Affix>
+      <HeaderMenu />
       <Content className="content">{children}</Content>
     </Layout>
   );

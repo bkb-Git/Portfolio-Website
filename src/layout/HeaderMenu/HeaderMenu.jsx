@@ -3,6 +3,8 @@ import { Button, Col, Layout, Row } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
+import PersonalLogo from 'assets/svg/PersonalLogo';
+
 import Navbar from '../Navbar';
 
 import './HeaderMenu.scss';
@@ -19,15 +21,9 @@ const HeaderMenu = () => {
             style={{ marginRight: '10px' }}
           />
         }
-        type="primary"
-        size="large"
-        style={{
-          borderRadius: 20,
-          padding: '10px 25px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+        ghost
+        size="middle"
+        className="headerMenu__buttons__contactMe"
       >
         Let&apos;s Talk
       </Button>
@@ -36,12 +32,14 @@ const HeaderMenu = () => {
 
   return (
     <Header className="headerMenu">
-      <Row justify="center" align="middle">
-        <Col span={6} />
-        <Col span={10} className="headerMenu__navbar">
+      <Row justify="space-around" align="middle" style={{ height: '100%' }}>
+        <Col span={4} className="headerMenu__logo">
+          <PersonalLogo />
+        </Col>
+        <Col span={13} className="headerMenu__navbar">
           <Navbar />
         </Col>
-        <Col span={6} className="headerMenu__buttons">
+        <Col span={4} className="headerMenu__buttons">
           {renderButtons()}
         </Col>
       </Row>
