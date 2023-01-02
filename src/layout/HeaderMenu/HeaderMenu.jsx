@@ -21,8 +21,7 @@ const HeaderMenu = () => {
             style={{ marginRight: '10px' }}
           />
         }
-        ghost
-        size="middle"
+        size="large"
         className="headerMenu__buttons__contactMe"
       >
         Let&apos;s Talk
@@ -36,7 +35,7 @@ const HeaderMenu = () => {
         <Col span={4} className="headerMenu__logo">
           <PersonalLogo />
         </Col>
-        <Col span={13} className="headerMenu__navbar">
+        <Col span={10} className="headerMenu__navbar">
           <Navbar />
         </Col>
         <Col span={4} className="headerMenu__buttons">

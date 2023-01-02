@@ -4,51 +4,11 @@
 .Home {
   height: 100%;
   width: 100%;
+  padding-top: 40px;
   background: $primary-bg-color;
+}
 
-  &__intro {
-    // background: linear-gradient(to right, #ffffff, #ece9e6);
-
-    &::before {
-      content: "";
-      background-image: url(../../assets/svg/logo.svg);
-      background-position: center;
-      transform-origin: 50% 50%;
-      background-size: cover;
-      position: absolute;
-      top: 2%;
-      width: 7rem;
-      height: 5.5rem;
-      &::after {
-        content: "bkb";
-        position: absolute;
-      }
-    }
-
-    &:hover::before {
-      animation: logo 0.4s ease-in-out 3;
-    }
-  }
-
-  &__image {
-    background-image: url("../../assets/images/homepage-pic.jpeg");
-    background-size: cover;
-    background-position: center;
-  }
-
-  @include mixins.respond(tab-land) {
-    &__intro {
-      display: none;
-    }
-
-    &__image {
-      height: 100%;
-    }
-  }
-
-  @keyframes logo {
-    to {
-      transform: rotate(360deg) scale(1.15);
-    }
-  }
+.arrow {
+  position: absolute;
+  bottom: 15px;
 }

@@ -20,7 +20,8 @@
     &__contactMe {
       @include mixins.flex(center, center, row);
       border-radius: 20px;
-      // border-color: white;
+      color: white;
+      background: transparent;
       padding: 10px 25px;
     }
   }
