@@ -49,12 +49,12 @@ const IntroductionSide = () => {
                       type="vertical"
                       className="introductionSide__briefBio__divider"
                     />
-                    Self-Starter
+                    Reliable
                     <Divider
                       type="vertical"
                       className="introductionSide__briefBio__divider"
                     />
-                    Introverted
+                    Self-Starter
                   </Row>
                 </Col>
               </Row>

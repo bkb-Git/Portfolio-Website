@@ -72,6 +72,32 @@ const Projects = () => {
   const { xs, sm, lg } = useBreakpoint();
   const isMobileOrTablet = (xs || sm) && !lg;
 
+  // Render functions defined here
+  const renderTitle = () => {
+    return (
+      <Col lg={24} className="projects__header">
+        Latest Projects
+      </Col>
+    );
+  };
+
+  const renderProjects = () => {
+    return (
+      <Col lg={24} sm={23} xs={22} className="projects__works">
+        <Row
+          justify="center"
+          align="middle"
+          gutter={[0, 150]}
+          style={{ height: 'auto' }}
+        >
+          {TILES__PROJECTS.map((work) => (
+            <ProjectCard key={work.id} data={work} right={work.rightSide} />
+          ))}
+        </Row>
+      </Col>
+    );
+  };
+
   return (
     <Col span={24} className="projects">
       <Row
@@ -79,21 +105,8 @@ const Projects = () => {
         align={isMobileOrTablet && 'middle'}
         gutter={[0, 20]}
       >
-        <Col lg={24} className="projects__header">
-          Latest Projects
-        </Col>
-        <Col lg={24} sm={23} xs={22} className="projects__works">
-          <Row
-            justify="center"
-            align="middle"
-            gutter={[0, 150]}
-            style={{ height: 'auto' }}
-          >
-            {TILES__PROJECTS.map((work) => (
-              <ProjectCard key={work.id} data={work} right={work.rightSide} />
-            ))}
-          </Row>
-        </Col>
+        {renderTitle()}
+        {renderProjects()}
       </Row>
     </Col>
   );

@@ -3,7 +3,6 @@ import { Col, Row } from 'antd';
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { Transition, TransitionGroup } from 'react-transition-group';
 
 import MainLayout from './layout/MainLayout';
 import Home from './views/Home';
@@ -13,11 +12,18 @@ import Projects from './views/Projects';
 import './styles/index.scss';
 
 const App = () => {
-  return (
-    <MainLayout>
+  // Render functions defined here
+  const renderHelmet = () => {
+    return (
       <Helmet>
         <title>Billy K. Bett | Portfolio</title>
       </Helmet>
+    );
+  };
+
+  return (
+    <MainLayout>
+      {renderHelmet()}
       <Row justify="center" align="middle">
         <Home />
         <Projects />
