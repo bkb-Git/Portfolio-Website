@@ -1,0 +1,19 @@
+@use "/src/styles/mixins";
+@import "/src/styles/typography";
+@import "/src/styles/variables";
+
+.projectCardRight {
+    &__title {
+        @extend .headline;
+        margin-bottom: 0 !important;
+    }
+
+    &__about {
+        &__text {
+            @extend .body-text;
+        }
+    }
+
+    &__stack {
+    }
+}

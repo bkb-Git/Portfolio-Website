@@ -10,6 +10,22 @@ import './IntroductionSide.scss';
 const { Title, Paragraph } = Typography;
 
 const IntroductionSide = () => {
+  // Render functions defined here
+  const renderLine = () => {
+    return (
+      <Col
+        style={{
+          width: '130px',
+          position: 'absolute',
+          left: 0,
+          top: '-12px',
+        }}
+      >
+        <Divider style={{ borderColor: '#eae3d2' }} />
+      </Col>
+    );
+  };
+
   const renderProfessionalTitle = () => {
     return (
       <Col span={24}>
@@ -120,16 +136,7 @@ const IntroductionSide = () => {
   return (
     <Col span={12} className="introductionSide">
       <Row justify="start" align="middle" gutter={[0, 48]}>
-        <Col
-          style={{
-            width: '130px',
-            position: 'absolute',
-            left: 0,
-            top: '-12px',
-          }}
-        >
-          <Divider style={{ borderColor: '#eae3d2' }} />
-        </Col>
+        {renderLine()}
         {renderProfessionalTitle()}
         {renderIntro()}
         {renderHireMeButton()}

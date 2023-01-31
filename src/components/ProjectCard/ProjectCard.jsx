@@ -1,17 +1,16 @@
-import { GithubFilled } from '@ant-design/icons';
-import { Col, Image, Row, Typography } from 'antd';
+import { Col, Row } from 'antd';
 
-import { ReactComponent as CircleArrowUp } from 'assets/svg/circle-arrow-up-solid.svg';
-import CarouselMod from 'components/CarouselMod';
+import ProjectCardLeftPt from './ProjectCardLeftPt';
+import ProjectCardRightPt from './ProjectCardRightPt';
 
 import './ProjectCard.scss';
 
-const { Title } = Typography;
-
 const responsiveWidths = {
+  xs: 22,
+  sm: 23,
   lg: 22,
   xl: 22,
-  xxl: 20,
+  xxl: 21,
 };
 
 const ProjectCard = (props) => {
@@ -20,90 +19,24 @@ const ProjectCard = (props) => {
     name = 'TITLE',
     description = 'This is an example for where a description will be placed',
     backgroundImg,
+    languages,
   } = data;
 
-  const projectHeader = () => {
+  // Render functions for each part
+
+  const renderRightPart = () => {
     return (
-      <Row justify="space-between" align="middle" className="projectHeader">
-        <Col span={18}>
-          <Title level={3} className="projectHeader__title">
-            {name}
-          </Title>
-        </Col>
-        <Col span={6} className="projectHeader__button">
-          <GithubFilled className="projectHeader__button__gitIcon" />
-          <CircleArrowUp className="projectHeader__button__linkIcon" />
-        </Col>
-      </Row>
+      <Col span={10}>
+        <ProjectCardRightPt description={description} stack={languages} />
+      </Col>
     );
   };
 
-  const projectImages = () => {
+  const renderLeftPart = () => {
     return (
-      <Row
-        justify="space-between"
-        align="middle"
-        className="projectImages"
-        gutter={[0, 25]}
-      >
-        <Col span={24}>
-          <CarouselMod arrows dots={false} infinite slidesToShow={1}>
-            <Col className="projectImages__mainImage">
-              <Image src={backgroundImg} />
-            </Col>
-          </CarouselMod>
-        </Col>
-        <Col span={24}>
-          <CarouselMod
-            arrows
-            dots={false}
-            infinite
-            slidesToShow={3}
-            autoplay
-            otherClassNames="projectImages__secondSlider"
-          >
-            <Col className="projectImages__card">
-              <Col className="projectImages__card__image">
-                <Image preview={false} src={backgroundImg} />
-              </Col>
-            </Col>
-            <Col className="projectImages__card">
-              <Col className="projectImages__card__image">
-                <Image preview={false} src={backgroundImg} />
-              </Col>
-            </Col>
-            <Col className="projectImages__card">
-              <Col className="projectImages__card__image">
-                <Image preview={false} src={backgroundImg} />
-              </Col>
-            </Col>
-            <Col className="projectImages__card">
-              <Col className="projectImages__card__image">
-                <Image preview={false} src={backgroundImg} />
-              </Col>
-            </Col>
-            <Col className="projectImages__card">
-              <Col className="projectImages__card__image">
-                <Image preview={false} src={backgroundImg} />
-              </Col>
-            </Col>
-          </CarouselMod>
-        </Col>
-      </Row>
-    );
-  };
-
-  const renderProjectMain = () => {
-    return (
-      <Row
-        justify="start"
-        align="middle"
-        gutter={[0, 32]}
-        className="project__main"
-      >
-        <Col span={24}>{projectHeader()}</Col>
-        <Col span={24}>{projectImages()}</Col>
-      </Row>
+      <Col span={12}>
+        <ProjectCardLeftPt name={name} image={backgroundImg} />
+      </Col>
     );
   };
 
@@ -112,13 +45,13 @@ const ProjectCard = (props) => {
       <Row justify="space-between" align="middle">
         {right ? (
           <>
-            <Col span={8}>{description}</Col>
-            <Col span={12}>{renderProjectMain()}</Col>
+            {renderRightPart()}
+            {renderLeftPart()}
           </>
         ) : (
           <>
-            <Col span={12}>{renderProjectMain()}</Col>
-            <Col span={8}>{description}</Col>
+            {renderLeftPart()}
+            {renderRightPart()}
           </>
         )}
       </Row>

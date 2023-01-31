@@ -8,10 +8,7 @@
   padding-bottom: 8rem;
 
   &__header {
-    @extend .header;
-    color: #333;
-    text-align: center;
-    margin: 5rem 0;
+    @extend .page-title;
   }
 
   &__works {
