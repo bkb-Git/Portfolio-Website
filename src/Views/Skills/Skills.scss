@@ -1,0 +1,78 @@
+@import "/src/styles/typography";
+@import "/src/styles/variables";
+
+.skillsPage {
+    position: relative;
+    width: 100%;
+    height: auto;
+    // background-image: url("../../assets/images/keyboard.png");
+    // background-image: url("../../assets/images/homepage-pic.jpeg");
+    background-image: url("../../assets/images/laptopImageBetaUpscale.png");
+    background-attachment: fixed;
+    // background-repeat: ;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+
+    &__bg {
+        position: absolute;
+        background: white;
+        height: 60vh;
+
+        &__svg {
+            width: 100%;
+            opacity: 0.6;
+            z-index: 0;
+        }
+    }
+
+    &__header {
+        @extend .page-title;
+
+        &__box {
+            padding: 2rem 25rem;
+            // background: rgba(255, 255, 255);
+            // background: radial-gradient(circle at center, white 20%, transparent 100%);
+            background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%);
+            border-radius: 20px;
+            // border: 2px solid $tertiary-color;
+        }
+    }
+
+    &__skills {
+        margin-bottom: 10rem;
+
+        &__technical {
+            padding: 60px 80px;
+            // background-color: change-color($color: $primary-color, $alpha: 0.97);
+            // background-color: $primary-color;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            // border: 2px solid $tertiary-color;
+            border-left: none;
+        }
+
+        &__soft {
+            padding: 60px 80px;
+            // background-color: change-color($color: $primary-color, $alpha: 0.97);
+            // background-color: $primary-color;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            // border: 2px solid $tertiary-color;
+            border-right: none;
+        }
+    }
+}
+
+.skillsSubtitle {
+    background-color: change-color($color: $primary-color, $alpha: 0.97);
+    padding: 2rem 4rem;
+    border-radius: 25px;
+    border: 1px solid $accent-color;
+
+    &__title {
+        @extend .subtitle;
+        color: white !important;
+        font-size: 2.4rem !important;
+    }
+}

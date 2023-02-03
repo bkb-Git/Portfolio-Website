@@ -67,8 +67,8 @@ const ProjectCardRightPt = (props) => {
 
   return (
     <Row
-      justify="center"
-      align="middle"
+      justify="space-between"
+      align="top"
       gutter={[0, 32]}
       className="projectCardRight"
     >

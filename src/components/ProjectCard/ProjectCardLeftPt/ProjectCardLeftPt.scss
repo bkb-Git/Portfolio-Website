@@ -5,7 +5,6 @@
 .projectCardLeft {
     &__header {
         border-top: 2px solid $tertiary-color;
-        padding: 12px 5px;
         height: 150px;
 
         &__title {
@@ -55,7 +54,7 @@
     &__sliders {
         &__mainImage {
             @include mixins.flex(center, center, row);
-            padding: 5px;
+            padding: 3px;
             background: $tertiary-color;
             border-radius: 5px;
         }
@@ -66,7 +65,7 @@
             &__image {
                 @include mixins.flex(center, center, row);
                 background: $tertiary-color;
-                padding: 5px;
+                padding: 3px;
                 border-radius: 5px;
             }
         }

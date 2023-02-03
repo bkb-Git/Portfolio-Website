@@ -10,7 +10,19 @@ import './ProjectCardLeftPt.scss';
 const { Title } = Typography;
 
 const ProjectCardLeftPt = (props) => {
-  const { name, image } = props;
+  const { name, image, links } = props;
+  const { gitLink, liveLink } = links;
+
+  // Redirect click handler
+
+  const handleClick = (e) => {
+    const {
+      target: { id },
+    } = e;
+
+    return id === 'gitHub' ? window.open(gitLink) : window.open(liveLink);
+  };
+
   // Project Header
   const projectHeader = () => {
     return (
@@ -25,8 +37,16 @@ const ProjectCardLeftPt = (props) => {
           </Title>
         </Col>
         <Col span={6} className="projectCardLeft__header__button">
-          <GithubFilled className="projectCardLeft__header__button__gitIcon" />
-          <CircleArrowUp className="projectCardLeft__header__button__linkIcon" />
+          <GithubFilled
+            id="gitHub"
+            className="projectCardLeft__header__button__gitIcon"
+            onClick={handleClick}
+          />
+          <CircleArrowUp
+            id="liveSite"
+            className="projectCardLeft__header__button__linkIcon"
+            onClick={handleClick}
+          />
         </Col>
       </Row>
     );

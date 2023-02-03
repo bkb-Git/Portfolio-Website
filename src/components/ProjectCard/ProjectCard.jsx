@@ -20,6 +20,8 @@ const ProjectCard = (props) => {
     description = 'This is an example for where a description will be placed',
     backgroundImg,
     languages,
+    gitLink,
+    liveLink,
   } = data;
 
   // Render functions for each part
@@ -35,14 +37,18 @@ const ProjectCard = (props) => {
   const renderLeftPart = () => {
     return (
       <Col span={12}>
-        <ProjectCardLeftPt name={name} image={backgroundImg} />
+        <ProjectCardLeftPt
+          name={name}
+          image={backgroundImg}
+          links={{ gitLink, liveLink }}
+        />
       </Col>
     );
   };
 
   return (
     <Col {...responsiveWidths} className="project">
-      <Row justify="space-between" align="middle">
+      <Row justify="space-between" align="top">
         {right ? (
           <>
             {renderRightPart()}

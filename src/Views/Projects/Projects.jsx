@@ -59,7 +59,7 @@ const TILES__PROJECTS = [
       Languages.SCSS,
     ],
     description:
-      'Graphical representation of economic data using World Bank APIs.',
+      'This is an app that offers a way to visualize world economic data. The app is powered by JSON APIs provided by the World Bank and organizes data from nations by their respective regions. I utilized D3.js to create interactive and visually appealing graphs and used the latest developer technologies to ensure their performance and reliability. I believe that this app is not just a tool for understanding economic data, but also a demonstration of my expertise in data visualization, web development, and the use of APIs. I am confident that this project showcases my ability to bring together multiple technologies to create a seamless user experience.',
     backgroundImg: GraphAppImg,
     gitLink: 'https://github.com/bkb-Git/Graph-Application',
     liveLink: 'https://wb-graph-app.netlify.app/',
