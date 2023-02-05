@@ -4,12 +4,32 @@ import { ReactComponent as Divider } from 'assets/svg/Divider.svg';
 import { ReactComponent as PuzzlePiece } from 'assets/svg/puzzle-piece-solid 1.svg';
 
 import TechSkillTag from 'components/TechSkillTag';
+import SoftSkillTag from 'components/SoftSkillTag';
 
 import Languages from 'lib/constants/languages';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTeamspeak } from '@fortawesome/free-brands-svg-icons';
 
 import './Skills.scss';
 
 const { Title } = Typography;
+
+const SOFT_SKILLS = [
+  {
+    name: 'Effective Communication',
+    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" />,
+  },
+  { name: 'Team Work', icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" /> },
+  {
+    name: 'Time Management',
+    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" />,
+  },
+  {
+    name: 'Problem Solving',
+    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" />,
+  },
+];
 
 const Skills = () => {
   const mappedSkills = (skillsToMap, SkillComponent) => {
@@ -21,7 +41,7 @@ const Skills = () => {
       </Row>
     );
   };
-  // Function that returns a subtitle
+
   const skillsSubtitle = (title, Icon) => {
     return (
       <Row
@@ -57,7 +77,7 @@ const Skills = () => {
 
   const renderTechnicalSkills = () => {
     return (
-      <Col span={18} className="skillsPage__skills__technical">
+      <Col span={20} className="skillsPage__skills__technical">
         <Row justify="start" align="middle" gutter={[96, 0]}>
           <Col span={6}>{skillsSubtitle('Technical', Divider)}</Col>
           <Col span={18}>
@@ -70,10 +90,10 @@ const Skills = () => {
 
   const renderSoftSkills = () => {
     return (
-      <Col offset={6} span={18} className="skillsPage__skills__soft">
+      <Col offset={4} span={20} className="skillsPage__skills__soft">
         <Row justify="end" align="middle" gutter={[96, 0]}>
-          <Col>Skills</Col>
-          <Col>{skillsSubtitle('Soft', PuzzlePiece)}</Col>
+          <Col span={18}>{mappedSkills(SOFT_SKILLS, SoftSkillTag)}</Col>
+          <Col span={6}>{skillsSubtitle('Soft', PuzzlePiece)}</Col>
         </Row>
       </Col>
     );
@@ -81,13 +101,15 @@ const Skills = () => {
 
   return (
     <Row justify="center" align="middle" className="skillsPage">
-      {renderTitle()}
-      <Col span={24} className="skillsPage__skills">
-        <Row justify="start" align="middle" gutter={[0, 84]}>
-          {renderTechnicalSkills()}
-          {renderSoftSkills()}
-        </Row>
-      </Col>
+      <Row justify="center" align="middle" className="skillsPage__screen">
+        {renderTitle()}
+        <Col span={24} className="skillsPage__skills">
+          <Row justify="start" align="middle" gutter={[0, '20rem']}>
+            {renderTechnicalSkills()}
+            {renderSoftSkills()}
+          </Row>
+        </Col>
+      </Row>
     </Row>
   );
 };

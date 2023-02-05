@@ -7,55 +7,6 @@
   height: 100vh;
   border-left: 2px solid $tertiary-color;
 
-  &__container {
-    width: 100%;
-    height: calc(100% - 3.5rem);
-    margin: 7rem 1rem 1rem 7rem;
-
-    &__content {
-      border-radius: 50px;
-      height: 85%;
-      padding: 1rem 0 1rem 0rem;
-      z-index: 2;
-
-      &::-webkit-scrollbar {
-        height: 5px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: $secondary-color;
-        border-radius: 10px;
-      }
-    }
-  }
-
-  @keyframes arrow-2-Home {
-    to {
-      left: 1%;
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes arrow-3 {
-    from {
-      top: 2%;
-      opacity: 0.3;
-    }
-    to {
-      top: 0.8%;
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes blinker-3 {
-    from {
-      opacity: 0.3;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   @include mixins.respond(tab-land) {
     border-left: none;
     border-top: 2px solid $tertiary-color;

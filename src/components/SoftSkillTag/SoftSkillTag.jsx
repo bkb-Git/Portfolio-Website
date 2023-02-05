@@ -1,23 +1,23 @@
 import { Col, Row } from 'antd';
 
-import './TechSkillTag.scss';
+import './SoftSkillTag.scss';
 
-const TechSkillTag = (props) => {
+const SoftSkillTag = (props) => {
   const { data } = props;
-  const { displayText, icon } = data;
+  const { name, icon } = data;
   return (
-    <Col span={6}>
+    <Col span={8}>
       <Row
         justify="center"
         align="middle"
-        className="techSkillTag"
+        className="softSkillTag"
         gutter={[12, 0]}
       >
         <Col className="techSkillTag__icon">{icon}</Col>
-        <Col className="techSkillTag__text">{displayText}</Col>
+        <Col className="techSkillTag__text">{name}</Col>
       </Row>
     </Col>
   );
 };
 
-export default TechSkillTag;
+export default SoftSkillTag;

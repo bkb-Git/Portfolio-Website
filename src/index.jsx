@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Row } from 'antd';
 
 import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
@@ -9,8 +9,7 @@ import MainLayout from './layout/MainLayout';
 import Home from './views/Home';
 import Projects from './views/Projects';
 import Skills from './views/Skills';
-
-// import About from './views/About';
+import About from './views/About';
 
 import './styles/index.scss';
 
@@ -31,12 +30,7 @@ const App = () => {
         <Home />
         <Projects />
         <Skills />
-        <Col
-          span={24}
-          style={{
-            height: '100vh',
-          }}
-        />
+        <About />
       </Row>
     </MainLayout>
   );
