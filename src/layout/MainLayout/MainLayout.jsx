@@ -13,7 +13,7 @@ const MainLayout = (props) => {
   // const isMobileOrTablet = (xs || sm) && !lg;
 
   return (
-    <Layout>
+    <Layout style={{ background: 'white' }}>
       <HeaderMenu />
       <Content className="content">{children}</Content>
     </Layout>

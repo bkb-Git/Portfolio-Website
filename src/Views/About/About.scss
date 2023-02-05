@@ -2,10 +2,39 @@
 @import "/src/styles/variables";
 @import "/src/styles/typography";
 
-.about-page {
-  background: $secondary-color;
-  height: 100vh;
-  border-left: 2px solid $tertiary-color;
+.aboutPage {
+  min-height: 100vh;
+  margin-bottom: 10rem;
+
+  &__title {
+    @extend .page-title;
+    margin-bottom: 6rem !important;
+
+    &__me {
+      position: absolute;
+      transform: translate(-25%, 75%);
+      color: $primary-color;
+    }
+  }
+
+  &__text {
+    @extend .body-text;
+    margin-bottom: 0 !important;
+  }
+
+  &__image {
+    height: 80%;
+    padding: 2px;
+    background: $tertiary-color;
+    border-radius: 5px;
+  }
+
+  &__resume {
+    @include mixins.flex(center, center, row);
+    padding: 25px 50px;
+    border-radius: 12px;
+    border: 1px solid $accent-color;
+  }
 
   @include mixins.respond(tab-land) {
     border-left: none;

@@ -10,6 +10,7 @@ import Home from './views/Home';
 import Projects from './views/Projects';
 import Skills from './views/Skills';
 import About from './views/About';
+import ContactMe from './views/ContactMe';
 
 import './styles/index.scss';
 
@@ -31,6 +32,7 @@ const App = () => {
         <Projects />
         <Skills />
         <About />
+        <ContactMe />
       </Row>
     </MainLayout>
   );

@@ -36,7 +36,7 @@ const Skills = () => {
     return (
       <Row justify="start" align="middle" gutter={[64, 48]}>
         {skillsToMap.map((skill) => (
-          <SkillComponent key={Date.now()} data={skill} />
+          <SkillComponent key={`${skill.name}-${Date.now()}`} data={skill} />
         ))}
       </Row>
     );
