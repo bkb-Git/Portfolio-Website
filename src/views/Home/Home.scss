@@ -1,0 +1,14 @@
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+
+.Home {
+  height: 100%;
+  width: 100%;
+  padding-top: 40px;
+  background: $primary-bg-color;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 15px;
+}

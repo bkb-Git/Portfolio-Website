@@ -1,0 +1,25 @@
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+@import "/src/styles/typography";
+
+.projects {
+  height: auto;
+  background: white;
+  padding-bottom: 8rem;
+
+  &__header {
+    @extend .page-title;
+  }
+
+  &__works {
+    padding: 0 0 15px 0;
+  }
+
+  @include mixins.respond(tab-land) {
+    &__header {
+      &__text {
+        font-size: 3rem;
+      }
+    }
+  }
+}
