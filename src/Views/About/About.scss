@@ -3,11 +3,12 @@
 @import "/src/styles/typography";
 
 .aboutPage {
-  min-height: 100vh;
-  margin-bottom: 10rem;
+  height: 100vh;
+  margin-top: 8rem;
 
   &__title {
     @extend .page-title;
+    margin: 0 !important;
     margin-bottom: 6rem !important;
 
     &__me {
@@ -23,7 +24,7 @@
   }
 
   &__image {
-    height: 80%;
+    // height: 80%;
     padding: 2px;
     background: $tertiary-color;
     border-radius: 5px;

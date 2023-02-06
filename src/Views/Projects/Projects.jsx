@@ -2,13 +2,14 @@ import { Col, Row, Grid } from 'antd';
 
 import ProjectCard from 'components/ProjectCard';
 
-import PortfolioWebsiteImg from 'assets/images/portfolio-cover.jpg';
 import GraphAppImg from 'assets/images/WB-graph-app-cover.png';
 import TravelLamuCover from 'assets/images/Travel-Lamu-Cover.jpg';
 import LLLCover from 'assets/images/LLLSection2.png';
+import RadicalX from 'assets/images/radicalx-internships.png';
+
+import Languages from 'lib/constants/languages';
 
 import './Projects.scss';
-import Languages from 'lib/constants/languages';
 
 const { useBreakpoint } = Grid;
 
@@ -31,6 +32,24 @@ const TILES__PROJECTS = [
     no: 1,
   },
   {
+    name: 'RadicalX Internships',
+    languages: [
+      Languages.React,
+      Languages.Javascript,
+      Languages.AntDesign,
+      Languages.HTML5,
+      Languages.SCSS,
+      Languages.Firebase,
+    ],
+    description:
+      'This is a web-based CRUD (Create, Read, Update, Delete) application that streamlines the process of intern hiring for recruiters and companies. The app is designed to provide a platform for companies to post internships and apprenticeships, as well as for individuals to search and apply for opportunities that match their skills and interests. Built using React and Ant Design, the app offers a user-friendly and intuitive interface that makes it easy for recruiters to manage their intern hiring process. For individuals, the app provides a centralized and organized way to search for internships and apprenticeships, eliminating the need to spend countless hours browsing multiple websites.',
+    backgroundImg: RadicalX,
+    rightSide: true,
+    gitLink: 'https://github.com/bkb-Git/RadicalX-Internships-Tab',
+    liveLink: 'https://radicalx-internships-bkb.netlify.app/',
+    no: 2,
+  },
+  {
     name: 'Travel Lamu',
     languages: [
       Languages.NextJs,
@@ -45,8 +64,7 @@ const TILES__PROJECTS = [
     backgroundImg: TravelLamuCover,
     gitLink: 'https://github.com/bkb-Git/travel-lamu',
     liveLink: 'https://travel-lamu.vercel.app/',
-    rightSide: true,
-    no: 2,
+    no: 3,
   },
   {
     name: 'World Bank Graph App',
@@ -61,23 +79,9 @@ const TILES__PROJECTS = [
     description:
       'This is an app that offers a way to visualize world economic data. The app is powered by JSON APIs provided by the World Bank and organizes data from nations by their respective regions. I utilized D3.js to create interactive and visually appealing graphs and used the latest developer technologies to ensure their performance and reliability. I believe that this app is not just a tool for understanding economic data, but also a demonstration of my expertise in data visualization, web development, and the use of APIs. I am confident that this project showcases my ability to bring together multiple technologies to create a seamless user experience.',
     backgroundImg: GraphAppImg,
+    rightSide: true,
     gitLink: 'https://github.com/bkb-Git/Graph-Application',
     liveLink: 'https://wb-graph-app.netlify.app/',
-    no: 3,
-  },
-  {
-    name: 'Portfolio Website',
-    languages: [
-      Languages.React,
-      Languages.Javascript,
-      Languages.SCSS,
-      Languages.HTML5,
-    ],
-    description: 'This is my portfolio website',
-    backgroundImg: PortfolioWebsiteImg,
-    gitLink: 'https://github.com/bkb-Git/Portfolio-Website',
-    liveLink: null,
-    rightSide: true,
     no: 4,
   },
 ];

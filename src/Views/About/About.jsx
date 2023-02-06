@@ -44,7 +44,7 @@ const About = () => {
   const renderAboutText = () => {
     return (
       <Col span={12}>
-        <Row justify="starts" align="middle">
+        <Row justify="start" align="bottom" style={{ height: '100%' }}>
           <Col span={20}>
             <Title className="aboutPage__title">
               About <span className="aboutPage__title__me">Me</span>
@@ -61,12 +61,8 @@ const About = () => {
 
   const renderPotrait = () => {
     return (
-      <Col span={12} style={{ height: '100vh' }}>
-        <Row
-          justify="center"
-          align="middle"
-          style={{ marginTop: '10rem', height: 'calc( 100% - 10rem)' }}
-        >
+      <Col span={12}>
+        <Row justify="center" align="middle" gutter={[0, 64]}>
           <Col span={20}>
             <Image className="aboutPage__image" src={Portrait} />
           </Col>

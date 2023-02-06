@@ -10,6 +10,13 @@ import Languages from 'lib/constants/languages';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTeamspeak } from '@fortawesome/free-brands-svg-icons';
+import {
+  faInfinity,
+  faHourglass,
+  faSearch,
+  faPeopleGroup,
+  faLightbulb,
+} from '@fortawesome/free-solid-svg-icons';
 
 import './Skills.scss';
 
@@ -17,31 +24,47 @@ const { Title } = Typography;
 
 const SOFT_SKILLS = [
   {
-    name: 'Effective Communication',
-    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" />,
-  },
-  { name: 'Team Work', icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" /> },
-  {
-    name: 'Time Management',
-    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" />,
+    displayText: 'Effective Communication',
+    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" color="#1c3879" />,
   },
   {
-    name: 'Problem Solving',
-    icon: <FontAwesomeIcon icon={faTeamspeak} size="2x" />,
+    displayText: 'Team Work',
+    icon: <FontAwesomeIcon icon={faPeopleGroup} size="2x" color="#1c3879" />,
+  },
+  {
+    displayText: 'Time Management',
+    icon: <FontAwesomeIcon icon={faHourglass} size="2x" color="#1c3879" />,
+  },
+  {
+    displayText: 'Problem Solving',
+    icon: <FontAwesomeIcon icon={faSearch} size="2x" color="#1c3879" />,
+  },
+  {
+    displayText: 'Adaptability',
+    icon: <FontAwesomeIcon icon={faInfinity} size="2x" color="#1c3879" />,
+  },
+  {
+    displayText: 'Critical Thinking',
+    icon: <FontAwesomeIcon icon={faLightbulb} size="2x" color="#1c3879" />,
   },
 ];
 
 const Skills = () => {
+  // Map function to render skills tag
   const mappedSkills = (skillsToMap, SkillComponent) => {
     return (
       <Row justify="start" align="middle" gutter={[64, 48]}>
         {skillsToMap.map((skill) => (
-          <SkillComponent key={`${skill.name}-${Date.now()}`} data={skill} />
+          <SkillComponent
+            key={`${skill.displayText}-${Date.now()}`}
+            data={skill}
+          />
         ))}
       </Row>
     );
   };
 
+  // Function to render skills category
   const skillsSubtitle = (title, Icon) => {
     return (
       <Row

@@ -10,8 +10,8 @@ const { TextArea } = Input;
 const ContactMe = () => {
   // Handle form finish
 
-  const handleFormFinish = (values) => {
-    console.log(values);
+  const handleFormFinish = () => {
+    // console.log(values);
   };
 
   // Render functions for this component's views

@@ -4,7 +4,7 @@ import './SoftSkillTag.scss';
 
 const SoftSkillTag = (props) => {
   const { data } = props;
-  const { name, icon } = data;
+  const { displayText, icon } = data;
   return (
     <Col span={8}>
       <Row
@@ -14,7 +14,7 @@ const SoftSkillTag = (props) => {
         gutter={[12, 0]}
       >
         <Col className="techSkillTag__icon">{icon}</Col>
-        <Col className="techSkillTag__text">{name}</Col>
+        <Col className="techSkillTag__text">{displayText}</Col>
       </Row>
     </Col>
   );

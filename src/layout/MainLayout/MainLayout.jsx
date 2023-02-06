@@ -1,4 +1,6 @@
 import { Layout } from 'antd';
+
+import FooterSection from 'layout/FooterSection';
 import HeaderMenu from '../HeaderMenu';
 
 import './MainLayout.scss';
@@ -16,6 +18,7 @@ const MainLayout = (props) => {
     <Layout style={{ background: 'white' }}>
       <HeaderMenu />
       <Content className="content">{children}</Content>
+      <FooterSection />
     </Layout>
   );
 };

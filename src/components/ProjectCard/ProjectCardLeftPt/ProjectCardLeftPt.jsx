@@ -17,7 +17,7 @@ const ProjectCardLeftPt = (props) => {
 
   const handleClick = (e) => {
     const {
-      target: { id },
+      currentTarget: { id },
     } = e;
 
     return id === 'gitHub' ? window.open(gitLink) : window.open(liveLink);
