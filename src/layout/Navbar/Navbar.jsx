@@ -1,13 +1,33 @@
 // import { useContext } from 'react';
 import { useEffect } from 'react';
 import { Menu } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useHistory } from 'react-router-dom';
 
-import sns from './sns';
-
 import './Navbar.scss';
+
+const PAGES = [
+  {
+    id: 1,
+    name: 'Home',
+    link: '#home',
+  },
+  {
+    id: 2,
+    name: 'Projects',
+    link: '#projects',
+  },
+  {
+    id: 3,
+    name: 'Skills',
+    link: '#skills',
+  },
+  {
+    id: 4,
+    name: 'About',
+    link: '#about',
+  },
+];
 
 // const { useBreakpoint } = Grid;
 
@@ -19,16 +39,11 @@ const Navbar = () => {
 
   useEffect(() => {}, [history]);
 
-  // const handleRoute = (e) => {
-  //   const { key } = e;
-
-  //   if (key === '/' || key === '/about') {
-  //     // context.updateNextRoute(key);
-  //     return history.push(key);
-  //   }
-
-  //   return null;
-  // };
+  const handleClick = (props) => {
+    const { key } = props;
+    const element = document.getElementById(key);
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const getItem = (label, key) => {
     return {
@@ -37,10 +52,10 @@ const Navbar = () => {
     };
   };
 
-  const items = sns.map((item) => {
-    const { name, route, icon } = item;
+  const items = PAGES.map((item) => {
+    const { name, link } = item;
 
-    return getItem(name, route, <FontAwesomeIcon icon={icon} />);
+    return getItem(name, link);
   });
 
   return (
@@ -49,6 +64,7 @@ const Navbar = () => {
       theme="dark"
       defaultSelectedKeys={[1]}
       selectedKeys={[history.location.pathname]}
+      onClick={handleClick}
       mode="horizontal"
       items={items}
     />

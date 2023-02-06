@@ -20,6 +20,12 @@ const IntroductionSide = () => {
 
   const determineColumnGap = () => (isHDScreen ? 16 : isHDPlusScreen && 48);
 
+  // Handler for scrolling to contact form
+  const handleClick = () => {
+    const element = document.getElementById('#contact');
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   // Render functions defined here
   const renderLine = () => {
     return (
@@ -79,7 +85,11 @@ const IntroductionSide = () => {
     return (
       <Row justify="start" align="middle">
         <Col span={4}>
-          <Button size="large" className="introductionSide__hireMeButton">
+          <Button
+            size="large"
+            className="introductionSide__hireMeButton"
+            onClick={handleClick}
+          >
             Hire me
           </Button>
         </Col>

@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 import { Col, Row, Grid } from 'antd';
 
 import { ReactComponent as Arrow } from 'assets/svg/Arrow.svg';

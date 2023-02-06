@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-alert */
 import { Button, Col, Divider, Image, Row, Typography } from 'antd';
 
@@ -91,6 +93,7 @@ const About = () => {
 
   return (
     <Col span={20}>
+      <a name="about" id="#about" />
       <Row justify="center" align="middle" className="aboutPage">
         {renderAboutText()}
         {renderPotrait()}

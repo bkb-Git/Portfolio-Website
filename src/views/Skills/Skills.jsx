@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Row, Col, Typography } from 'antd';
 
 import { ReactComponent as Divider } from 'assets/svg/Divider.svg';
@@ -128,6 +130,7 @@ const Skills = () => {
 
   return (
     <Row justify="center" align="middle" className="skillsPage">
+      <a name="skills" id="#skills" />
       <Row justify="center" align="middle" className="skillsPage__screen">
         {renderTitle()}
         <Col span={24} className="skillsPage__skills">

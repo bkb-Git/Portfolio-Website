@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row, Col, Typography, Form, Input, Button } from 'antd';
@@ -66,6 +68,7 @@ const ContactMe = () => {
 
   return (
     <Col span={14}>
+      <a name="contact" id="#contact" />
       <Row justify="center" align="middle" className="contactMe">
         {renderTitle()}
         {renderForm()}

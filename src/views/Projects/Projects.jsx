@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Col, Row, Grid } from 'antd';
 
 import ProjectCard from 'components/ProjectCard';
@@ -118,6 +120,7 @@ const Projects = () => {
 
   return (
     <Col span={24} className="projects">
+      <a name="projects" id="#projects" />
       <Row
         justify={isMobileOrTablet && 'center'}
         align={isMobileOrTablet && 'middle'}

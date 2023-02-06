@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Button, Col, Layout, Row } from 'antd';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +14,12 @@ import './HeaderMenu.scss';
 const { Header } = Layout;
 
 const HeaderMenu = () => {
+  // Handler to scroll to contact me
+  const handleClick = () => {
+    const element = document.getElementById('#contact');
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const renderButtons = () => {
     return (
       <Button
@@ -21,6 +29,7 @@ const HeaderMenu = () => {
             style={{ marginRight: '10px' }}
           />
         }
+        onClick={handleClick}
         size="large"
         className="headerMenu__buttons__contactMe"
       >
@@ -31,6 +40,7 @@ const HeaderMenu = () => {
 
   return (
     <Header className="headerMenu">
+      <a name="home" id="#home" />
       <Row justify="space-around" align="middle" style={{ height: '100%' }}>
         <Col span={4} className="headerMenu__logo">
           <PersonalLogo />
