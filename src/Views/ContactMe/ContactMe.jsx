@@ -1,4 +1,4 @@
-import { faEnvelope, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row, Col, Typography, Form, Input, Button } from 'antd';
 
@@ -8,41 +8,20 @@ const { Title } = Typography;
 const { TextArea } = Input;
 
 const ContactMe = () => {
-  // Handle form finish
-
-  const handleFormFinish = () => {
-    // console.log(values);
-  };
-
   // Render functions for this component's views
   const renderTitle = () => {
     return (
       <Col span={24} className="contactMe__header">
-        <Row justify="center" align="middle" gutter={[32, 0]}>
-          <Col
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <FontAwesomeIcon icon={faEnvelope} size="3x" color="#1c3879" />
-          </Col>
-          <Col>
-            <Title className="contactMe__header__title">Contact Me</Title>
-          </Col>
-        </Row>
+        <Col>
+          <Title className="contactMe__header__title">Contact Me</Title>
+        </Col>
       </Col>
     );
   };
 
   const renderForm = () => {
     return (
-      <Form
-        name="contact"
-        className="contactMe__form"
-        onFinish={handleFormFinish}
-      >
+      <Form name="contact" className="contactMe__form">
         <Form.Item name="name" className="contactMe__form__item">
           <Input placeholder="Name" className="contactMe__form__item__input" />
         </Form.Item>

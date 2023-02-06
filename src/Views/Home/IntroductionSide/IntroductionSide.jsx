@@ -1,4 +1,4 @@
-import { Button, Col, Divider, Row, Typography } from 'antd';
+import { Button, Col, Divider, Row, Typography, Grid } from 'antd';
 
 import { ReactComponent as GitIcon } from 'assets/svg/Git.svg';
 import { ReactComponent as LinkedInIcon } from 'assets/svg/LinkedIn.svg';
@@ -8,19 +8,22 @@ import { ReactComponent as FigmaIcon } from 'assets/svg/Figma.svg';
 import './IntroductionSide.scss';
 
 const { Title, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
 
 const IntroductionSide = () => {
+  // Breakpoints destructured here
+  const { xl, xxl } = useBreakpoint();
+
+  // Breakpoint test for hd screen or hdPlus screen
+  const isHDScreen = xl && !xxl;
+  const isHDPlusScreen = xxl;
+
+  const determineColumnGap = () => (isHDScreen ? 16 : isHDPlusScreen && 48);
+
   // Render functions defined here
   const renderLine = () => {
     return (
-      <Col
-        style={{
-          width: '130px',
-          position: 'absolute',
-          left: 0,
-          top: '-12px',
-        }}
-      >
+      <Col className="introductionSide__line">
         <Divider style={{ borderColor: '#eae3d2' }} />
       </Col>
     );
@@ -28,20 +31,11 @@ const IntroductionSide = () => {
 
   const renderProfessionalTitle = () => {
     return (
-      <Col span={24}>
-        <Title level={5} style={{ marginBottom: '0.2em', color: '#CCAC00' }}>
+      <Col span={24} className="introductionSide__title">
+        <Title level={5} className="introductionSide__title__first">
           Software Developer
         </Title>
-        <Title
-          level={5}
-          style={{
-            marginBottom: '0.5em',
-            marginTop: '0',
-            position: 'relative',
-            left: '10px',
-            color: '#CCAC00',
-          }}
-        >
+        <Title level={5} className="introductionSide__title__second">
           Front-End Developer
         </Title>
       </Col>
@@ -135,7 +129,7 @@ const IntroductionSide = () => {
 
   return (
     <Col span={12} className="introductionSide">
-      <Row justify="start" align="middle" gutter={[0, 48]}>
+      <Row justify="start" align="middle" gutter={[0, determineColumnGap()]}>
         {renderLine()}
         {renderProfessionalTitle()}
         {renderIntro()}

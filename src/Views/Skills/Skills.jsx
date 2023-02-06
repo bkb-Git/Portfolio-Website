@@ -100,7 +100,7 @@ const Skills = () => {
 
   const renderTechnicalSkills = () => {
     return (
-      <Col span={20} className="skillsPage__skills__technical">
+      <Col xl={22} xxl={20} className="skillsPage__skills__technical">
         <Row justify="start" align="middle" gutter={[96, 0]}>
           <Col span={6}>{skillsSubtitle('Technical', Divider)}</Col>
           <Col span={18}>
@@ -113,7 +113,11 @@ const Skills = () => {
 
   const renderSoftSkills = () => {
     return (
-      <Col offset={4} span={20} className="skillsPage__skills__soft">
+      <Col
+        xxl={{ span: 20, offset: 4 }}
+        xl={{ span: 22, offset: 2 }}
+        className="skillsPage__skills__soft"
+      >
         <Row justify="end" align="middle" gutter={[96, 0]}>
           <Col span={18}>{mappedSkills(SOFT_SKILLS, SoftSkillTag)}</Col>
           <Col span={6}>{skillsSubtitle('Soft', PuzzlePiece)}</Col>

@@ -6,6 +6,31 @@
     height: 100%;
     padding-left: 150px;
 
+    &__line {
+        width: 130px;
+        position: absolute;
+        left: 0;
+        top: -12px;
+    }
+
+    &__title {
+        font-family: $font-secondary;
+        letter-spacing: 2px;
+
+        &__first {
+            margin-bottom: 0.2em !important;
+            color: $accent-color !important;
+        }
+
+        &__second {
+            margin-bottom: 0.5em !important;
+            margin-top: 0 !important;
+            position: relative;
+            left: 10px;
+            color: $accent-color !important;
+        }
+    }
+
     &__name {
         font-family: $font-primary;
         font-size: 96px !important;
@@ -63,6 +88,15 @@
         @include mixins.flex(flex-start, center, row);
         font-family: $tertiary-font;
         font-weight: 500;
+        font-size: 1.4rem;
         color: #eae3d2;
+    }
+
+    @include mixins.respond(desk-small) {
+        padding-left: 100px;
+
+        &__line {
+            width: 80px;
+        }
     }
 }

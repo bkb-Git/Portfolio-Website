@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Grid, Row } from 'antd';
 
 import { ReactComponent as MainPic } from 'assets/svg/MainPic.svg';
 import { ReactComponent as CSSTag } from 'assets/svg/CSSTag.svg';
@@ -9,7 +9,33 @@ import { ReactComponent as JavaScriptTag } from 'assets/svg/JavaScriptTag.svg';
 
 import './PictureSide.scss';
 
+const { useBreakpoint } = Grid;
+
 const PictureSide = () => {
+  // Breakpoints destructured here
+  const { xl, xxl } = useBreakpoint();
+
+  // Breakpoint test for hd screen or hdPlus screen
+  const isHDScreen = xl && !xxl;
+  const isHDPlusScreen = xxl;
+
+  const determinePicSize = () => {
+    let width;
+    let height;
+
+    if (isHDScreen) {
+      width = 500;
+      height = 636.85;
+    }
+
+    if (isHDPlusScreen) {
+      width = 600;
+      height = 764.23;
+    }
+
+    return { width, height };
+  };
+
   return (
     <Col span={12} className="pictureSide">
       <Row justify="center" align="middle">
@@ -18,7 +44,7 @@ const PictureSide = () => {
         <HTMLTag className="htmlTag" width={200} height={80} />
         <ReactTag className="reactTag" width={200} height={80} />
         <JavaScriptTag className="javascriptTag" width={200} heigth={80} />
-        <MainPic width={600} height={764.23} />
+        <MainPic {...determinePicSize()} />
       </Row>
     </Col>
   );

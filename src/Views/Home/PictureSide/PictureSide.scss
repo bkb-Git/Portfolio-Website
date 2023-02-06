@@ -1,3 +1,5 @@
+@use "styles/_mixins.scss";
+
 .pictureSide {
     height: 100%;
 }
@@ -12,6 +14,11 @@
     position: absolute;
     top: 35px;
     left: 190px;
+
+    @include mixins.respond(desk-small) {
+        top: 40px;
+        left: 175px;
+    }
 }
 
 .javascriptTag {
@@ -24,6 +31,10 @@
     position: absolute;
     left: 0;
     bottom: 220px;
+
+    @include mixins.respond(desk-small) {
+        bottom: 100px;
+    }
 }
 
 .reactTag {

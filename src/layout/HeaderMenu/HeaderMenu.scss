@@ -1,5 +1,6 @@
 @use "/src/styles/mixins";
 @import "/src/styles/variables";
+@import "/src/styles/typography";
 
 .headerMenu {
   width: 100%;
@@ -19,6 +20,7 @@
 
     &__contactMe {
       @include mixins.flex(center, center, row);
+      font-family: $font-secondary;
       border-radius: 20px;
       color: white;
       background: transparent;

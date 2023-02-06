@@ -1,5 +1,6 @@
 @use "src/styles/mixins";
 @import "/src/styles/variables";
+@import "/src/styles/typography";
 
 .navbar {
   justify-content: center;
@@ -8,29 +9,27 @@
   background: $primary-color !important;
 
   li {
+    font-family: $font-secondary;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
     text-align: center;
     margin: 0 2.5rem;
     flex: 1;
+    border-bottom: 1px solid transparent !important;
+
+    &:hover {
+      border-bottom-color: $accent-color !important;
+    }
+
+    &:active {
+      border-bottom-color: $accent-color !important;
+    }
   }
 
   @include mixins.respond(tab-land) {
     li {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       height: 100%;
-
-      svg {
-        flex: 1;
-        transform: translate(0, 15%);
-      }
-
-      span {
-        flex: 1;
-        line-height: 1.5rem;
-        margin-left: 0 !important;
-      }
     }
   }
 }
