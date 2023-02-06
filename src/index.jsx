@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import MainLayout from './layout/MainLayout';
+import MainLayout from 'layout/MainLayout';
 
-import Home from './views/Home';
-import Projects from './views/Projects';
-import Skills from './views/Skills';
-import About from './views/About';
-import ContactMe from './views/ContactMe';
+import Home from 'views/Home';
+import Projects from 'views/Projects';
+import Skills from 'views/Skills';
+import About from 'views/About';
+import ContactMe from 'views/ContactMe';
 
 import './styles/index.scss';
 
