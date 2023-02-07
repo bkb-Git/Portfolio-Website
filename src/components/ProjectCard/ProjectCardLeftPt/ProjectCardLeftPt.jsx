@@ -1,4 +1,5 @@
 import { Col, Row, Image, Typography } from 'antd';
+import { useState } from 'react';
 
 import { GithubFilled } from '@ant-design/icons';
 import { ReactComponent as CircleArrowUp } from 'assets/svg/circle-arrow-up-solid.svg';
@@ -10,11 +11,16 @@ import './ProjectCardLeftPt.scss';
 const { Title } = Typography;
 
 const ProjectCardLeftPt = (props) => {
-  const { name, image, links } = props;
+  const { name, screenshots, links } = props;
   const { gitLink, liveLink } = links;
 
-  // Redirect click handler
+  // Slider navigation state
+  const [sliderNav, setSliderNav] = useState({
+    primary: null,
+    secondary: null,
+  });
 
+  // Redirect click handler
   const handleClick = (e) => {
     const {
       currentTarget: { id },
@@ -62,10 +68,23 @@ const ProjectCardLeftPt = (props) => {
         gutter={[0, 25]}
       >
         <Col span={24}>
-          <CarouselMod arrows dots={false} infinite slidesToShow={1}>
-            <Col className="projectCardLeft__sliders__mainImage">
-              <Image src={image} />
-            </Col>
+          <CarouselMod
+            dots={false}
+            infinite
+            slidesToShow={1}
+            setRefSlide={setSliderNav}
+            slideState={sliderNav}
+            primary
+            navFor={sliderNav.secondary}
+          >
+            {screenshots.map((img) => (
+              <Col
+                key={`${Math.random()}-${Date.now()}`}
+                className="projectCardLeft__sliders__mainImage"
+              >
+                <Image src={img} />
+              </Col>
+            ))}
           </CarouselMod>
         </Col>
         <Col span={24}>
@@ -74,34 +93,22 @@ const ProjectCardLeftPt = (props) => {
             dots={false}
             infinite
             slidesToShow={3}
+            setRefSlide={setSliderNav}
+            navFor={sliderNav.primary}
             autoplay
+            focusOnSelect
             otherClassNames="projectCardLeft__sliders__secondSlider"
           >
-            <Col className="projectCardLeft__sliders__card">
-              <Col className="projectCardLeft__sliders__card__image">
-                <Image preview={false} src={image} />
+            {screenshots.map((img) => (
+              <Col
+                key={`${Math.random()}-${Date.now()}`}
+                className="projectCardLeft__sliders__card"
+              >
+                <Col className="projectCardLeft__sliders__card__image">
+                  <Image preview={false} src={img} />
+                </Col>
               </Col>
-            </Col>
-            <Col className="projectCardLeft__sliders__card">
-              <Col className="projectCardLeft__sliders__card__image">
-                <Image preview={false} src={image} />
-              </Col>
-            </Col>
-            <Col className="projectCardLeft__sliders__card">
-              <Col className="projectCardLeft__sliders__card__image">
-                <Image preview={false} src={image} />
-              </Col>
-            </Col>
-            <Col className="projectCardLeft__sliders__card">
-              <Col className="projectCardLeft__sliders__card__image">
-                <Image preview={false} src={image} />
-              </Col>
-            </Col>
-            <Col className="projectCardLeft__sliders__card">
-              <Col className="projectCardLeft__sliders__card__image">
-                <Image preview={false} src={image} />
-              </Col>
-            </Col>
+            ))}
           </CarouselMod>
         </Col>
       </Row>

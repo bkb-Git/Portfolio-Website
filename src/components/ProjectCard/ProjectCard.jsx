@@ -18,7 +18,7 @@ const ProjectCard = (props) => {
   const {
     name = 'TITLE',
     description = 'This is an example for where a description will be placed',
-    backgroundImg,
+    screenshots,
     languages,
     gitLink,
     liveLink,
@@ -39,7 +39,7 @@ const ProjectCard = (props) => {
       <Col span={12}>
         <ProjectCardLeftPt
           name={name}
-          image={backgroundImg}
+          screenshots={screenshots}
           links={{ gitLink, liveLink }}
         />
       </Col>

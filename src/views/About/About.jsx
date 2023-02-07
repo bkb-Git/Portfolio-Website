@@ -2,11 +2,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-alert */
 import { Button, Col, Divider, Image, Row, Typography } from 'antd';
+import { saveAs } from 'file-saver';
 
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Portrait from 'assets/images/potrait.jpg';
+import Resume from 'assets/Latest Resume .docx.pdf';
 
 import './About.scss';
 
@@ -15,6 +17,10 @@ const { Title, Paragraph } = Typography;
 // const { useBreakpoint } = Grid;
 
 const About = () => {
+  // Handler to download file
+  const handleSave = () => saveAs(Resume, 'resume.pdf');
+
+  // Introction to me
   const aboutMe = () => {
     return (
       <>
@@ -43,6 +49,7 @@ const About = () => {
     );
   };
 
+  // Render functions for views
   const renderAboutText = () => {
     return (
       <Col span={12}>
@@ -73,6 +80,7 @@ const About = () => {
               <Button
                 type="primary"
                 size="large"
+                onClick={handleSave}
                 icon={
                   <FontAwesomeIcon
                     icon={faDownload}

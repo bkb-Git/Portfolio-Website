@@ -31,7 +31,9 @@ const CarouselMod = (props) => {
 
   useEffect(() => {
     if (slideState?.primary && slideState?.secondary) return null;
-    if (setRefSlide) return setRefSlide(stateToChange(carouselRef.current));
+
+    if (setRefSlide) setRefSlide(stateToChange(carouselRef.current));
+
     return null;
   }, [setRefSlide, stateToChange, primary, slideState]);
 
