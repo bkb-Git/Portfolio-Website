@@ -10,18 +10,37 @@ import Navbar from 'layout/Navbar';
 const { Footer } = Layout;
 
 const FooterSection = () => {
+  // Handler click
+  const handleClick = (e) => {
+    const {
+      currentTarget: { id },
+    } = e;
+
+    return id === 'gitHub'
+      ? window.open('https://github.com/bkb-Git/')
+      : window.open('https://www.linkedin.com/in/billykbett/');
+  };
+
   // Render functions for views
   const renderLinks = () => {
     return (
       <Col span={4}>
         <Row justify="space-around" align="middle">
           <Col>
-            <Col className="footerSection__links">
+            <Col
+              className="footerSection__links"
+              id="gitHub"
+              onClick={handleClick}
+            >
               <GitIcon width={26} height={26} />
             </Col>
           </Col>
           <Col>
-            <Col className="footerSection__links">
+            <Col
+              className="footerSection__links"
+              id="linkedIn"
+              onClick={handleClick}
+            >
               <LinkedInIcon width={26} height={26} />
             </Col>
           </Col>
