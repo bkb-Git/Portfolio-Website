@@ -1,0 +1,34 @@
+@use "styles/mixins";
+@import "styles/_variables.scss";
+
+.footerSection {
+    height: 30vh;
+    background: $primary-color;
+
+    &__links {
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        border: 1px solid $accent-color;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: 0px 0px 10px $accent-color, 0px 0px 20px $accent-color, 0px 0px 30px $accent-color;
+            transform: translateY(-3px);
+            cursor: pointer;
+        }
+    }
+
+    &__copyright {
+        @include mixins.flex(center, center, row);
+        color: white;
+
+        &__year {
+            color: $accent-color;
+        }
+    }
+}

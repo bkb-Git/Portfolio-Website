@@ -1,8 +1,42 @@
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
+import { Row } from 'antd';
 
-import './index.scss';
+import ReactDOM from 'react-dom';
+import { Helmet } from 'react-helmet';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import MainLayout from './layout/MainLayout';
+
+import Home from './views/Home';
+import Projects from './views/Projects';
+import Skills from './views/Skills';
+import About from './views/About';
+import ContactMe from './views/ContactMe';
+
+import './styles/index.scss';
+
+const App = () => {
+  // Render functions defined here
+  const renderHelmet = () => {
+    return (
+      <Helmet>
+        <title>Billy K. Bett | Portfolio</title>
+      </Helmet>
+    );
+  };
+
+  return (
+    <MainLayout>
+      {renderHelmet()}
+      <Row justify="center" align="middle">
+        <Home />
+        <Projects />
+        <Skills />
+        <About />
+        <ContactMe />
+      </Row>
+    </MainLayout>
+  );
+};
 
 ReactDOM.render(
   <Router>

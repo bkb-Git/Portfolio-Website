@@ -1,0 +1,36 @@
+@use "/src/styles/mixins";
+@import "/src/styles/typography";
+@import "/src/styles/variables";
+
+.contactMe {
+    &__header {
+        margin: 10rem 0;
+        &__title {
+            @extend .page-title;
+            margin: 0 !important;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        &__item {
+            margin-bottom: 8rem;
+
+            &__input {
+                padding: 15px 25px;
+                border-radius: 20px;
+
+                &::placeholder {
+                    color: $accent-color;
+                }
+            }
+
+            &__button {
+                @include mixins.flex(center, center, row);
+                height: 55px;
+                border-radius: 20px;
+                border: 1px solid $accent-color;
+            }
+        }
+    }
+}

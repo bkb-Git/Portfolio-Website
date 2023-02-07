@@ -1,0 +1,21 @@
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+@import "/src/styles/typography";
+
+.softSkillTag {
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: #fff;
+    border: 1px solid $accent-color;
+    font-size: 1.4rem;
+
+    &__icon {
+        @include mixins.flex(center, center, row);
+    }
+
+    &__text {
+        color: #333;
+        font-weight: bolder;
+        font-family: $font-primary;
+    }
+}

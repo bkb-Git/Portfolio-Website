@@ -1,0 +1,34 @@
+@use "/src/styles/mixins";
+@import "/src/styles/variables";
+@import "/src/styles/typography";
+
+.headerMenu {
+  width: 100%;
+  height: 100px;
+  background: $primary-color;
+
+  &__logo {
+    @include mixins.flex(flex-start, center, row);
+  }
+
+  &__navbar {
+    background: $primary-color;
+  }
+
+  &__buttons {
+    @include mixins.flex(flex-end, center, row);
+
+    &__contactMe {
+      @include mixins.flex(center, center, row);
+      font-family: $font-secondary;
+      border-radius: 20px;
+      color: white;
+      background: transparent;
+      padding: 10px 25px;
+    }
+  }
+
+  @include mixins.respond(tab-land) {
+    padding: 0 2px;
+  }
+}
