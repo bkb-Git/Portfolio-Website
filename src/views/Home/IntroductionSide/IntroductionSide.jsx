@@ -21,9 +21,21 @@ const IntroductionSide = () => {
   const determineColumnGap = () => (isHDScreen ? 16 : isHDPlusScreen && 48);
 
   // Handler for scrolling to contact form
-  const handleClick = () => {
+  const handleScroll = () => {
     const element = document.getElementById('#contact');
     element.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Hanlder for links
+
+  const handleClick = (e) => {
+    const {
+      currentTarget: { id },
+    } = e;
+
+    return id === 'gitHub'
+      ? window.open('https://github.com/bkb-Git/')
+      : window.open('https://www.linkedin.com/in/billykbett/');
   };
 
   // Render functions defined here
@@ -88,7 +100,7 @@ const IntroductionSide = () => {
           <Button
             size="large"
             className="introductionSide__hireMeButton"
-            onClick={handleClick}
+            onClick={handleScroll}
           >
             Hire me
           </Button>
@@ -104,12 +116,20 @@ const IntroductionSide = () => {
           <Col span={9}>
             <Row justify="start" align="middle">
               <Col span={8}>
-                <Col className="introductionSide__socialLinks">
+                <Col
+                  className="introductionSide__socialLinks"
+                  id="linkedIn"
+                  onClick={handleClick}
+                >
                   <LinkedInIcon />
                 </Col>
               </Col>
               <Col span={8}>
-                <Col className="introductionSide__socialLinks">
+                <Col
+                  className="introductionSide__socialLinks"
+                  id="gitHub"
+                  onClick={handleClick}
+                >
                   <GitIcon />
                 </Col>
               </Col>
