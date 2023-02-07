@@ -8,6 +8,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Portrait from 'assets/images/potrait.jpg';
+import PortraitPreview from 'assets/images/potrait Preview.jpg';
 import Resume from 'assets/Latest Resume .docx.pdf';
 
 import './About.scss';
@@ -73,7 +74,11 @@ const About = () => {
       <Col span={12}>
         <Row justify="center" align="middle" gutter={[0, 64]}>
           <Col span={20}>
-            <Image className="aboutPage__image" src={Portrait} />
+            <Image
+              className="aboutPage__image"
+              src={Portrait}
+              placeholder={<Image preview={false} src={PortraitPreview} />}
+            />
           </Col>
           <Col span={20}>
             <Row justify="center" align="middle">
