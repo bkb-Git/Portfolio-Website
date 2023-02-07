@@ -6,7 +6,9 @@ import ProjectCard from 'components/ProjectCard';
 
 // First project image imports
 import LLLSection1 from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 1.png';
+import LLLSection1Preview from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 1 Preview.png';
 import LLLSection2 from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 2.png';
+import LLLSection2Preview from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 2 Preview.png';
 import LLLSection3 from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 3.png';
 import LLLSection4 from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 4.png';
 import LLLSection5 from 'assets/images/Project Screenshots/Loglink Logistics/LLL Section 5.png';
@@ -14,22 +16,27 @@ import LLLSection5 from 'assets/images/Project Screenshots/Loglink Logistics/LLL
 // Second project image imports
 import RadicalXCover from 'assets/images/Project Screenshots/RadicalX/radicalx-internships.png';
 import RadicalXFirstView from 'assets/images/Project Screenshots/RadicalX/FirstView.jpg';
-import RadicalXSecondView from 'assets/images/Project Screenshots/RadicalX/SecondView.jpg';
-import RadicalXThirdView from 'assets/images/Project Screenshots/RadicalX/ThirdView.jpg';
-import RadicalXFourthView from 'assets/images/Project Screenshots/RadicalX/FourthView.jpg';
-import RadicalXFifthView from 'assets/images/Project Screenshots/RadicalX/FifthView.jpg';
+import RadicalXFirstViewPreview from 'assets/images/Project Screenshots/RadicalX/FirstView Preview.png';
+import RadicalXSecondView from 'assets/images/Project Screenshots/RadicalX/SecondView.jpeg';
+import RadicalXThirdView from 'assets/images/Project Screenshots/RadicalX/ThirdView.jpeg';
+import RadicalXFourthView from 'assets/images/Project Screenshots/RadicalX/FourthView.jpeg';
+import RadicalXFifthView from 'assets/images/Project Screenshots/RadicalX/FifthView.jpeg';
 
 // Third project image imports
 import TravelLamuCover from 'assets/images/Project Screenshots/Travel Lamu/Travel-Lamu-Cover.jpg';
+import TravelLamuCoverPreview from 'assets/images/Project Screenshots/Travel Lamu/Travel-Lamu-Cover Preview.png';
 import TravelLamuSecondView from 'assets/images/Project Screenshots/Travel Lamu/SecondView.jpg';
 import TravelLamuThirdView from 'assets/images/Project Screenshots/Travel Lamu/ThirdView.jpg';
-import TravelLamuFourthView from 'assets/images/Project Screenshots/Travel Lamu/FourthView.jpg';
-import TravelLamuFifthView from 'assets/images/Project Screenshots/Travel Lamu/FifthView.jpg';
-import TravelLamuSixthView from 'assets/images/Project Screenshots/Travel Lamu/SixthView.jpg';
+import TravelLamuThirdViewPreview from 'assets/images/Project Screenshots/Travel Lamu/ThirdView Preview.png';
+import TravelLamuFourthView from 'assets/images/Project Screenshots/Travel Lamu/FourthView.jpeg';
+import TravelLamuFourthViewPreview from 'assets/images/Project Screenshots/Travel Lamu/FourthView Preview.png';
+import TravelLamuFifthView from 'assets/images/Project Screenshots/Travel Lamu/FifthView.jpeg';
+import TravelLamuSixthView from 'assets/images/Project Screenshots/Travel Lamu/SixthView.jpeg';
 
 // Fourth project image imports
 import GraphAppImg from 'assets/images/Project Screenshots/WBGraphPic/WB-graph-app-cover.png';
 import GraphAppFirstView from 'assets/images/Project Screenshots/WBGraphPic/First View.jpg';
+import GraphAppFirstViewPreview from 'assets/images/Project Screenshots/WBGraphPic/First View Preview.png';
 import GraphAppSecondView from 'assets/images/Project Screenshots/WBGraphPic/Second View.jpg';
 import GraphAppThirdView from 'assets/images/Project Screenshots/WBGraphPic/Third View.jpg';
 
@@ -53,11 +60,11 @@ const TILES__PROJECTS = [
     description:
       'The official website of Loglink Logistics Limited. This website is designed to attract new clients and provide a seamless experience for existing ones. As one of the leading logistics providers in Nairobi, Kenya, our goal was to create a user-friendly platform that showcases our services and allows for easy quotation inquiries. Built with the latest technologies and best practices, the website is optimized for speed and accessibility. The responsive design adapts to any device, allowing clients to access our site from anywhere.',
     screenshots: [
-      LLLSection2,
-      LLLSection1,
-      LLLSection3,
-      LLLSection4,
-      LLLSection5,
+      { img: LLLSection2, preview: LLLSection2Preview },
+      { img: LLLSection1, preview: LLLSection1Preview },
+      { img: LLLSection3, preview: null },
+      { img: LLLSection4, preview: null },
+      { img: LLLSection5, preview: null },
     ],
     gitLink: 'https://github.com/bkb-Git/Brasi-Web',
     liveLink: 'https://loglinklogistics.com',
@@ -76,12 +83,12 @@ const TILES__PROJECTS = [
     description:
       'This is a web-based CRUD (Create, Read, Update, Delete) application that streamlines the process of intern hiring for recruiters and companies. The app is designed to provide a platform for companies to post internships and apprenticeships, as well as for individuals to search and apply for opportunities that match their skills and interests. Built using React and Ant Design, the app offers a user-friendly and intuitive interface that makes it easy for recruiters to manage their intern hiring process. For individuals, the app provides a centralized and organized way to search for internships and apprenticeships, eliminating the need to spend countless hours browsing multiple websites.',
     screenshots: [
-      RadicalXCover,
-      RadicalXFirstView,
-      RadicalXSecondView,
-      RadicalXThirdView,
-      RadicalXFourthView,
-      RadicalXFifthView,
+      { img: RadicalXCover, preview: null },
+      { img: RadicalXFirstView, preview: RadicalXFirstViewPreview },
+      { img: RadicalXSecondView, preview: null },
+      { img: RadicalXThirdView, preview: null },
+      { img: RadicalXFourthView, preview: null },
+      { img: RadicalXFifthView, preview: null },
     ],
     rightSide: true,
     gitLink: 'https://github.com/bkb-Git/RadicalX-Internships-Tab',
@@ -101,12 +108,12 @@ const TILES__PROJECTS = [
     description:
       "A mock-up website for Travel Lamu, the premier travel destination in Lamu, Kenya. I built this website with the goal of making it easy for visitors to plan and book their dream vacation in Lamu. The site showcases all the popular spots, tour guides and travel essentials, like car rentals and booking for accommodations. I used the latest technologies and best practices in web development to create a responsive design that looks great on any device, and built the site's structure for easy navigation. The booking system is intuitive and fast, it makes the process easy and efficient for visitors.",
     screenshots: [
-      TravelLamuCover,
-      TravelLamuSecondView,
-      TravelLamuThirdView,
-      TravelLamuFourthView,
-      TravelLamuFifthView,
-      TravelLamuSixthView,
+      { img: TravelLamuCover, preview: TravelLamuCoverPreview },
+      { img: TravelLamuSecondView, preview: null },
+      { img: TravelLamuThirdView, preview: TravelLamuThirdViewPreview },
+      { img: TravelLamuFourthView, preview: TravelLamuFourthViewPreview },
+      { img: TravelLamuFifthView, preview: null },
+      { img: TravelLamuSixthView, preview: null },
     ],
     gitLink: 'https://github.com/bkb-Git/travel-lamu',
     liveLink: 'https://travel-lamu.vercel.app/',
@@ -125,10 +132,10 @@ const TILES__PROJECTS = [
     description:
       'This is an app that offers a way to visualize world economic data. The app is powered by JSON APIs provided by the World Bank and organizes data from nations by their respective regions. I utilized D3.js to create interactive and visually appealing graphs and used the latest developer technologies to ensure their performance and reliability. I believe that this app is not just a tool for understanding economic data, but also a demonstration of my expertise in data visualization, web development, and the use of APIs. I am confident that this project showcases my ability to bring together multiple technologies to create a seamless user experience.',
     screenshots: [
-      GraphAppImg,
-      GraphAppFirstView,
-      GraphAppSecondView,
-      GraphAppThirdView,
+      { img: GraphAppImg, preview: null },
+      { img: GraphAppFirstView, preview: GraphAppFirstViewPreview },
+      { img: GraphAppSecondView, preview: null },
+      { img: GraphAppThirdView, preview: null },
     ],
     rightSide: true,
     gitLink: 'https://github.com/bkb-Git/Graph-Application',

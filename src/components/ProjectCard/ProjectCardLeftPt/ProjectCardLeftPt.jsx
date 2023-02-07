@@ -77,12 +77,19 @@ const ProjectCardLeftPt = (props) => {
             primary
             navFor={sliderNav.secondary}
           >
-            {screenshots.map((img) => (
+            {screenshots.map((screenshot) => (
               <Col
                 key={`${Math.random()}-${Date.now()}`}
                 className="projectCardLeft__sliders__mainImage"
               >
-                <Image src={img} />
+                <Image
+                  src={screenshot.img}
+                  placeholder={
+                    screenshot.preview && (
+                      <Image preview={false} src={screenshot.preview} />
+                    )
+                  }
+                />
               </Col>
             ))}
           </CarouselMod>
@@ -99,13 +106,21 @@ const ProjectCardLeftPt = (props) => {
             focusOnSelect
             otherClassNames="projectCardLeft__sliders__secondSlider"
           >
-            {screenshots.map((img) => (
+            {screenshots.map((screenshot) => (
               <Col
                 key={`${Math.random()}-${Date.now()}`}
                 className="projectCardLeft__sliders__card"
               >
                 <Col className="projectCardLeft__sliders__card__image">
-                  <Image preview={false} src={img} />
+                  <Image
+                    preview={false}
+                    src={screenshot.img}
+                    placeholder={
+                      screenshot.preview && (
+                        <Image preview={false} src={screenshot.preview} />
+                      )
+                    }
+                  />
                 </Col>
               </Col>
             ))}
