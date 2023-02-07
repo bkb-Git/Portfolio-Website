@@ -8,7 +8,7 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Portrait from 'assets/images/potrait.jpg';
-import PortraitPreview from 'assets/images/potrait Preview.jpg';
+import PortraitPreview from 'assets/images/potrait Preview.jpeg';
 import Resume from 'assets/Latest Resume .docx.pdf';
 
 import './About.scss';
