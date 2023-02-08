@@ -15,20 +15,20 @@ const PictureSide = () => {
   // Breakpoints destructured here
   const { xl, xxl } = useBreakpoint();
 
-  // Breakpoint test for hd screen or hdPlus screen
-  const isHDScreen = xl && !xxl;
-  const isHDPlusScreen = xxl;
+  // Breakpoints
+  const is720p = xl && !xxl;
+  const is1080pAndAbove = xxl;
 
   const determinePicSize = () => {
     let width;
     let height;
 
-    if (isHDScreen) {
-      width = 500;
-      height = 636.85;
+    if (is720p) {
+      width = 450;
+      height = 573.17;
     }
 
-    if (isHDPlusScreen) {
+    if (is1080pAndAbove) {
       width = 600;
       height = 764.23;
     }

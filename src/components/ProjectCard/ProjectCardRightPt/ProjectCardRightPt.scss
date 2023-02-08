@@ -15,6 +15,13 @@
         }
     }
 
-    &__stack {
+    @include mixins.respond(desk-small) {
+        &__about {
+            // margin-top: 0;
+
+            &__text {
+                line-height: 1.8em;
+            }
+        }
     }
 }

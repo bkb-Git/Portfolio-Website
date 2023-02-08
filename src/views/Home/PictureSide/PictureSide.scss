@@ -1,4 +1,4 @@
-@use "styles/_mixins.scss";
+@use "/src/styles/mixins";
 
 .pictureSide {
     height: 100%;
@@ -8,6 +8,10 @@
     position: absolute;
     top: -10px;
     right: 150px;
+
+    @include mixins.respond(desk-small) {
+        right: 100px;
+    }
 }
 
 .cssTag {
@@ -16,8 +20,8 @@
     left: 190px;
 
     @include mixins.respond(desk-small) {
-        top: 40px;
-        left: 175px;
+        top: 5px;
+        left: 110px;
     }
 }
 
@@ -25,6 +29,11 @@
     position: absolute;
     top: 140px;
     left: 60px;
+
+    @include mixins.respond(desk-small) {
+        top: 80px;
+        left: 30px;
+    }
 }
 
 .gitHubTag {
@@ -33,7 +42,8 @@
     bottom: 220px;
 
     @include mixins.respond(desk-small) {
-        bottom: 100px;
+        bottom: 90px;
+        left: -50px;
     }
 }
 

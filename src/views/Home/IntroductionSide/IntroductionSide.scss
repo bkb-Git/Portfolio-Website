@@ -33,7 +33,7 @@
 
     &__name {
         font-family: $font-primary;
-        font-size: 96px !important;
+        font-size: 9.6rem !important;
         font-weight: 900 !important;
         color: white !important;
         letter-spacing: 0.03em;
@@ -97,6 +97,10 @@
 
         &__line {
             width: 80px;
+        }
+
+        &__name {
+            font-size: 6.4rem !important;
         }
     }
 }
