@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography, Grid } from 'antd';
 
 import { ReactComponent as Divider } from 'assets/svg/Divider.svg';
 import { ReactComponent as PuzzlePiece } from 'assets/svg/puzzle-piece-solid 1.svg';
@@ -23,6 +23,7 @@ import {
 import './Skills.scss';
 
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
 const SOFT_SKILLS = [
   {
@@ -52,10 +53,16 @@ const SOFT_SKILLS = [
 ];
 
 const Skills = () => {
+  // Destructure breakpoints
+  const { xl, xxl } = useBreakpoint();
+
+  // Breakpoints
+  const is720p = xl && !xxl;
+
   // Map function to render skills tag
   const mappedSkills = (skillsToMap, SkillComponent) => {
     return (
-      <Row justify="start" align="middle" gutter={[64, 48]}>
+      <Row justify="start" align="middle" gutter={is720p ? [48, 36] : [64, 48]}>
         {skillsToMap.map((skill) => (
           <SkillComponent
             key={`${skill.displayText}-${Date.now()}`}
@@ -91,6 +98,40 @@ const Skills = () => {
     );
   };
 
+  const technicalSkills = () => {
+    return (
+      <Col xl={24} xxl={20} className="skillsPage__skills__technical">
+        <Row justify="start" align="middle" gutter={[is720p ? 32 : 96, 0]}>
+          <Col xxl={6} xl={6}>
+            {skillsSubtitle('Technical', Divider)}
+          </Col>
+          <Col xxl={18} xl={18}>
+            {mappedSkills(Object.values(Languages), TechSkillTag)}
+          </Col>
+        </Row>
+      </Col>
+    );
+  };
+
+  const softSkills = () => {
+    return (
+      <Col
+        xxl={{ span: 20, offset: 4 }}
+        xl={{ span: 24, offset: 0 }}
+        className="skillsPage__skills__soft"
+      >
+        <Row justify="end" align="middle" gutter={[is720p ? 32 : 96, 0]}>
+          <Col xxl={18} xl={19}>
+            {mappedSkills(SOFT_SKILLS, SoftSkillTag)}
+          </Col>
+          <Col xxl={6} xl={5}>
+            {skillsSubtitle('Soft', PuzzlePiece)}
+          </Col>
+        </Row>
+      </Col>
+    );
+  };
+
   // Render function for views defined here
   const renderTitle = () => {
     return (
@@ -100,29 +141,12 @@ const Skills = () => {
     );
   };
 
-  const renderTechnicalSkills = () => {
+  const renderSkills = () => {
     return (
-      <Col xl={22} xxl={20} className="skillsPage__skills__technical">
-        <Row justify="start" align="middle" gutter={[96, 0]}>
-          <Col span={6}>{skillsSubtitle('Technical', Divider)}</Col>
-          <Col span={18}>
-            {mappedSkills(Object.values(Languages), TechSkillTag)}
-          </Col>
-        </Row>
-      </Col>
-    );
-  };
-
-  const renderSoftSkills = () => {
-    return (
-      <Col
-        xxl={{ span: 20, offset: 4 }}
-        xl={{ span: 22, offset: 2 }}
-        className="skillsPage__skills__soft"
-      >
-        <Row justify="end" align="middle" gutter={[96, 0]}>
-          <Col span={18}>{mappedSkills(SOFT_SKILLS, SoftSkillTag)}</Col>
-          <Col span={6}>{skillsSubtitle('Soft', PuzzlePiece)}</Col>
+      <Col span={24} className="skillsPage__skills">
+        <Row justify="start" align="middle" gutter={[0, '20rem']}>
+          {technicalSkills()}
+          {softSkills()}
         </Row>
       </Col>
     );
@@ -133,12 +157,7 @@ const Skills = () => {
       <a name="skills" id="#skills" />
       <Row justify="center" align="middle" className="skillsPage__screen">
         {renderTitle()}
-        <Col span={24} className="skillsPage__skills">
-          <Row justify="start" align="middle" gutter={[0, '20rem']}>
-            {renderTechnicalSkills()}
-            {renderSoftSkills()}
-          </Row>
-        </Col>
+        {renderSkills()}
       </Row>
     </Row>
   );

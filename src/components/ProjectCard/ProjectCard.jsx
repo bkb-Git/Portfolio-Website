@@ -48,7 +48,7 @@ const ProjectCard = (props) => {
 
   return (
     <Col {...responsiveWidths} className="project">
-      <Row justify="space-between" align="top">
+      <Row justify="space-between" align="center">
         {right ? (
           <>
             {renderRightPart()}

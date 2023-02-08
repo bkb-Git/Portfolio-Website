@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-alert */
-import { Button, Col, Divider, Image, Row, Typography } from 'antd';
+import { Button, Col, Divider, Grid, Image, Row, Typography } from 'antd';
 import { saveAs } from 'file-saver';
 
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +15,15 @@ import './About.scss';
 
 const { Title, Paragraph } = Typography;
 
-// const { useBreakpoint } = Grid;
+const { useBreakpoint } = Grid;
 
 const About = () => {
+  // Destructure breakpoints from Grid
+  const { xl, xxl } = useBreakpoint();
+
+  // Breakpoints
+  const is720p = xl && !xxl;
+
   // Handler to download file
   const handleSave = () => saveAs(Resume, 'resume.pdf');
 
@@ -72,7 +78,7 @@ const About = () => {
   const renderPotrait = () => {
     return (
       <Col span={12}>
-        <Row justify="center" align="middle" gutter={[0, 64]}>
+        <Row justify="center" align="middle" gutter={[0, is720p ? 136 : 64]}>
           <Col span={20}>
             <Image
               className="aboutPage__image"
