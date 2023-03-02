@@ -1,4 +1,4 @@
-@use "src/styles/mixins";
+@use "src/styles/_mixins.scss";
 @import "/src/styles/variables";
 @import "/src/styles/typography";
 
@@ -31,5 +31,13 @@
     li {
       height: 100%;
     }
+  }
+
+  @include mixins.respond(phone) {
+    background: transparent !important;
+    height: 60%;
+
+    // li {
+    // }
   }
 }

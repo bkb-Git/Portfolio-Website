@@ -11,6 +11,21 @@
     @include mixins.flex(flex-start, center, row);
   }
 
+  &__bars {
+    @include mixins.flex(flex-end, center, row);
+
+    button {
+      background-color: transparent;
+      border-radius: 8px !important;
+
+      &:hover {
+        svg {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
   &__navbar {
     background: $primary-color;
   }
@@ -26,6 +41,18 @@
       background: transparent;
       padding: 10px 25px;
     }
+  }
+
+  &__title {
+    color: $primary-color !important;
+    font-family: $font-primary;
+    letter-spacing: 1px;
+    margin: 0.5em 0;
+  }
+
+  @include mixins.respond(phone) {
+    // position: fixed;
+    // top: 0;
   }
 
   @include mixins.respond(tab-land) {
