@@ -182,7 +182,7 @@ const Projects = () => {
         align={isMobileOrTablet && 'middle'}
       >
         {renderTitle()}
-        {renderProjects()}
+        {!isMobileOrTablet && renderProjects()}
       </Row>
     </Col>
   );

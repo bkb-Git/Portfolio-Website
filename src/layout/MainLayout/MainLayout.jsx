@@ -18,7 +18,9 @@ const MainLayout = (props) => {
   useEffect(() => {}, [isMobileOrTablet]);
 
   return (
-    <Layout style={{ background: 'white' }}>
+    <Layout
+      style={{ background: 'white', overflowX: isMobileOrTablet && 'clip' }}
+    >
       <HeaderMenu />
       <Content className="content">{children}</Content>
       <FooterSection />

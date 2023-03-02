@@ -6,7 +6,7 @@ const SoftSkillTag = (props) => {
   const { data } = props;
   const { displayText, icon } = data;
   return (
-    <Col span={8}>
+    <Col xs={22} sm={22} xl={8} xxl={8}>
       <Row
         justify="center"
         align="middle"

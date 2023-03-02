@@ -19,20 +19,21 @@ const { useBreakpoint } = Grid;
 
 const About = () => {
   // Destructure breakpoints from Grid
-  const { xl, xxl } = useBreakpoint();
+  const { xs, sm, lg, xl, xxl } = useBreakpoint();
 
   // Breakpoints
-  const is720p = xl && !xxl;
+  const is1080p = xl && !xxl;
+  const isMobileOrTablet = (xs || sm) && !lg;
 
   // Handler to download file
   const handleSave = () => saveAs(Resume, 'resume.pdf');
 
-  // Introction to me
+  // Introduction to me
   const aboutMe = () => {
     return (
       <>
         <span> Hello! I’m Billy, a Software Engineer from Nairobi.</span>
-        <br />
+        {!isMobileOrTablet && <br />}
         <br /> Since 2020 I chose to pivot into the tech industry as a
         self-taught engineer, with a strong focus on front-end development and
         some experience in back-end development having the desire to go
@@ -56,20 +57,58 @@ const About = () => {
     );
   };
 
+  const title = () => {
+    return (
+      <Col span={20}>
+        <Title className="aboutPage__title">
+          About <span className="aboutPage__title__me">Me</span>
+        </Title>
+        {!isMobileOrTablet && <Divider style={{ borderColor: '#eae3d2' }} />}
+      </Col>
+    );
+  };
+
+  const button = () => {
+    return (
+      <Button
+        type="primary"
+        size="large"
+        onClick={handleSave}
+        icon={
+          <FontAwesomeIcon
+            icon={faDownload}
+            color="#ccac00"
+            style={{ marginRight: '1rem' }}
+          />
+        }
+        className="aboutPage__resume"
+      >
+        Resume
+      </Button>
+    );
+  };
+
   // Render functions for views
   const renderAboutText = () => {
     return (
-      <Col span={12}>
-        <Row justify="start" align="bottom" style={{ height: '100%' }}>
-          <Col span={20}>
-            <Title className="aboutPage__title">
-              About <span className="aboutPage__title__me">Me</span>
-            </Title>
-            <Divider style={{ borderColor: '#eae3d2' }} />
-          </Col>
-          <Col span={24}>
-            <Paragraph className="aboutPage__text">{aboutMe()}</Paragraph>
-          </Col>
+      <Col
+        xs={24}
+        sm={24}
+        xl={12}
+        xxl={12}
+        style={{ marginBottom: isMobileOrTablet && '5rem' }}
+      >
+        <Row
+          justify={isMobileOrTablet ? 'center' : 'start'}
+          align="bottom"
+          style={{ height: '100%' }}
+        >
+          {title()}
+          {!isMobileOrTablet && (
+            <Col span={24}>
+              <Paragraph className="aboutPage__text">{aboutMe()}</Paragraph>
+            </Col>
+          )}
         </Row>
       </Col>
     );
@@ -77,32 +116,25 @@ const About = () => {
 
   const renderPotrait = () => {
     return (
-      <Col span={12}>
-        <Row justify="center" align="middle" gutter={[0, is720p ? 136 : 64]}>
-          <Col span={20}>
+      <Col xs={24} sm={24} xl={12} xxl={12}>
+        <Row justify="center" align="middle" gutter={[0, is1080p ? 136 : 64]}>
+          <Col xs={22} sm={22} xl={20} xxl={20}>
             <Image
               className="aboutPage__image"
               src={Portrait}
               placeholder={<Image preview={false} src={PortraitPreview} />}
             />
           </Col>
-          <Col span={20}>
+          {isMobileOrTablet && (
+            <Col xs={22} sm={22} xl={20} xxl={20}>
+              <Row justify="center" align="middle">
+                {aboutMe()}
+              </Row>
+            </Col>
+          )}
+          <Col xs={22} sm={22} xl={20} xxl={20}>
             <Row justify="center" align="middle">
-              <Button
-                type="primary"
-                size="large"
-                onClick={handleSave}
-                icon={
-                  <FontAwesomeIcon
-                    icon={faDownload}
-                    color="#ccac00"
-                    style={{ marginRight: '1rem' }}
-                  />
-                }
-                className="aboutPage__resume"
-              >
-                Resume
-              </Button>
+              {button()}
             </Row>
           </Col>
         </Row>
@@ -110,12 +142,20 @@ const About = () => {
     );
   };
 
-  return (
-    <Col span={20}>
-      <a name="about" id="#about" />
-      <Row justify="center" align="middle" className="aboutPage">
+  const renderView = () => {
+    return (
+      <>
         {renderAboutText()}
         {renderPotrait()}
+      </>
+    );
+  };
+
+  return (
+    <Col xs={22} sm={22} xl={20} xxl={20}>
+      <a name="about" id="#about" />
+      <Row justify="center" align="middle" className="aboutPage">
+        {renderView()}
       </Row>
     </Col>
   );

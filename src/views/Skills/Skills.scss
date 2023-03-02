@@ -1,3 +1,4 @@
+@use "/src/styles/mixins";
 @import "/src/styles/typography";
 @import "/src/styles/variables";
 
@@ -18,15 +19,6 @@
     &__header {
         @extend .page-title;
         color: #fff !important;
-
-        // &__box {
-        //     padding: 2rem 25rem;
-        //     // background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%);
-        //     background: white;
-        //     border-radius: 20px;
-        //     border: 2px solid $accent-color;
-        //     box-shadow: 0px 4px 14px rgba(black, 0.25), 0px 10px 20px rgba(black, 0.15), 0px -4px 6px rgba(black, 0.1);
-        // }
     }
 
     &__skills {
@@ -47,6 +39,24 @@
             border-right: none;
         }
     }
+
+    @include mixins.respond(phone) {
+        &__header {
+            font-size: 2.5rem !important;
+            margin: 5rem 0 !important;
+        }
+
+        &__skills {
+            margin-bottom: 10rem;
+            &__technical {
+                padding: 0px;
+            }
+
+            &__soft {
+                padding: 0px;
+            }
+        }
+    }
 }
 
 .skillsSubtitle {
@@ -57,6 +67,16 @@
 
     &__title {
         @extend .subtitle;
+
         font-size: 2.4rem !important;
+    }
+
+    @include mixins.respond(phone) {
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+
+        &__title {
+            font-size: 2rem !important;
+        }
     }
 }
