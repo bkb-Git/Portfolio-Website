@@ -21,6 +21,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './Skills.scss';
+import { useEffect } from 'react';
 
 const { Title } = Typography;
 const { useBreakpoint } = Grid;
@@ -54,15 +55,28 @@ const SOFT_SKILLS = [
 
 const Skills = () => {
   // Destructure breakpoints
-  const { xl, xxl } = useBreakpoint();
+  const { xs, sm, lg, xl, xxl } = useBreakpoint();
 
   // Breakpoints
-  const is720p = xl && !xxl;
+  const is1080p = xl && !xxl;
+  const isMobileOrTablet = (xs || sm) && !lg;
+
+  useEffect(() => {}, [isMobileOrTablet]);
 
   // Map function to render skills tag
   const mappedSkills = (skillsToMap, SkillComponent) => {
+    const determineGutter = () => {
+      if (isMobileOrTablet) return [36, 36];
+      if (is1080p) return [48, 36];
+      return [64, 48];
+    };
+
     return (
-      <Row justify="start" align="middle" gutter={is720p ? [48, 36] : [64, 48]}>
+      <Row
+        justify={isMobileOrTablet ? 'center' : 'start'}
+        align="middle"
+        gutter={determineGutter()}
+      >
         {skillsToMap.map((skill) => (
           <SkillComponent
             key={`${skill.displayText}-${Date.now()}`}
@@ -99,13 +113,27 @@ const Skills = () => {
   };
 
   const technicalSkills = () => {
+    const determineGutter = () => {
+      if (is1080p) return [32, 0];
+      return [96, 0];
+    };
     return (
-      <Col xl={24} xxl={20} className="skillsPage__skills__technical">
-        <Row justify="start" align="middle" gutter={[is720p ? 32 : 96, 0]}>
+      <Col
+        xs={22}
+        sm={22}
+        xl={24}
+        xxl={20}
+        className="skillsPage__skills__technical"
+      >
+        <Row
+          justify={isMobileOrTablet ? 'center' : 'start'}
+          align="middle"
+          gutter={determineGutter()}
+        >
           <Col xxl={6} xl={6}>
             {skillsSubtitle('Technical', Divider)}
           </Col>
-          <Col xxl={18} xl={18}>
+          <Col xxl={18} xl={18} xs={24} sm={24}>
             {mappedSkills(Object.values(Languages), TechSkillTag)}
           </Col>
         </Row>
@@ -116,17 +144,30 @@ const Skills = () => {
   const softSkills = () => {
     return (
       <Col
+        xs={22}
+        sm={22}
         xxl={{ span: 20, offset: 4 }}
         xl={{ span: 24, offset: 0 }}
         className="skillsPage__skills__soft"
       >
-        <Row justify="end" align="middle" gutter={[is720p ? 32 : 96, 0]}>
-          <Col xxl={18} xl={19}>
+        <Row
+          justify={isMobileOrTablet ? 'center' : 'end'}
+          align="middle"
+          gutter={[is1080p ? 32 : 96, 0]}
+        >
+          {isMobileOrTablet && (
+            <Col xxl={6} xl={5}>
+              {skillsSubtitle('Soft', PuzzlePiece)}
+            </Col>
+          )}
+          <Col xs={24} sm={24} xxl={18} xl={19}>
             {mappedSkills(SOFT_SKILLS, SoftSkillTag)}
           </Col>
-          <Col xxl={6} xl={5}>
-            {skillsSubtitle('Soft', PuzzlePiece)}
-          </Col>
+          {!isMobileOrTablet && (
+            <Col xxl={6} xl={5}>
+              {skillsSubtitle('Soft', PuzzlePiece)}
+            </Col>
+          )}
         </Row>
       </Col>
     );
@@ -144,7 +185,11 @@ const Skills = () => {
   const renderSkills = () => {
     return (
       <Col span={24} className="skillsPage__skills">
-        <Row justify="start" align="middle" gutter={[0, '20rem']}>
+        <Row
+          justify={isMobileOrTablet ? 'center' : 'start'}
+          align="middle"
+          gutter={[0, isMobileOrTablet ? '10rem' : '20rem']}
+        >
           {technicalSkills()}
           {softSkills()}
         </Row>

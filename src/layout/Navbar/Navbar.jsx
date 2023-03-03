@@ -1,8 +1,5 @@
-// import { useContext } from 'react';
-import { useEffect } from 'react';
-import { Menu } from 'antd';
-
-import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Menu, Grid } from 'antd';
 
 import './Navbar.scss';
 
@@ -29,20 +26,23 @@ const PAGES = [
   },
 ];
 
-// const { useBreakpoint } = Grid;
+const { useBreakpoint } = Grid;
 
-const Navbar = () => {
-  const history = useHistory();
+const Navbar = ({ setOpen }) => {
+  const [page, setPage] = useState('');
 
-  // const { xs, sm, lg } = useBreakpoint();
-  // const isMobileOrTablet = (xs || sm) && !lg;
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
 
-  useEffect(() => {}, [history]);
+  useEffect(() => {}, [isMobileOrTablet]);
 
   const handleClick = (props) => {
     const { key } = props;
     const element = document.getElementById(key);
+    setPage(key);
     element.scrollIntoView({ behavior: 'smooth' });
+
+    setOpen(false);
   };
 
   const getItem = (label, key) => {
@@ -61,11 +61,11 @@ const Navbar = () => {
   return (
     <Menu
       className="navbar"
-      theme="dark"
+      theme={isMobileOrTablet ? 'light' : 'dark'}
       defaultSelectedKeys={[1]}
-      selectedKeys={[history.location.pathname]}
+      selectedKeys={page}
       onClick={handleClick}
-      mode="horizontal"
+      mode={isMobileOrTablet ? 'vertical' : 'horizontal'}
       items={items}
     />
   );

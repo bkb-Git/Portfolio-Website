@@ -1,4 +1,5 @@
-import { Layout } from 'antd';
+import { useEffect } from 'react';
+import { Grid, Layout } from 'antd';
 
 import FooterSection from 'layout/FooterSection';
 import HeaderMenu from '../HeaderMenu';
@@ -6,16 +7,20 @@ import HeaderMenu from '../HeaderMenu';
 import './MainLayout.scss';
 
 const { Content } = Layout;
-// const { useBreakpoint } = Grid;
+const { useBreakpoint } = Grid;
 
 const MainLayout = (props) => {
   const { children } = props;
 
-  // const { xs, sm, lg } = useBreakpoint()
-  // const isMobileOrTablet = (xs || sm) && !lg;
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
+
+  useEffect(() => {}, [isMobileOrTablet]);
 
   return (
-    <Layout style={{ background: 'white' }}>
+    <Layout
+      style={{ background: 'white', overflowX: isMobileOrTablet && 'clip' }}
+    >
       <HeaderMenu />
       <Content className="content">{children}</Content>
       <FooterSection />

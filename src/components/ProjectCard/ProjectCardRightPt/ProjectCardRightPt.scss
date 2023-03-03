@@ -24,4 +24,18 @@
             }
         }
     }
+
+    @include mixins.respond(phone) {
+        &__title {
+            font-size: 1.5rem !important;
+        }
+
+        &__about {
+            margin-top: 1.5rem;
+
+            &__text {
+                font-size: 1rem !important;
+            }
+        }
+    }
 }

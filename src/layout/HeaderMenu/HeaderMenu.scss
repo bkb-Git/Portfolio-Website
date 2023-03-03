@@ -28,6 +28,18 @@
     }
   }
 
+  &__title {
+    color: $primary-color !important;
+    font-family: $font-primary;
+    letter-spacing: 1px;
+    margin: 0.5em 0;
+  }
+
+  @include mixins.respond(phone) {
+    // position: fixed;
+    // top: 0;
+  }
+
   @include mixins.respond(tab-land) {
     padding: 0 2px;
   }

@@ -6,7 +6,7 @@ const TechSkillTag = (props) => {
   const { data } = props;
   const { displayText, icon } = data;
   return (
-    <Col span={6}>
+    <Col sm={12} xs={12} xl={6} xxl={6}>
       <Row
         justify="center"
         align="middle"

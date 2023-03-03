@@ -67,7 +67,7 @@ const ContactMe = () => {
   };
 
   return (
-    <Col span={14}>
+    <Col xs={20} sm={20} xl={14} xxl={14}>
       <a name="contact" id="#contact" />
       <Row justify="center" align="middle" className="contactMe">
         {renderTitle()}

@@ -1,4 +1,4 @@
-import { Col, Layout, Row } from 'antd';
+import { Col, Grid, Layout, Row } from 'antd';
 
 import { ReactComponent as GitIcon } from 'assets/svg/Git.svg';
 import { ReactComponent as LinkedInIcon } from 'assets/svg/LinkedIn.svg';
@@ -8,8 +8,12 @@ import './FooterSection.scss';
 import Navbar from 'layout/Navbar';
 
 const { Footer } = Layout;
+const { useBreakpoint } = Grid;
 
 const FooterSection = () => {
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
+
   // Handler click
   const handleClick = (e) => {
     const {
@@ -24,7 +28,7 @@ const FooterSection = () => {
   // Render functions for views
   const renderLinks = () => {
     return (
-      <Col span={4}>
+      <Col xs={22} sm={22} xl={4} xxl={4}>
         <Row justify="space-around" align="middle">
           <Col>
             <Col
@@ -68,9 +72,9 @@ const FooterSection = () => {
 
   const renderCopyright = () => {
     return (
-      <Col span={24}>
+      <Col xs={22} sm={22} xl={8} xxl={8}>
         <Row justify="center" align="bottom">
-          <Col span={8} className="footerSection__copyright">
+          <Col span={24} className="footerSection__copyright">
             <p>
               &copy;{' '}
               <span className="footerSection__copyright__year">
@@ -93,7 +97,7 @@ const FooterSection = () => {
         style={{ height: '100%' }}
       >
         {renderLinks()}
-        {renderMenu()}
+        {!isMobileOrTablet && renderMenu()}
         {renderCopyright()}
       </Row>
     </Footer>

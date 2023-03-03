@@ -22,4 +22,11 @@
       }
     }
   }
+
+  @include mixins.respond(phone) {
+    &__header {
+      font-size: 2.5rem !important;
+      margin: 5rem 0 !important;
+    }
+  }
 }
