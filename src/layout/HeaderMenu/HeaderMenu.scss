@@ -11,21 +11,6 @@
     @include mixins.flex(flex-start, center, row);
   }
 
-  &__bars {
-    @include mixins.flex(flex-end, center, row);
-
-    button {
-      background-color: transparent;
-      border-radius: 8px !important;
-
-      &:hover {
-        svg {
-          color: $primary-color;
-        }
-      }
-    }
-  }
-
   &__navbar {
     background: $primary-color;
   }

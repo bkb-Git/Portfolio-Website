@@ -10,4 +10,8 @@
     &__icon {
         @include mixins.flex(center, center, row);
     }
+
+    @include mixins.respond(phone) {
+        font-size: 1rem;
+    }
 }

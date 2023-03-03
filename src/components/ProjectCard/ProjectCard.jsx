@@ -1,9 +1,10 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Grid } from 'antd';
 
 import ProjectCardLeftPt from './ProjectCardLeftPt';
 import ProjectCardRightPt from './ProjectCardRightPt';
 
 import './ProjectCard.scss';
+import MobileCardView from './MobileCardView';
 
 const responsiveWidths = {
   xs: 22,
@@ -12,6 +13,8 @@ const responsiveWidths = {
   xl: 22,
   xxl: 21,
 };
+
+const { useBreakpoint } = Grid;
 
 const ProjectCard = (props) => {
   const { data = null, right } = props;
@@ -24,8 +27,11 @@ const ProjectCard = (props) => {
     liveLink,
   } = data;
 
-  // Render functions for each part
+  // Breakpoints
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
 
+  // Render functions for each part
   const renderRightPart = () => {
     return (
       <Col span={10}>
@@ -46,20 +52,32 @@ const ProjectCard = (props) => {
     );
   };
 
+  // View to be rendered
+  const renderView = () => {
+    if (isMobileOrTablet) {
+      return <MobileCardView data={data} />;
+    }
+
+    return right ? (
+      <>
+        {renderRightPart()}
+        {renderLeftPart()}
+      </>
+    ) : (
+      <>
+        {renderLeftPart()}
+        {renderRightPart()}
+      </>
+    );
+  };
+
   return (
     <Col {...responsiveWidths} className="project">
-      <Row justify="space-between" align="center">
-        {right ? (
-          <>
-            {renderRightPart()}
-            {renderLeftPart()}
-          </>
-        ) : (
-          <>
-            {renderLeftPart()}
-            {renderRightPart()}
-          </>
-        )}
+      <Row
+        justify={isMobileOrTablet ? 'center' : 'space-between'}
+        align="center"
+      >
+        {renderView()}
       </Row>
     </Col>
   );

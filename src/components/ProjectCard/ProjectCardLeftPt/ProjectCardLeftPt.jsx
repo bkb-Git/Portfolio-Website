@@ -1,4 +1,4 @@
-import { Col, Row, Image, Typography } from 'antd';
+import { Col, Row, Image, Typography, Grid } from 'antd';
 import { useState } from 'react';
 
 import { GithubFilled } from '@ant-design/icons';
@@ -9,16 +9,94 @@ import CarouselMod from 'components/CarouselMod';
 import './ProjectCardLeftPt.scss';
 
 const { Title } = Typography;
+const { useBreakpoint } = Grid;
 
 const ProjectCardLeftPt = (props) => {
   const { name, screenshots, links } = props;
   const { gitLink, liveLink } = links;
+
+  // Breakpoints
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
 
   // Slider navigation state
   const [sliderNav, setSliderNav] = useState({
     primary: null,
     secondary: null,
   });
+
+  // Primary Slider
+  const primarySlider = () => {
+    return (
+      <Col span={24}>
+        <CarouselMod
+          arrows={isMobileOrTablet}
+          dots={false}
+          infinite
+          slidesToShow={1}
+          setRefSlide={!isMobileOrTablet && setSliderNav}
+          slideState={!isMobileOrTablet && sliderNav}
+          primary
+          navFor={!isMobileOrTablet && sliderNav.secondary}
+        >
+          {screenshots.map((screenshot) => (
+            <Col
+              key={`${Math.random()}-${Date.now()}`}
+              className="projectCardLeft__sliders__mainImage"
+            >
+              <Image
+                src={screenshot.img}
+                placeholder={
+                  screenshot.preview && (
+                    <Image preview={false} src={screenshot.preview} />
+                  )
+                }
+              />
+            </Col>
+          ))}
+        </CarouselMod>
+      </Col>
+    );
+  };
+
+  const secondarySlider = () => {
+    return (
+      !isMobileOrTablet && (
+        <Col span={24}>
+          <CarouselMod
+            arrows
+            dots={false}
+            infinite
+            slidesToShow={3}
+            setRefSlide={setSliderNav}
+            navFor={sliderNav.primary}
+            autoplay
+            focusOnSelect
+            otherClassNames="projectCardLeft__sliders__secondSlider"
+          >
+            {screenshots.map((screenshot) => (
+              <Col
+                key={`${Math.random()}-${Date.now()}`}
+                className="projectCardLeft__sliders__card"
+              >
+                <Col className="projectCardLeft__sliders__card__image">
+                  <Image
+                    preview={false}
+                    src={screenshot.img}
+                    placeholder={
+                      screenshot.preview && (
+                        <Image preview={false} src={screenshot.preview} />
+                      )
+                    }
+                  />
+                </Col>
+              </Col>
+            ))}
+          </CarouselMod>
+        </Col>
+      )
+    );
+  };
 
   // Redirect click handler
   const handleClick = (e) => {
@@ -67,65 +145,8 @@ const ProjectCardLeftPt = (props) => {
         className="projectCardLeft__sliders"
         gutter={[0, 25]}
       >
-        <Col span={24}>
-          <CarouselMod
-            dots={false}
-            infinite
-            slidesToShow={1}
-            setRefSlide={setSliderNav}
-            slideState={sliderNav}
-            primary
-            navFor={sliderNav.secondary}
-          >
-            {screenshots.map((screenshot) => (
-              <Col
-                key={`${Math.random()}-${Date.now()}`}
-                className="projectCardLeft__sliders__mainImage"
-              >
-                <Image
-                  src={screenshot.img}
-                  placeholder={
-                    screenshot.preview && (
-                      <Image preview={false} src={screenshot.preview} />
-                    )
-                  }
-                />
-              </Col>
-            ))}
-          </CarouselMod>
-        </Col>
-        <Col span={24}>
-          <CarouselMod
-            arrows
-            dots={false}
-            infinite
-            slidesToShow={3}
-            setRefSlide={setSliderNav}
-            navFor={sliderNav.primary}
-            autoplay
-            focusOnSelect
-            otherClassNames="projectCardLeft__sliders__secondSlider"
-          >
-            {screenshots.map((screenshot) => (
-              <Col
-                key={`${Math.random()}-${Date.now()}`}
-                className="projectCardLeft__sliders__card"
-              >
-                <Col className="projectCardLeft__sliders__card__image">
-                  <Image
-                    preview={false}
-                    src={screenshot.img}
-                    placeholder={
-                      screenshot.preview && (
-                        <Image preview={false} src={screenshot.preview} />
-                      )
-                    }
-                  />
-                </Col>
-              </Col>
-            ))}
-          </CarouselMod>
-        </Col>
+        {primarySlider()}
+        {secondarySlider()}
       </Row>
     );
   };
@@ -137,7 +158,7 @@ const ProjectCardLeftPt = (props) => {
       gutter={[0, 24]}
       className="projectCardLeft"
     >
-      <Col span={24}>{projectHeader()}</Col>
+      {!isMobileOrTablet && <Col span={24}>{projectHeader()}</Col>}
       <Col span={24}>{projectImages()}</Col>
     </Row>
   );

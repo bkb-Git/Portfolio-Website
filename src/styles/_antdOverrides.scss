@@ -1,4 +1,25 @@
+@use "/src/styles/mixins";
+
 body {
     overflow: auto;
     scroll-behavior: smooth;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+    @include mixins.respond(phone) {
+        top: 120%;
+    }
+}
+
+.ant-carousel .slick-next {
+    @include mixins.respond(phone) {
+        right: 25%;
+    }
+}
+
+.ant-carousel .slick-prev {
+    @include mixins.respond(phone) {
+        left: 25%;
+    }
 }

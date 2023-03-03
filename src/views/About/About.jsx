@@ -33,7 +33,7 @@ const About = () => {
     return (
       <>
         <span> Hello! I’m Billy, a Software Engineer from Nairobi.</span>
-        {!isMobileOrTablet && <br />}
+        <br />
         <br /> Since 2020 I chose to pivot into the tech industry as a
         self-taught engineer, with a strong focus on front-end development and
         some experience in back-end development having the desire to go
@@ -128,7 +128,9 @@ const About = () => {
           {isMobileOrTablet && (
             <Col xs={22} sm={22} xl={20} xxl={20}>
               <Row justify="center" align="middle">
-                {aboutMe()}
+                <Col span={24}>
+                  <Paragraph className="aboutPage__text">{aboutMe()}</Paragraph>
+                </Col>
               </Row>
             </Col>
           )}
